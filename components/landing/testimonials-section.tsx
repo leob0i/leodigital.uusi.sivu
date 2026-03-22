@@ -10,6 +10,12 @@ const testimonials = [
     role: "Asiakas",
     rating: 5,
   },
+  {
+    quote: "Ammattitaitoista ja nopeaa palvelua. Verkkosivumme uudistus sujui täysin kivuttomasti ja lopputulos ylitti odotukset.",
+    author: "Repola",
+    role: "Asiakas",
+    rating: 5,
+  },
 ];
 
 // Client logos - placeholder images
@@ -17,7 +23,6 @@ const clients = [
   { name: "Rautaranta", logo: "/logos/rautaranta.png" },
   { name: "Repola", logo: "/logos/repola.png" },
   { name: "Asiakas 3", logo: "/logos/client3.png" },
-  { name: "Asiakas 4", logo: "/logos/client4.png" },
 ];
 
 export function TestimonialsSection() {
@@ -54,7 +59,7 @@ export function TestimonialsSection() {
           </h2>
           
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-3 gap-6 lg:gap-8 max-w-3xl">
             {clients.map((client, index) => (
               <div
                 key={client.name}
@@ -95,11 +100,11 @@ export function TestimonialsSection() {
             Mitä asiakkaat kertovat
           </h3>
 
-          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-3xl">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`p-8 lg:p-12 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 ${
+                className={`p-8 lg:p-10 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 150}ms` }}
@@ -112,7 +117,7 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-relaxed mb-8">
+                <blockquote className="text-lg lg:text-xl font-display text-[#f0f0f0] leading-relaxed mb-8">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 

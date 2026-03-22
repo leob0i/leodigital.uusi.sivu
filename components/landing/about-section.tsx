@@ -3,13 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-const workSteps = [
-  "Aluksi lyhyt keskustelu tavoitteista ja nykytilanteesta",
-  "Ehdotan selkeän ratkaisun ja hinnan etukäteen",
-  "Toteutan projektin vaiheittain ja pidän sinut ajan tasalla",
-  "Lopuksi julkaisu, perusopastus ja mahdollisuus jatkokehitykseen",
-];
-
 const benefits = [
   "Jokainen ratkaisu on käytännönläheinen ja helppo ylläpitää",
   "Ei valmispohjia - kaikki koodataan yksilöllisesti",
@@ -116,35 +109,6 @@ export function AboutSection() {
               <div className="absolute -inset-2 border border-[#2a2a2a] -z-10" />
               <div className="absolute -inset-4 border border-[#1a1a1a] -z-20" />
             </div>
-          </div>
-        </div>
-
-        {/* How I Work - Below */}
-        <div className="mt-24 pt-16 border-t border-[#2a2a2a]">
-          <h3 
-            className={`text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-8 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            Miten työskentelen
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workSteps.map((step, index) => (
-              <div
-                key={index}
-                className={`flex gap-6 p-6 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 group ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: `${(index + 3) * 100}ms` }}
-              >
-                <div className="w-10 h-10 shrink-0 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] font-mono text-sm group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-                <div className="flex-1">
-                  <p className="text-[#a0a0a0]">{step}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -115,7 +115,7 @@ export function MaintenanceSection() {
               <p className="text-[#a0a0a0]">Kysy lisätietoja ylläpitopalvelusta tai pyydä tarjous.</p>
             </div>
             <a 
-              href="#paketit"
+              href="/starter"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full"
             >
               Katso paketit
