@@ -2,13 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { AnimatedTetrahedron } from "./animated-tetrahedron";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 
 export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,8 +36,14 @@ export function CtaSection() {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log(formData);
+  };
+
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="yhteystiedot" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden border-t border-foreground/10">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
           className={`relative border border-foreground transition-all duration-1000 ${
@@ -48,45 +60,136 @@ export function CtaSection() {
           />
           
           <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="grid lg:grid-cols-2 gap-16">
               {/* Left content */}
-              <div className="flex-1">
-                <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-8 leading-[0.95]">
-                  Ready to build
+              <div>
+                <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-6">
+                  Yhteystiedot
+                </span>
+                <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8 leading-[0.95]">
+                  Pyydä tarjous
                   <br />
-                  something great?
+                  <span className="text-stroke">tai kysy lisää</span>
                 </h2>
 
-                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                  Join thousands of teams shipping faster with Optimus. 
-                  Start free, scale infinitely.
+                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-md">
+                  Kerro lyhyesti mitä tarvitset. Vastaan mahdollisimman pian!
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+                <div className="space-y-4 mb-8">
+                  <a 
+                    href="https://wa.me/358452031377" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 border border-foreground/10 hover:border-foreground/30 transition-colors group"
                   >
-                    Start building free
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
+                    <div className="w-12 h-12 flex items-center justify-center border border-foreground/20 group-hover:bg-foreground group-hover:text-background transition-colors">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="block font-medium">WhatsApp</span>
+                      <span className="text-sm text-muted-foreground">+358 45 203 1377</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                  
+                  <a 
+                    href="mailto:info@leodigital.fi"
+                    className="flex items-center gap-4 p-4 border border-foreground/10 hover:border-foreground/30 transition-colors group"
                   >
-                    Talk to sales
-                  </Button>
+                    <div className="w-12 h-12 flex items-center justify-center border border-foreground/20 group-hover:bg-foreground group-hover:text-background transition-colors">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="block font-medium">Sähköposti</span>
+                      <span className="text-sm text-muted-foreground">info@leodigital.fi</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                 </div>
-
-                <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  No credit card required
-                </p>
               </div>
 
-              {/* Right animation */}
-              <div className="hidden lg:flex items-center justify-center w-[500px] h-[500px] -mr-16">
-                <AnimatedTetrahedron />
+              {/* Right - Form */}
+              <div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">Nimi *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3 bg-transparent border border-foreground/20 focus:border-foreground outline-none transition-colors"
+                        placeholder="Nimesi"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium mb-2">Yritys</label>
+                      <input
+                        type="text"
+                        id="company"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-3 bg-transparent border border-foreground/20 focus:border-foreground outline-none transition-colors"
+                        placeholder="Yrityksen nimi (valinnainen)"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">Sähköposti *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3 bg-transparent border border-foreground/20 focus:border-foreground outline-none transition-colors"
+                        placeholder="sahkoposti@esimerkki.fi"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium mb-2">Puhelin</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-3 bg-transparent border border-foreground/20 focus:border-foreground outline-none transition-colors"
+                        placeholder="+358 40 123 4567"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Viesti *</label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-4 py-3 bg-transparent border border-foreground/20 focus:border-foreground outline-none transition-colors resize-none"
+                      placeholder="Kerro mitä tarvitset..."
+                    />
+                  </div>
+
+                  <p className="text-xs text-muted-foreground">
+                    Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä.
+                  </p>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+                  >
+                    Lähetä tarjouspyyntö
+                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </form>
               </div>
             </div>
           </div>

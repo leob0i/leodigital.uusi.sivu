@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { AnimatedSphere } from "./animated-sphere";
+import { ArrowRight, Phone } from "lucide-react";
 
-const words = ["create", "build", "scale", "ship"];
+const words = ["Nettisivu", "Ylläpito", "Näkyvyys"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -24,13 +24,24 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Animated sphere background */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
-        <AnimatedSphere />
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/85" />
       </div>
       
       {/* Subtle grid lines */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-[1]">
         {[...Array(8)].map((_, i) => (
           <div
             key={`h-${i}`}
@@ -64,20 +75,19 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            The platform for modern teams
+            Verkkosivut & digitaalinen näkyvyys
           </span>
         </div>
         
         {/* Main headline */}
         <div className="mb-12">
           <h1 
-            className={`text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${
+            className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">The platform</span>
+            <span className="block text-balance">Yrityksellesi</span>
             <span className="block">
-              to{" "}
               <span className="relative inline-block">
                 <span 
                   key={wordIndex}
@@ -108,8 +118,8 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Your toolkit to stop configuring and start innovating. 
-            Securely build, deploy, and scale the best experiences.
+            Suunnittelen ja toteutan moderneja verkkosivuja sekä huolehdin koko digitaalisesta näkyvyydestäsi. 
+            Sinä keskityt liiketoimintaan, minä hoidan loput.
           </p>
           
           {/* CTAs */}
@@ -121,25 +131,32 @@ export function HeroSection() {
             <Button 
               size="lg" 
               className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+              asChild
             >
-              Start free trial
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              <a href="#yhteystiedot">
+                Pyydä tarjous
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
+              asChild
             >
-              Watch demo
+              <a href="https://wa.me/358452031377" target="_blank" rel="noopener noreferrer">
+                <Phone className="w-4 h-4 mr-2" />
+                WhatsApp
+              </a>
             </Button>
           </div>
         </div>
         
       </div>
       
-      {/* Stats marquee - full width outside container */}
+      {/* Stats marquee */}
       <div 
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
+        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 z-10 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -147,10 +164,10 @@ export function HeroSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "20 days", label: "saved on builds", company: "NETFLIX" },
-                { value: "98%", label: "faster deployment", company: "STRIPE" },
-                { value: "300%", label: "throughput increase", company: "LINEAR" },
-                { value: "6x", label: "faster to ship", company: "NOTION" },
+                { value: "100%", label: "räätälöity koodi", company: "Ei valmispohjia" },
+                { value: "24/7", label: "tuki saatavilla", company: "WhatsApp" },
+                { value: "SEO", label: "alusta alkaen", company: "Hakukoneoptimointi" },
+                { value: "Nopea", label: "latausaika", company: "Optimoitu" },
               ].map((stat) => (
                 <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
                   <span className="text-4xl lg:text-5xl font-display">{stat.value}</span>
@@ -164,8 +181,6 @@ export function HeroSection() {
           ))}
         </div>
       </div>
-      
-      {/* Scroll indicator */}
       
     </section>
   );

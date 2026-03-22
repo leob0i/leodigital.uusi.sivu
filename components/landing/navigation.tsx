@@ -2,18 +2,28 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 
-const navLinks = [
-  { name: "Features", href: "#features" },
-  { name: "How it works", href: "#how-it-works" },
-  { name: "Developers", href: "#developers" },
-  { name: "Pricing", href: "#pricing" },
+const navLinksFi = [
+  { name: "Palvelut", href: "#palvelut" },
+  { name: "Ylläpito", href: "#yllapito" },
+  { name: "Paketit", href: "#paketit" },
+  { name: "Yhteystiedot", href: "#yhteystiedot" },
+];
+
+const navLinksEn = [
+  { name: "Services", href: "#palvelut" },
+  { name: "Maintenance", href: "#yllapito" },
+  { name: "Packages", href: "#paketit" },
+  { name: "Contact", href: "#yhteystiedot" },
 ];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [language, setLanguage] = useState<'fi' | 'en'>('fi');
+
+  const navLinks = language === 'fi' ? navLinksFi : navLinksEn;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +32,10 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'fi' ? 'en' : 'fi');
+  };
 
   return (
     <header
@@ -45,8 +59,7 @@ export function Navigation() {
         >
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Optimus</span>
-            <span className={`text-muted-foreground font-mono transition-all duration-500 ${isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"}`}>TM</span>
+            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -65,14 +78,22 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="#" className={`text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}>
-              Sign in
-            </a>
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className={`flex items-center gap-1.5 text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}
+            >
+              <Globe className="w-4 h-4" />
+              {language === 'fi' ? 'EN' : 'FI'}
+            </button>
             <Button
               size="sm"
               className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              asChild
             >
-              Start creating
+              <a href="#yhteystiedot">
+                {language === 'fi' ? 'Ota yhteyttä' : 'Contact'}
+              </a>
             </Button>
           </div>
 
@@ -132,15 +153,22 @@ export function Navigation() {
             <Button 
               variant="outline" 
               className="flex-1 rounded-full h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                toggleLanguage();
+                setIsMobileMenuOpen(false);
+              }}
             >
-              Sign in
+              <Globe className="w-4 h-4 mr-2" />
+              {language === 'fi' ? 'English' : 'Suomi'}
             </Button>
             <Button 
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
+              asChild
             >
-              Start creating
+              <a href="#yhteystiedot">
+                {language === 'fi' ? 'Ota yhteyttä' : 'Contact'}
+              </a>
             </Button>
           </div>
         </div>
