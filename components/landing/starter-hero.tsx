@@ -1,16 +1,47 @@
 "use client";
 
 import { Check, Shield, Zap, Clock, Headphones } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 export function StarterHero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener("loadeddata", () => setVideoLoaded(true));
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center py-32 lg:py-40 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-[#111111]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.03),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-      </div>
+      {/* Fallback Image - shown while video loads */}
+      <div 
+        className={`absolute inset-0 z-0 transition-opacity duration-700 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
+        style={{
+          backgroundImage: "url('/images/starter-bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className={`absolute inset-0 z-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+        poster="/images/starter-bg.jpg"
+      >
+        <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-[1] bg-[#0d0d0d]/70" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         {/* Large Glass Box */}

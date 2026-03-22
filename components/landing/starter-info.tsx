@@ -1,8 +1,26 @@
 "use client";
 
 import { Globe, Search, Smartphone, Bot, BarChart3, Lock, RefreshCw, MessageSquare } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const animatedTexts = ["jatkuvaa huolenpitoa", "näkyvyyttä", "kaikki maksut samasta"];
 
 export function StarterInfo() {
+  const [textIndex, setTextIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setTextIndex((prev) => (prev + 1) % animatedTexts.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-24 lg:py-32 border-t border-[#2a2a2a]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -17,7 +35,13 @@ export function StarterInfo() {
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight text-[#f0f0f0] mb-8">
               Verkkosivusto vaatii
               <br />
-              <span className="text-stroke">jatkuvaa huolenpitoa</span>
+              <span 
+                className={`text-stroke inline-block transition-all duration-300 ${
+                  isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                }`}
+              >
+                {animatedTexts[textIndex]}
+              </span>
             </h2>
             
             <div className="space-y-6 text-[#a0a0a0] leading-relaxed">
