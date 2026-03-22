@@ -34,16 +34,16 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 border-t border-foreground/10">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Clients */}
         <div className="mb-20">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
-            <span className="w-8 h-px bg-foreground/30" />
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8">
+            <span className="w-8 h-px bg-[#f0f0f0]/30" />
             Asiakkaat
           </span>
           <h2 
-            className={`text-3xl lg:text-4xl font-display mb-12 transition-all duration-700 ${
+            className={`text-3xl lg:text-4xl font-display text-[#f0f0f0] mb-12 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
             {clients.map((client, index) => (
               <div
                 key={client}
-                className={`text-2xl lg:text-3xl font-display text-muted-foreground/50 hover:text-foreground transition-all duration-500 ${
+                className={`text-2xl lg:text-3xl font-display text-[#606060] hover:text-[#f0f0f0] transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
@@ -66,12 +66,12 @@ export function TestimonialsSection() {
 
         {/* Testimonials */}
         <div>
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
-            <span className="w-8 h-px bg-foreground/30" />
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8">
+            <span className="w-8 h-px bg-[#f0f0f0]/30" />
             Arvostelut
           </span>
           <h3 
-            className={`text-3xl lg:text-4xl font-display mb-12 transition-all duration-700 ${
+            className={`text-3xl lg:text-4xl font-display text-[#f0f0f0] mb-12 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -82,7 +82,7 @@ export function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`p-8 lg:p-12 border border-foreground/10 hover:border-foreground/30 transition-all duration-500 ${
+                className={`p-8 lg:p-12 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 150}ms` }}
@@ -90,19 +90,19 @@ export function TestimonialsSection() {
                 {/* Rating */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-foreground text-foreground" />
+                    <Star key={i} className="w-5 h-5 fill-[#f0f0f0] text-[#f0f0f0]" />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-xl lg:text-2xl font-display leading-relaxed mb-8">
+                <blockquote className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-relaxed mb-8">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
                 <div>
-                  <div className="font-medium">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div className="font-medium text-[#f0f0f0]">{testimonial.author}</div>
+                  <div className="text-sm text-[#a0a0a0]">{testimonial.role}</div>
                 </div>
               </div>
             ))}

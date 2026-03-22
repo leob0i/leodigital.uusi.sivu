@@ -252,23 +252,23 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-foreground/10">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-[#2a2a2a]">
         <div className="shrink-0">
-          <span className="font-mono text-sm text-muted-foreground">{feature.number}</span>
+          <span className="font-mono text-sm text-[#a0a0a0]">{feature.number}</span>
         </div>
         
         <div className="flex-1 grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 className="text-3xl lg:text-4xl font-display mb-4 group-hover:translate-x-2 transition-transform duration-500">
+            <h3 className="text-3xl lg:text-4xl font-display text-[#f0f0f0] mb-4 group-hover:translate-x-2 transition-transform duration-500">
               {feature.title}
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-[#a0a0a0] leading-relaxed">
               {feature.description}
             </p>
           </div>
           
           <div className="flex justify-center lg:justify-end">
-            <div className="w-48 h-40 text-foreground">
+            <div className="w-48 h-40 text-[#f0f0f0]">
               <AnimatedVisual type={feature.visual} />
             </div>
           </div>
@@ -298,22 +298,22 @@ export function FeaturesSection() {
     <section
       id="palvelut"
       ref={sectionRef}
-      className="relative py-24 lg:py-32"
+      className="relative py-24 lg:py-32 bg-[#111111]"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-            <span className="w-8 h-px bg-foreground/30" />
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
+            <span className="w-8 h-px bg-[#f0f0f0]/30" />
             Palvelut
           </span>
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
+            className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
             Kaikki mitä tarvitset.
             <br />
-            <span className="text-muted-foreground">Ei turhaa monimutkaisuutta.</span>
+            <span className="text-[#a0a0a0]">Ei turhaa monimutkaisuutta.</span>
           </h2>
         </div>
 

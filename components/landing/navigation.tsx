@@ -48,7 +48,7 @@ export function Navigation() {
       <nav 
         className={`mx-auto transition-all duration-500 ${
           isScrolled || isMobileMenuOpen
-            ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
+            ? "bg-[#111111]/80 backdrop-blur-xl border border-[#2a2a2a] rounded-2xl shadow-lg max-w-[1200px]"
             : "bg-transparent max-w-[1400px]"
         }`}
       >
@@ -59,7 +59,7 @@ export function Navigation() {
         >
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
+            <span className={`font-display tracking-tight transition-all duration-500 text-[#f0f0f0] ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -68,10 +68,10 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors duration-300 relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#f0f0f0] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -81,14 +81,14 @@ export function Navigation() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className={`flex items-center gap-1.5 text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}
+              className={`flex items-center gap-1.5 text-[#a0a0a0] hover:text-[#f0f0f0] transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}
             >
               <Globe className="w-4 h-4" />
               {language === 'fi' ? 'EN' : 'FI'}
             </button>
             <Button
               size="sm"
-              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              className={`bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
               asChild
             >
               <a href="#yhteystiedot">
@@ -100,7 +100,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-[#f0f0f0]"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -115,7 +115,7 @@ export function Navigation() {
       
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 bg-[#0d0d0d] z-40 transition-all duration-500 ${
           isMobileMenuOpen 
             ? "opacity-100 pointer-events-auto" 
             : "opacity-0 pointer-events-none"
@@ -130,7 +130,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
+                className={`text-5xl font-display text-[#f0f0f0] hover:text-[#a0a0a0] transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-4"
@@ -143,7 +143,7 @@ export function Navigation() {
           </div>
           
           {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
+          <div className={`flex gap-4 pt-8 border-t border-[#2a2a2a] transition-all duration-500 ${
             isMobileMenuOpen 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-4"
@@ -152,7 +152,7 @@ export function Navigation() {
           >
             <Button 
               variant="outline" 
-              className="flex-1 rounded-full h-14 text-base"
+              className="flex-1 rounded-full h-14 text-base border-[#2a2a2a] text-[#f0f0f0] hover:bg-[#1a1a1a]"
               onClick={() => {
                 toggleLanguage();
                 setIsMobileMenuOpen(false);
@@ -162,7 +162,7 @@ export function Navigation() {
               {language === 'fi' ? 'English' : 'Suomi'}
             </Button>
             <Button 
-              className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
+              className="flex-1 bg-[#f0f0f0] text-[#0d0d0d] rounded-full h-14 text-base hover:bg-[#e0e0e0]"
               onClick={() => setIsMobileMenuOpen(false)}
               asChild
             >

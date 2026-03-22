@@ -70,19 +70,19 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="paketit" className="relative py-32 lg:py-40 border-t border-foreground/10">
+    <section id="paketit" className="relative py-32 lg:py-40 border-t border-[#2a2a2a] bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="max-w-3xl mb-20">
-          <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-6">
+          <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
             Paketit
           </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight text-foreground mb-6">
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight text-[#f0f0f0] mb-6">
             Ylläpitopaketit
             <br />
             <span className="text-stroke">yrityksellesi</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl">
+          <p className="text-lg text-[#a0a0a0] max-w-xl">
             Valitse tarpeisiisi sopiva ylläpitopaketti. Kaikki paketit sisältävät domain, hostingin ja teknisen tuen.
           </p>
         </div>
@@ -92,18 +92,22 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className={`relative p-6 lg:p-8 bg-background ${
-                plan.popular ? "border-2 border-foreground" : plan.highlight ? "border-2 border-foreground/50 bg-foreground/5" : "border border-foreground/10"
+              className={`relative p-6 lg:p-8 ${
+                plan.popular 
+                  ? "border-2 border-[#f0f0f0] bg-[#1a1a1a]" 
+                  : plan.highlight 
+                    ? "border-2 border-[#f0f0f0]/50 bg-[#1a1a1a]" 
+                    : "border border-[#2a2a2a] bg-[#161616]"
               }`}
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-6 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest">
+                <span className="absolute -top-3 left-6 px-3 py-1 bg-[#f0f0f0] text-[#0d0d0d] text-xs font-mono uppercase tracking-widest">
                   Suosituin
                 </span>
               )}
               
               {plan.highlight && (
-                <div className="absolute -top-3 left-6 px-3 py-1 bg-foreground/80 text-primary-foreground text-xs font-mono uppercase tracking-widest flex items-center gap-1">
+                <div className="absolute -top-3 left-6 px-3 py-1 bg-[#a0a0a0] text-[#0d0d0d] text-xs font-mono uppercase tracking-widest flex items-center gap-1">
                   <Star className="w-3 h-3" />
                   Kokonaisuus
                 </div>
@@ -111,20 +115,20 @@ export function PricingSection() {
 
               {/* Plan Header */}
               <div className="mb-6">
-                <span className="font-mono text-xs text-muted-foreground">
+                <span className="font-mono text-xs text-[#a0a0a0]">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-2xl text-foreground mt-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
+                <h3 className="font-display text-2xl text-[#f0f0f0] mt-2">{plan.name}</h3>
+                <p className="text-sm text-[#a0a0a0] mt-2">{plan.description}</p>
               </div>
 
               {/* Price */}
-              <div className="mb-6 pb-6 border-b border-foreground/10">
+              <div className="mb-6 pb-6 border-b border-[#2a2a2a]">
                 <div className="flex items-baseline gap-1">
-                  <span className="font-display text-4xl lg:text-5xl text-foreground">
-                    {plan.price}
+                  <span className="font-display text-4xl lg:text-5xl text-[#f0f0f0]">
+                    {plan.price}€
                   </span>
-                  <span className="text-muted-foreground text-lg">/kk</span>
+                  <span className="text-[#a0a0a0] text-lg">/kk</span>
                 </div>
               </div>
 
@@ -132,8 +136,8 @@ export function PricingSection() {
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-foreground mt-0.5 shrink-0" />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                    <Check className="w-4 h-4 text-[#f0f0f0] mt-0.5 shrink-0" />
+                    <span className="text-sm text-[#a0a0a0]">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -143,8 +147,8 @@ export function PricingSection() {
                 href="#yhteystiedot"
                 className={`w-full py-3 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
                   plan.popular || plan.highlight
-                    ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
-                    : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"
+                    ? "bg-[#f0f0f0] text-[#0d0d0d] hover:bg-[#e0e0e0]"
+                    : "border border-[#2a2a2a] text-[#f0f0f0] hover:border-[#f0f0f0] hover:bg-[#1a1a1a]"
                 }`}
               >
                 {plan.cta}
@@ -155,9 +159,9 @@ export function PricingSection() {
         </div>
 
         {/* Bottom Note */}
-        <p className="mt-12 text-center text-sm text-muted-foreground">
+        <p className="mt-12 text-center text-sm text-[#a0a0a0]">
           Kaikki paketit sisältävät domain, SSL-sertifikaatin ja teknisen tuen.{" "}
-          <a href="#yhteystiedot" className="underline underline-offset-4 hover:text-foreground transition-colors">
+          <a href="#yhteystiedot" className="underline underline-offset-4 hover:text-[#f0f0f0] transition-colors">
             Kysy lisää
           </a>
         </p>

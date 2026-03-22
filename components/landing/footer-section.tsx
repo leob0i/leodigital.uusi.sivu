@@ -29,9 +29,9 @@ const socialLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="relative border-t border-foreground/10">
+    <footer className="relative border-t border-[#2a2a2a] bg-[#0d0d0d]">
       {/* Animated wave background */}
-      <div className="absolute inset-0 h-64 opacity-20 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 h-64 opacity-10 pointer-events-none overflow-hidden">
         <AnimatedWave />
       </div>
       
@@ -42,24 +42,24 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display">Leo Digital</span>
+                <span className="text-2xl font-display text-[#f0f0f0]">Leo Digital</span>
               </a>
 
-              <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
+              <p className="text-[#a0a0a0] leading-relaxed mb-8 max-w-xs">
                 Suunnittelen ja toteutan moderneja verkkosivuja sekä huolehdin koko digitaalisesta näkyvyydestäsi.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3 mb-8">
-                <a href="tel:+358452031377" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="tel:+358452031377" className="flex items-center gap-3 text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors">
                   <Phone className="w-4 h-4" />
                   +358 45 203 1377
                 </a>
-                <a href="mailto:info@leodigital.fi" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:info@leodigital.fi" className="flex items-center gap-3 text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors">
                   <Mail className="w-4 h-4" />
                   info@leodigital.fi
                 </a>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-3 text-sm text-[#a0a0a0]">
                   <MapPin className="w-4 h-4" />
                   Suomi
                 </div>
@@ -73,7 +73,7 @@ export function FooterSection() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
+                    className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -85,13 +85,13 @@ export function FooterSection() {
             {/* Link Columns */}
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="text-sm font-medium mb-6">{title}</h3>
+                <h3 className="text-sm font-medium text-[#f0f0f0] mb-6">{title}</h3>
                 <ul className="space-y-4">
                   {links.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                        className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors inline-flex items-center gap-2"
                       >
                         {link.name}
                       </a>
@@ -104,14 +104,14 @@ export function FooterSection() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="py-8 border-t border-[#2a2a2a] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-[#a0a0a0]">
             2025 Leo Digital. Kaikki oikeudet pidätetään.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Tietosuoja</a>
-            <a href="#" className="hover:text-foreground transition-colors">Käyttöehdot</a>
+          <div className="flex items-center gap-6 text-sm text-[#a0a0a0]">
+            <a href="#" className="hover:text-[#f0f0f0] transition-colors">Tietosuoja</a>
+            <a href="#" className="hover:text-[#f0f0f0] transition-colors">Käyttöehdot</a>
           </div>
         </div>
       </div>

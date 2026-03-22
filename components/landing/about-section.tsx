@@ -37,25 +37,25 @@ export function AboutSection() {
     <section
       id="meista"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 border-t border-foreground/10"
+      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#111111]"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left - About Text */}
           <div>
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-foreground/30" />
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
               Meistä
             </span>
             <h2
-              className={`text-4xl lg:text-5xl font-display tracking-tight mb-8 transition-all duration-700 ${
+              className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
               Hei, olen Leo Apell
             </h2>
             <p 
-              className={`text-lg text-muted-foreground leading-relaxed mb-6 transition-all duration-700 delay-100 ${
+              className={`text-lg text-[#a0a0a0] leading-relaxed mb-6 transition-all duration-700 delay-100 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
@@ -63,7 +63,7 @@ export function AboutSection() {
               - ilman turhaa monimutkaisuutta.
             </p>
             <p 
-              className={`text-lg text-muted-foreground leading-relaxed mb-8 transition-all duration-700 delay-200 ${
+              className={`text-lg text-[#a0a0a0] leading-relaxed mb-8 transition-all duration-700 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
@@ -78,8 +78,8 @@ export function AboutSection() {
             >
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-foreground mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">{benefit}</span>
+                  <CheckCircle className="w-5 h-5 text-[#f0f0f0] mt-0.5 shrink-0" />
+                  <span className="text-[#a0a0a0]">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -88,7 +88,7 @@ export function AboutSection() {
           {/* Right - How I Work */}
           <div>
             <h3 
-              className={`text-2xl lg:text-3xl font-display mb-8 transition-all duration-700 ${
+              className={`text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-8 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
@@ -98,16 +98,16 @@ export function AboutSection() {
               {workSteps.map((step, index) => (
                 <div
                   key={index}
-                  className={`flex gap-6 p-6 border border-foreground/10 hover:border-foreground/30 transition-all duration-500 group ${
+                  className={`flex gap-6 p-6 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 group ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${(index + 3) * 100}ms` }}
                 >
-                  <div className="w-10 h-10 shrink-0 flex items-center justify-center border border-foreground/20 font-mono text-sm group-hover:bg-foreground group-hover:text-background transition-colors">
+                  <div className="w-10 h-10 shrink-0 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] font-mono text-sm group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors">
                     {String(index + 1).padStart(2, "0")}
                   </div>
                   <div className="flex-1">
-                    <p className="text-muted-foreground">{step}</p>
+                    <p className="text-[#a0a0a0]">{step}</p>
                   </div>
                 </div>
               ))}
@@ -115,7 +115,7 @@ export function AboutSection() {
 
             <a
               href="#yhteystiedot"
-              className={`inline-flex items-center gap-2 mt-8 text-foreground hover:opacity-70 transition-all duration-700 ${
+              className={`inline-flex items-center gap-2 mt-8 text-[#f0f0f0] hover:opacity-70 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: "700ms" }}
