@@ -12,9 +12,12 @@ const testimonials = [
   },
 ];
 
+// Client logos - placeholder images
 const clients = [
-  "Rautaranta",
-  "Repola",
+  { name: "Rautaranta", logo: "/logos/rautaranta.png" },
+  { name: "Repola", logo: "/logos/repola.png" },
+  { name: "Asiakas 3", logo: "/logos/client3.png" },
+  { name: "Asiakas 4", logo: "/logos/client4.png" },
 ];
 
 export function TestimonialsSection() {
@@ -49,16 +52,30 @@ export function TestimonialsSection() {
           >
             Yritykset, jotka luottavat osaamiseeni
           </h2>
-          <div className="flex flex-wrap gap-8 lg:gap-16">
+          
+          {/* Client Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             {clients.map((client, index) => (
               <div
-                key={client}
-                className={`text-2xl lg:text-3xl font-display text-[#606060] hover:text-[#f0f0f0] transition-all duration-500 ${
+                key={client.name}
+                className={`aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center p-8 transition-all duration-500 group ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {client}
+                {/* Placeholder logo - replace with actual images */}
+                <div className="w-full h-full flex items-center justify-center bg-[#2a2a2a]/30 rounded-lg">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-3 bg-[#2a2a2a] rounded-full flex items-center justify-center group-hover:bg-[#404040] transition-colors">
+                      <span className="text-xl font-display text-[#606060] group-hover:text-[#f0f0f0] transition-colors">
+                        {client.name.charAt(0)}
+                      </span>
+                    </div>
+                    <span className="text-xs text-[#606060] group-hover:text-[#a0a0a0] transition-colors">
+                      {client.name}
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

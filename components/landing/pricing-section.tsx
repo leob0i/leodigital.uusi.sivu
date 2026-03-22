@@ -70,8 +70,23 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="paketit" className="relative py-32 lg:py-40 border-t border-[#2a2a2a] bg-[#0d0d0d]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="paketit" className="relative py-32 lg:py-40 border-t border-[#2a2a2a] overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        {/* Placeholder background image - replace src with actual image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/pricing-bg.jpg')",
+          }}
+        />
+        {/* Dark overlay - 40% opacity */}
+        <div className="absolute inset-0 bg-[#0d0d0d]/60" />
+        {/* Fallback gradient if no image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-[#111111] -z-10" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
@@ -92,12 +107,12 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className={`relative p-6 lg:p-8 ${
+              className={`relative p-6 lg:p-8 backdrop-blur-sm ${
                 plan.popular 
-                  ? "border-2 border-[#f0f0f0] bg-[#1a1a1a]" 
+                  ? "border-2 border-[#f0f0f0] bg-[#1a1a1a]/90" 
                   : plan.highlight 
-                    ? "border-2 border-[#f0f0f0]/50 bg-[#1a1a1a]" 
-                    : "border border-[#2a2a2a] bg-[#161616]"
+                    ? "border-2 border-[#f0f0f0]/50 bg-[#1a1a1a]/90" 
+                    : "border border-[#2a2a2a] bg-[#161616]/90"
               }`}
             >
               {plan.popular && (
