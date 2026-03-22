@@ -159,7 +159,7 @@ export function PricingSection() {
 
               {/* CTA */}
               <a
-                href="#yhteystiedot"
+                href={plan.highlight ? "/kumppanuus" : "#yhteystiedot"}
                 className={`w-full py-3 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
                   plan.popular || plan.highlight
                     ? "bg-[#f0f0f0] text-[#0d0d0d] hover:bg-[#e0e0e0]"
