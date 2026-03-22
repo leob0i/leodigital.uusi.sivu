@@ -1,4 +1,6 @@
 import { Navigation } from "@/components/landing/navigation";
+import { StarterHero } from "@/components/landing/starter-hero";
+import { StarterInfo } from "@/components/landing/starter-info";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
@@ -11,9 +13,9 @@ export default function StarterPage() {
   return (
     <main className="bg-[#0d0d0d] min-h-screen">
       <Navigation />
-      <div className="pt-24">
-        <PricingSection />
-      </div>
+      <StarterHero />
+      <StarterInfo />
+      <PricingSection />
       <FooterSection />
     </main>
   );
