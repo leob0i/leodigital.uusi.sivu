@@ -53,7 +53,7 @@ export function StarterHero() {
             {/* Left Content */}
             <div className="flex-1 max-w-2xl">
               <span className="inline-block font-mono text-xs tracking-widest text-[#a0a0a0] uppercase mb-6 px-3 py-1 border border-[#2a2a2a] rounded-full">
-                Aloita tästä
+                ALKU
               </span>
               
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#f0f0f0] mb-6">
@@ -115,10 +115,7 @@ export function StarterHero() {
                   <Check className="w-5 h-5 text-[#f0f0f0]" />
                   <span className="text-[#a0a0a0]">Ei piilokuluja — kaikki sisältyy kuukausihintaan</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-[#f0f0f0]" />
-                  <span className="text-[#a0a0a0]">Joustava sopimus — voit perua milloin vain</span>
-                </div>
+
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-[#f0f0f0]" />
                   <span className="text-[#a0a0a0]">Nopea käyttöönotto — sivut toiminnassa heti</span>
@@ -165,16 +162,12 @@ export function StarterHero() {
                 </p>
 
                 <a
-                  href="#paketit"
+                  href="#yhteystiedot"
                   className="w-full py-4 flex items-center justify-center gap-2 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-xl"
                 >
-                  Katso kaikki paketit
+                  Ota yhteyttä
                   <span className="text-lg">↓</span>
                 </a>
-
-                <p className="text-center text-xs text-[#a0a0a0] mt-4">
-                  Ei sitoutumispakkoa
-                </p>
               </div>
             </div>
           </div>
