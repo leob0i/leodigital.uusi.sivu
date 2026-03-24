@@ -111,8 +111,8 @@ export function MaintenanceSection() {
         >
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-2">Haluatko kuulla lisää?</h3>
-              <p className="text-[#a0a0a0]">Kysy lisätietoja ylläpitopalvelusta tai pyydä tarjous.</p>
+              <h3 className="text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-2">Etsitkö kevyempää ratkaisua?</h3>
+              <p className="text-[#a0a0a0]">ALKU-paketti tarjoaa helpon ja kustannustehokkaan tavan päästä nettiin.</p>
             </div>
             <a 
               href="/starter"

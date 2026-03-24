@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 
-const benefits = [
-  "Jokainen ratkaisu on käytännönläheinen ja helppo ylläpitää",
-  "Ei valmispohjia - kaikki koodataan yksilöllisesti",
-  "Maksu 50% alussa ja 50% loput luovutuksen yhteydessä",
-  "Suora kommunikaatio ilman välikäsiä",
+const features = [
+  "yksilöllisesti suunnitellun ja toteutetun nettisivun",
+  "mobiiliystävällisen ja nopean rakenteen",
+  "hakukoneystävällisen pohjan (SEO)",
+  "yhteydenottolomakkeet, kartat ja tarvittavat integraatiot",
+  "Google-näkyvyyden perustan sekä arvostelujen hyödyntämisen",
+  "mahdollisuuden laajentaa sivustoa ja toiminnallisuuksia myöhemmin",
 ];
 
 export function AboutSection() {
@@ -30,84 +32,108 @@ export function AboutSection() {
     <section
       id="meista"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#111111]"
+      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left - About Text */}
-          <div>
-            <h2
-              className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8 transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              Hei, olen Leo Apell
-            </h2>
-            <p 
-              className={`text-lg text-[#a0a0a0] leading-relaxed mb-6 transition-all duration-700 delay-100 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              Autan pieniä ja keskisuuria yrityksiä saamaan enemmän irti digitaalisista kanavista 
-              - ilman turhaa monimutkaisuutta.
-            </p>
-            <p 
-              className={`text-lg text-[#a0a0a0] leading-relaxed mb-8 transition-all duration-700 delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              Suunnittelen ja toteutan verkkosivuja, asiakaspalvelubotteja ja muuta digitaalista 
-              tekemistä alusta loppuun itse, jotta kommunikaatio pysyy suorana ja selkeänä.
-            </p>
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f0f0f0]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#f0f0f0]/3 rounded-full blur-3xl" />
+      </div>
 
-            <div 
-              className={`space-y-3 mb-8 transition-all duration-700 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#f0f0f0] mt-0.5 shrink-0" />
-                  <span className="text-[#a0a0a0]">{benefit}</span>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        {/* Main Glass Box */}
+        <div 
+          className={`relative p-8 lg:p-12 xl:p-16 rounded-3xl border border-[#2a2a2a]/60 bg-[#1a1a1a]/40 backdrop-blur-xl shadow-2xl transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Inner glow effect */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f0f0f0]/5 via-transparent to-[#f0f0f0]/3 pointer-events-none" />
+          
+          {/* Content */}
+          <div className="relative z-10">
+            {/* Header */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2a2a2a] bg-[#111111]/60 mb-6">
+                  <Sparkles className="w-4 h-4 text-[#f0f0f0]" />
+                  <span className="text-sm font-medium text-[#f0f0f0]">Pääpalvelu</span>
                 </div>
-              ))}
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display tracking-tight text-[#f0f0f0] mb-4">
+                  Kotisivut alkaen <span className="text-stroke">499 €</span>
+                </h2>
+                <p className="text-xl lg:text-2xl text-[#f0f0f0]/90 font-medium">
+                  Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
+                </p>
+              </div>
+              
+              {/* Price badge */}
+              <div className="shrink-0 p-6 rounded-2xl border border-[#2a2a2a] bg-[#111111]/80 backdrop-blur-sm text-center">
+                <span className="text-sm text-[#a0a0a0] uppercase tracking-wider">Alkaen</span>
+                <div className="text-4xl lg:text-5xl font-display text-[#f0f0f0] mt-1">499€</div>
+                <span className="text-sm text-[#a0a0a0]">+ ALV</span>
+              </div>
             </div>
 
-            <a
-              href="#yhteystiedot"
-              className={`inline-flex items-center gap-2 text-[#f0f0f0] hover:opacity-70 transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            >
-              <span className="font-medium">Pyydä maksuton arvio</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+            {/* Description paragraphs */}
+            <div className="max-w-4xl space-y-6 mb-10">
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Rakennamme yrityksellesi yksilölliset kotisivut, jotka eivät ainoastaan näytä hyvältä – vaan myös toimivat. Jokainen sivu suunnitellaan alusta alkaen sinun yrityksesi tarpeisiin, olipa tavoitteena selkeä esittelysivu tai näyttävä, täysin räätälöity kokonaisuus.
+              </p>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Vuonna 2026 pelkkä nettisivu ei enää riitä. Siksi huomioimme jo toteutusvaiheessa näkyvyyden, hakukoneystävällisen rakenteen sekä sen, että asiakkaasi löytävät sinut helposti ja luottavat yritykseesi heti ensisilmäyksellä.
+              </p>
+            </div>
 
-          {/* Right - Profile Image */}
-          <div 
-            className={`flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Profile Image Placeholder */}
-              <div className="w-full h-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center overflow-hidden">
-                {/* Placeholder - replace src with actual image */}
-                <div className="w-full h-full bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] flex items-center justify-center">
-                  <svg 
-                    className="w-24 h-24 text-[#404040]" 
-                    fill="currentColor" 
-                    viewBox="0 0 24 24"
+            {/* Features list */}
+            <div className="mb-10">
+              <h3 className="text-lg font-medium text-[#f0f0f0] mb-6">
+                Saat käyttöösi kokonaisuuden, joka sisältää:
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {features.map((feature, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-start gap-3 p-4 rounded-xl border border-[#2a2a2a]/40 bg-[#111111]/40"
                   >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                </div>
+                    <div className="shrink-0 w-6 h-6 rounded-full bg-[#f0f0f0] flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-[#0d0d0d]" />
+                    </div>
+                    <span className="text-[#a0a0a0]">{feature}</span>
+                  </div>
+                ))}
               </div>
-              {/* Decorative border */}
-              <div className="absolute -inset-2 border border-[#2a2a2a] -z-10" />
-              <div className="absolute -inset-4 border border-[#1a1a1a] -z-20" />
+            </div>
+
+            {/* Additional info */}
+            <div className="space-y-6 mb-10 max-w-4xl">
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                <span className="text-[#f0f0f0] font-medium">Juuri sinun brändisi ja tavoitteidesi mukaan.</span> Halutessasi toteutamme myös täysin räätälöidyt designit ja laajemmat toiminnallisuudet.
+              </p>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Voit hankkia pelkän nettisivun kertaprojektina tai yhdistää sen ylläpitoon ja jatkuvaan kehitykseen.
+              </p>
+              <p className="text-[#a0a0a0] leading-relaxed border-l-2 border-[#2a2a2a] pl-4 italic">
+                Laajemmat kokonaisuudet, kuten varausjärjestelmät, maksutoiminnot ja räätälöidyt ratkaisut, suunnitellaan ja hinnoitellaan aina erikseen projektin laajuuden mukaan.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#yhteystiedot"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full"
+              >
+                Pyydä maksuton arvio
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/starter"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#2a2a2a] text-[#f0f0f0] font-medium hover:border-[#404040] hover:bg-[#1a1a1a] transition-colors rounded-full"
+              >
+                Katso ALKU-paketti
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
