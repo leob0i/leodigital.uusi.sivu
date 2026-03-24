@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Shield, Zap, Clock, Headphones } from "lucide-react";
+import { Check, Receipt, Globe, Smartphone, ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export function StarterHero() {
@@ -53,58 +53,58 @@ export function StarterHero() {
             {/* Left Content */}
             <div className="flex-1 max-w-2xl">
               <span className="inline-block font-mono text-xs tracking-widest text-[#a0a0a0] uppercase mb-6 px-3 py-1 border border-[#2a2a2a] rounded-full">
-                Ylläpitopaketit
+                Aloita tästä
               </span>
               
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#f0f0f0] mb-6">
-                Valitse tarpeisiisi sopiva
+                Yrityksesi nettiin,
                 <br />
-                <span className="text-stroke">ylläpitopaketti</span>
+                <span className="text-stroke">helposti ja edullisesti</span>
               </h1>
               
               <p className="text-lg lg:text-xl text-[#a0a0a0] mb-8 leading-relaxed">
-                Kaikki paketit sisältävät domain, hostingin ja teknisen tuen. Keskity yrityksesi pyörittämiseen — me huolehdimme verkkosivustosi toiminnasta, tietoturvasta ja kehityksestä. Saat ammattilaistasoisen ylläpidon ilman teknistä osaamista.
+                Saat valmiin ammattimaisen nettisivun ilman turhaa säätöä ja suuria investointeja! Me hoidamme kaiken valmiiksi, ja sinä voit keskittyä liiketoimintaasi.
               </p>
 
               {/* Features Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-[#f0f0f0]" />
+                    <Receipt className="w-5 h-5 text-[#f0f0f0]" />
                   </div>
                   <div>
-                    <p className="text-[#f0f0f0] font-medium">SSL & Tietoturva</p>
-                    <p className="text-sm text-[#a0a0a0]">Automaattiset päivitykset</p>
+                    <p className="text-[#f0f0f0] font-medium">Selkeä hinnoittelu</p>
+                    <p className="text-sm text-[#a0a0a0]">Kaikki laskut yhdestä paikkaa ilman piilokuluja</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-[#f0f0f0]" />
+                    <Globe className="w-5 h-5 text-[#f0f0f0]" />
                   </div>
                   <div>
-                    <p className="text-[#f0f0f0] font-medium">Nopea hosting</p>
-                    <p className="text-sm text-[#a0a0a0]">99.9% käytettävyys</p>
+                    <p className="text-[#f0f0f0] font-medium">Domain + Hosting</p>
+                    <p className="text-sm text-[#a0a0a0]">Hoidettuna puolestasi</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-[#f0f0f0]" />
+                    <Smartphone className="w-5 h-5 text-[#f0f0f0]" />
                   </div>
                   <div>
-                    <p className="text-[#f0f0f0] font-medium">Varmuuskopiot</p>
-                    <p className="text-sm text-[#a0a0a0]">Päivittäiset backupit</p>
+                    <p className="text-[#f0f0f0] font-medium">Mobiili & SEO</p>
+                    <p className="text-sm text-[#a0a0a0]">Hakukoneystävällisyys alusta asti</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                    <Headphones className="w-5 h-5 text-[#f0f0f0]" />
+                    <ArrowUpRight className="w-5 h-5 text-[#f0f0f0]" />
                   </div>
                   <div>
-                    <p className="text-[#f0f0f0] font-medium">Tekninen tuki</p>
-                    <p className="text-sm text-[#a0a0a0]">Suomenkielinen palvelu</p>
+                    <p className="text-[#f0f0f0] font-medium">Skaalautuva ratkaisu</p>
+                    <p className="text-sm text-[#a0a0a0]">Mahdollisuus laajentaa sivua tai pakettia</p>
                   </div>
                 </div>
               </div>
@@ -130,22 +130,35 @@ export function StarterHero() {
             <div className="lg:w-80 shrink-0">
               <div className="bg-[#161616]/80 backdrop-blur-sm border border-[#2a2a2a] rounded-2xl p-8">
                 <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-4">
-                  Alkaen
+                  Hinnoittelu
                 </span>
                 
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="font-display text-6xl lg:text-7xl text-[#f0f0f0]">
-                    19
-                  </span>
-                  <span className="text-2xl text-[#a0a0a0]">€</span>
-                  <span className="text-lg text-[#a0a0a0]">/kk</span>
+                <div className="mb-2">
+                  <span className="text-sm text-[#a0a0a0] block mb-1">Aloitus</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-display text-5xl lg:text-6xl text-[#f0f0f0]">
+                      299
+                    </span>
+                    <span className="text-2xl text-[#a0a0a0]">€</span>
+                  </div>
+                </div>
+
+                <div className="h-px bg-[#2a2a2a] my-4" />
+
+                <div className="mb-4">
+                  <span className="text-sm text-[#a0a0a0] block mb-1">Sen jälkeen</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-display text-2xl text-[#f0f0f0]">
+                      17
+                    </span>
+                    <span className="text-lg text-[#a0a0a0]">€</span>
+                    <span className="text-sm text-[#a0a0a0]">/kk</span>
+                  </div>
                 </div>
                 
-                <p className="text-sm text-[#a0a0a0] mb-6">
+                <p className="text-xs text-[#a0a0a0] mb-6">
                   + ALV 25.5%
                 </p>
-
-                <div className="h-px bg-[#2a2a2a] mb-6" />
 
                 <p className="text-[#a0a0a0] text-sm mb-6 leading-relaxed">
                   Täydellinen ratkaisu pienyrityksille ja aloittaville yrittäjille. Sisältää kaiken mitä tarvitset ammattimaiseen verkkopresenssiin.
