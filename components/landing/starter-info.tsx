@@ -42,15 +42,15 @@ export function StarterInfo() {
             
             <div className="space-y-6 text-[#a0a0a0] leading-relaxed">
               <p>
-                ALKU-paketti on nimensä mukaisesti suunniteltu aloitteleville yrittäjille, pienyrityksille ja kaikille, jotka tarvitsevat selkeän ja toimivan nettisivun ilman monimutkaisuutta tai suuria investointeja.
+                ALKU-paketti on kevyt ja rajattu ratkaisu aloitteleville yrittäjille sekä pienyrityksille, jotka tarvitsevat yksinkertaisen verkkonäkyvyyden ilman suuria investointeja tai monimutkaisia ominaisuuksia.
               </p>
               
               <p>
-                Suunnittelemme ja toteutamme sivuston alusta alkaen yrityksesi tietojen pohjalta. Olipa kyseessä kahvila, autokorjaamo, kuntosali tai muu palvelu, rakennamme sivun yrityksesi näköiseksi – käytännöllisyys ja hakukoneystävällinen rakenne edellä.
+                Toteutamme sinulle selkeän perussivun yrityksesi tietojen pohjalta. Olipa kyseessä kahvila, autokorjaamo, kuntosali tai muu palvelu, rakennamme toimivan ja siistin sivun – käytännöllisyys ja perus-SEO edellä.
               </p>
               
               <p>
-                Sivusto toteutetaan modernilla teknologialla, joka mahdollistaa sen laajentamisen myöhemmin tarpeen mukaan. Voit päivittää sivustoa tai vaihtaa ylläpitopakettia helposti yrityksesi kasvaessa.
+                Perussivu toteutetaan modernilla teknologialla, joka mahdollistaa sen laajentamisen myöhemmin tarpeen mukaan. Voit siirtyä laajempaan sivustoon tai ylläpitopakettiin yrityksesi kasvaessa.
               </p>
               
               <h3 className="font-display text-xl md:text-2xl tracking-tight text-[#f0f0f0] pt-6">
@@ -74,7 +74,7 @@ export function StarterInfo() {
             </span>
             
             <h3 className="font-display text-2xl md:text-3xl tracking-tight text-[#f0f0f0] mb-8">
-              Kattava palvelukokonaisuus
+              Perussivu sisältää
             </h3>
             
             <div className="space-y-6 text-[#a0a0a0] leading-relaxed">
@@ -93,8 +93,8 @@ export function StarterInfo() {
                   <Paintbrush className="w-6 h-6 text-[#f0f0f0]" />
                 </div>
                 <div>
-                  <strong className="text-[#f0f0f0] block mb-1">Nettisivun suunnittelu ja toteutus</strong>
-                  <p>Suunnittelemme ja rakennamme sinulle modernin, selkeän nettisivun valmiiksi käyttöön. Sivu antaa yrityksestäsi ammattimaisen ensivaikutelman heti.</p>
+                  <strong className="text-[#f0f0f0] block mb-1">Perussivun suunnittelu ja toteutus</strong>
+                  <p>Rakennamme sinulle yksinkertaisen ja selkeän perussivun valmiiksi käyttöön. Sivu antaa yrityksestäsi siistin ensivaikutelman.</p>
                 </div>
               </div>
               

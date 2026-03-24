@@ -63,7 +63,7 @@ export function StarterHero() {
               </h1>
               
               <p className="text-lg lg:text-xl text-[#a0a0a0] mb-8 leading-relaxed">
-                Saat valmiin ammattimaisen nettisivun ilman turhaa säätöä ja suuria investointeja! Me hoidamme kaiken, suunnittelun, toteutuksen ja ylläpidon. Sinä voit keskittyä liiketoimintaasi!
+                Tarvitsetko yksinkertaisen ja toimivan perussivun yrityksellesi? ALKU-paketti on kevyt ratkaisu, joka tuo yrityksesi verkkoon nopeasti ja edullisesti. Sinä voit keskittyä liiketoimintaasi!
               </p>
 
               {/* Features Grid */}
@@ -158,7 +158,7 @@ export function StarterHero() {
                 </p>
 
                 <p className="text-[#a0a0a0] text-sm mb-6 leading-relaxed">
-                  Täydellinen ratkaisu pienyrityksille ja aloittaville yrittäjille. Sisältää kaiken mitä tarvitset ammattimaiseen verkkopresenssiin.
+                  Kevyt aloituspaketti yrityksille, jotka tarvitsevat yksinkertaisen perussivun ilman monimutkaisia ominaisuuksia.
                 </p>
 
                 <a
