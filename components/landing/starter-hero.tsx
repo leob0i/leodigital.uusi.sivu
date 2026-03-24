@@ -63,7 +63,7 @@ export function StarterHero() {
               </h1>
               
               <p className="text-lg lg:text-xl text-[#a0a0a0] mb-8 leading-relaxed">
-                Saat valmiin ammattimaisen nettisivun ilman turhaa säätöä ja suuria investointeja! Me hoidamme kaiken valmiiksi, ja sinä voit keskittyä liiketoimintaasi.
+                Saat valmiin ammattimaisen nettisivun ilman turhaa säätöä ja suuria investointeja! Me hoidamme kaiken, suunnittelun, toteutuksen ja ylläpidon. Sinä voit keskittyä liiketoimintaasi!
               </p>
 
               {/* Features Grid */}

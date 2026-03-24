@@ -3,7 +3,7 @@
 import { Globe, Paintbrush, Smartphone, Search, Wrench } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const animatedTexts = ["jatkuvaa huolenpitoa", "näkyvyyttä", "kaikki maksut samasta"];
+const animatedTexts = ["jatkuvaa huolenpitoa", "näkyvyyttä", "kaikki maksut samasta", "helppo aloitus netissä"];
 
 export function StarterInfo() {
   const [textIndex, setTextIndex] = useState(0);
@@ -28,12 +28,8 @@ export function StarterInfo() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-20">
           {/* Left Column */}
           <div>
-            <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
-              Miksi ylläpito?
-            </span>
-            
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight text-[#f0f0f0] mb-8">
-              Verkkosivusto vaatii
+              ALKU paketti on
               <br />
               <span 
                 className={`text-stroke inline-block transition-all duration-300 ${
@@ -46,15 +42,27 @@ export function StarterInfo() {
             
             <div className="space-y-6 text-[#a0a0a0] leading-relaxed">
               <p>
-                Moderni verkkosivusto ei ole kertaluonteinen projekti vaan jatkuvasti elävä kokonaisuus. Hakukoneet, selaimet ja tietoturvauhat kehittyvät jatkuvasti, ja sivustosi täytyy pysyä mukana. Ilman säännöllistä ylläpitoa sivustosi voi hidastua, menettää hakukonenäkyvyyttään tai pahimmassa tapauksessa joutua tietoturvahyökkäyksen kohteeksi.
+                ALKU-paketti on nimensä mukaisesti suunniteltu aloitteleville yrittäjille, pienyrityksille ja kaikille, jotka tarvitsevat selkeän ja toimivan nettisivun ilman monimutkaisuutta tai suuria investointeja.
               </p>
               
               <p>
-                Leo Digitalin ylläpitopalvelu vapauttaa sinut teknisistä huolista. Me seuraamme sivustosi toimintaa ympäri vuorokauden, päivitämme ohjelmistot automaattisesti ja reagoimme ongelmiin ennen kuin ne vaikuttavat asiakkaisiisi. Saat mielenrauhan tietäen, että ammattilaiset huolehtivat digitaalisesta läsnäolostasi.
+                Suunnittelemme ja toteutamme sivuston alusta alkaen yrityksesi tietojen pohjalta. Olipa kyseessä kahvila, autokorjaamo, kuntosali tai muu palvelu, rakennamme sivun yrityksesi näköiseksi – käytännöllisyys ja hakukoneystävällinen rakenne edellä.
               </p>
               
               <p>
-                Jokainen ylläpitopakettimme on suunniteltu erilaisten yritysten tarpeisiin. Olitpa aloittava yrittäjä tai kasvava yritys, meillä on sinulle sopiva ratkaisu. Voit myös helposti päivittää pakettia yrityksesi kasvaessa — ilman monimutkaisia sopimuksia tai piilokustannuksia.
+                Sivusto toteutetaan modernilla teknologialla, joka mahdollistaa sen laajentamisen myöhemmin tarpeen mukaan. Voit päivittää sivustoa tai vaihtaa ylläpitopakettia helposti yrityksesi kasvaessa.
+              </p>
+              
+              <h3 className="font-display text-xl md:text-2xl tracking-tight text-[#f0f0f0] pt-6">
+                Pitääkö minun tehdä itse jotain?
+              </h3>
+              
+              <p>
+                Riittää, että toimitat meille tarvittavat tiedot aloitusvaiheessa. Kun sivu on valmis, sinun ei tarvitse huolehtia teknisestä puolesta – voit keskittyä täysillä omaan liiketoimintaasi.
+              </p>
+              
+              <p className="text-sm border-l-2 border-[#2a2a2a] pl-4 italic">
+                ALKU-paketti keskittyy olennaiseen – toimivaan nettisivuun ilman ylimääräisiä ominaisuuksia. Se ei sisällä esimerkiksi laajaa sivukokonaisuutta, kielivalintoja, varausjärjestelmiä, maksutoimintoja, tukea tai jatkuvia päivityksiä, mikä mahdollistaa kevyen rakenteen ja edullisen hinnan. Tarvittaessa voit laajentaa kokonaisuutta myöhemmin yrityksesi kasvaessa.
               </p>
             </div>
           </div>
