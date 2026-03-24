@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 
 const features = [
   "yksilöllisesti suunnitellun ja toteutetun nettisivun",
@@ -53,26 +53,13 @@ export function AboutSection() {
           {/* Content */}
           <div className="relative z-10">
             {/* Header */}
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-10">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2a2a2a] bg-[#111111]/60 mb-6">
-                  <Sparkles className="w-4 h-4 text-[#f0f0f0]" />
-                  <span className="text-sm font-medium text-[#f0f0f0]">Pääpalvelu</span>
-                </div>
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display tracking-tight text-[#f0f0f0] mb-4">
-                  Kotisivut alkaen <span className="text-stroke">499 €</span>
-                </h2>
-                <p className="text-xl lg:text-2xl text-[#f0f0f0]/90 font-medium">
-                  Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
-                </p>
-              </div>
-              
-              {/* Price badge */}
-              <div className="shrink-0 p-6 rounded-2xl border border-[#2a2a2a] bg-[#111111]/80 backdrop-blur-sm text-center">
-                <span className="text-sm text-[#a0a0a0] uppercase tracking-wider">Alkaen</span>
-                <div className="text-4xl lg:text-5xl font-display text-[#f0f0f0] mt-1">499€</div>
-                <span className="text-sm text-[#a0a0a0]">+ ALV</span>
-              </div>
+            <div className="mb-10">
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display tracking-tight text-[#f0f0f0] mb-4">
+                Kotisivut alkaen <span className="text-stroke">499 €</span>
+              </h2>
+              <p className="text-xl lg:text-2xl text-[#f0f0f0]/90 font-medium">
+                Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
+              </p>
             </div>
 
             {/* Description paragraphs */}
@@ -118,23 +105,7 @@ export function AboutSection() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#yhteystiedot"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full"
-              >
-                Pyydä maksuton arvio
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="/starter"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#2a2a2a] text-[#f0f0f0] font-medium hover:border-[#404040] hover:bg-[#1a1a1a] transition-colors rounded-full"
-              >
-                Katso ALKU-paketti
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+
           </div>
         </div>
       </div>
