@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/landing/navigation";
 import { StarterHero } from "@/components/landing/starter-hero";
 import { StarterInfo } from "@/components/landing/starter-info";
-import { PricingSection } from "@/components/landing/pricing-section";
+import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function StarterPage() {
       <Navigation />
       <StarterHero />
       <StarterInfo />
-      <PricingSection />
+      <CtaSection />
       <FooterSection />
     </main>
   );
