@@ -8,6 +8,7 @@ const navLinksFi = [
   { name: "Palvelut", href: "#palvelut" },
   { name: "Ylläpito", href: "#yllapito" },
   { name: "Paketit", href: "#paketit" },
+  { name: "Kuka on Leo?", href: "/leodigital" },
   { name: "Yhteystiedot", href: "#yhteystiedot" },
 ];
 
@@ -15,6 +16,7 @@ const navLinksEn = [
   { name: "Services", href: "#palvelut" },
   { name: "Maintenance", href: "#yllapito" },
   { name: "Packages", href: "#paketit" },
+  { name: "Who is Leo?", href: "/leodigital" },
   { name: "Contact", href: "#yhteystiedot" },
 ];
 
