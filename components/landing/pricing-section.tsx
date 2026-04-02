@@ -20,10 +20,11 @@ const plans = [
   {
     name: "Plus",
     description: "Kasvaville yrityksille",
-    price: 29,
+    price: 39,
     features: [
       "Kaikki Perus-paketin ominaisuudet",
-      "Rajattomat sisältöpäivitykset",
+      "Sisältöpäivitys kerran kuussa halutessasi",
+      "SEO kehitys ja seuranta",
       "Google Maps -optimointi",
       "Arvostelut & QR-koodi",
       "WhatsApp-tuki",
@@ -33,28 +34,14 @@ const plans = [
     popular: true,
   },
   {
-    name: "Pro",
-    description: "Aktiivisille yrityksille",
-    price: 99,
-    features: [
-      "Kaikki Plus-paketin ominaisuudet",
-      "SEO-kehitys & seuranta",
-      "Kilpailija-analyysi",
-      "Tekoäly-asiakaspalvelubotti",
-      "Prioriteettituki",
-      "Viikkoraportti & analytiikka",
-      "Jatkuva kehitystyö",
-    ],
-    cta: "Valitse Pro",
-    popular: false,
-  },
-  {
-    name: "Premium",
+    name: "Premium + Kirjanpito",
     description: "Kokonaisvaltainen kumppanuus",
     price: 149,
     features: [
-      "Kaikki Pro-paketin ominaisuudet",
+      "Kaikki Plus-paketin ominaisuudet",
       "Kirjanpito Repolan kanssa",
+      "Kattava SEO kehitys ja seuranta",
+      "Jatkuva kehitystyö",
       "Laaja markkinointituki",
       "Sosiaalisen median hallinta",
       "Henkilökohtainen yhteyshenkilö",
@@ -103,7 +90,7 @@ export function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
