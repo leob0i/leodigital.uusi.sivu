@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -9,8 +9,6 @@ const words = ["Nettisivu", "Ylläpito", "Näkyvyys"];
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -24,20 +22,15 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
-      {/* Video background */}
+      {/* Image background */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src="/images/herokuva.webp"
+          alt=""
           className="w-full h-full object-cover"
-        >
-          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-[#0d0d0d]/90" />
+        <div className="absolute inset-0 bg-[#0d0d0d]/70" />
       </div>
       
       {/* Subtle grid lines */}
@@ -164,7 +157,7 @@ export function HeroSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "100%", label: "räätälöity koodi", company: "Ei valmispohjia" },
+                { value: "100%", label: "räätälöity koodi", company: "yrityksesi näköiseksi" },
                 { value: "24/7", label: "tuki saatavilla", company: "WhatsApp" },
                 { value: "SEO", label: "alusta alkaen", company: "Hakukoneoptimointi" },
                 { value: "Nopea", label: "latausaika", company: "Optimoitu" },

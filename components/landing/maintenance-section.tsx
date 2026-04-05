@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Shield, RefreshCw, TrendingUp, Headphones, Globe, Star } from "lucide-react";
+import { Shield, RefreshCw, TrendingUp, Headphones, Globe, Palette } from "lucide-react";
 
 const services = [
   {
-    icon: Shield,
-    title: "Tietoturva & Päivitykset",
-    description: "Huolehdin sivujesi tietoturvasta ja pidän kaikki järjestelmät ajan tasalla. Ei huolta tietoturvapäivityksistä.",
+    icon: Palette,
+    title: "Suunnittelu ja toteutus",
+    description: "Suunnittelen sivuston alusta loppuun tyylisi mukaan. Pääset myös kehitysvaiheessa mukaan vaikuttamaan halutessa.",
   },
   {
-    icon: RefreshCw,
-    title: "Jatkuva Kehitys",
-    description: "Sivustosi ei jää paikoilleen. Teen jatkuvaa kehitystä ja parannuksia pitääkseni sivut kilpailukykyisinä.",
+    icon: Globe,
+    title: "Kaikki samasta, ei säätöä",
+    description: "Kaikki maksut samasta,\nDomain, hosting, SSL ja varmuuskopiot. Kaikki hoituu puolestasi kätevästi.",
   },
   {
     icon: TrendingUp,
@@ -25,14 +25,14 @@ const services = [
     description: "Olen aina tavoitettavissa. Nopea reagointi ongelmiin ja muutostoiveisiin WhatsAppin tai sähköpostin kautta.",
   },
   {
-    icon: Globe,
-    title: "Domain & Hosting",
-    description: "Kaikki tekninen perusinfra sisältyy: domain, SSL-sertifikaatti, hosting ja varmuuskopiot.",
+    icon: RefreshCw,
+    title: "Jatkuva Kehitys",
+    description: "Sivustosi ei jää paikoilleen. Teen jatkuvaa kehitystä ja parannuksia pitääkseni sivut kilpailukykyisinä.",
   },
   {
-    icon: Star,
-    title: "Google-arvostelut",
-    description: "QR-koodi asiakaspalautteelle ja arvostelut näkyviin sivuille. Helppo tapa kerätä suosituksia.",
+    icon: Shield,
+    title: "Tietoturva & Päivitykset",
+    description: "Huolehdin sivujesi tietoturvasta ja pidän kaikki järjestelmät ajan tasalla. Ei huolta tietoturvapäivityksistä.",
   },
 ];
 
@@ -61,10 +61,6 @@ export function MaintenanceSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
-            <span className="w-8 h-px bg-[#f0f0f0]/30" />
-            Ylläpito & Tuki
-          </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-6 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -72,7 +68,7 @@ export function MaintenanceSection() {
           >
             Jätä digitaalinen huoli
             <br />
-            <span className="text-stroke">minulle</span>
+            <span className="font-black text-[#f0f0f0]">minulle</span>
           </h2>
           <p 
             className={`text-lg lg:text-xl text-[#a0a0a0] max-w-2xl leading-relaxed transition-all duration-700 delay-100 ${
@@ -80,7 +76,7 @@ export function MaintenanceSection() {
             }`}
           >
             Täysi ylläpitopalvelu tarkoittaa, että sinun ei tarvitse huolehtia mistään teknisestä. 
-            Domain, tietoturva, päivitykset, kehitys ja tuki - kaikki sisältyy.
+            Domain, hosting, tietoturva, päivitykset jne... Kaikki samasta helposti ja edullisesti!
           </p>
         </div>
 
@@ -104,7 +100,7 @@ export function MaintenanceSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div 
+        {/* <div
           className={`mt-16 lg:mt-24 p-8 lg:p-12 bg-[#1a1a1a] border border-[#2a2a2a] transition-all duration-700 delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
@@ -114,7 +110,7 @@ export function MaintenanceSection() {
               <h3 className="text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-2">Etsitkö kevyempää ratkaisua?</h3>
               <p className="text-[#a0a0a0]">ALKU-paketti tarjoaa helpon ja kustannustehokkaan tavan päästä nettiin.</p>
             </div>
-            <a 
+            <a
               href="/starter"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full"
             >
@@ -122,7 +118,7 @@ export function MaintenanceSection() {
               <span className="text-lg">→</span>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

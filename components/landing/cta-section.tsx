@@ -94,7 +94,7 @@ export function CtaSection() {
                   </a>
                   
                   <a 
-                    href="mailto:info@leodigital.fi"
+                    href="mailto:leo@leodigital.fi"
                     className="flex items-center gap-4 p-4 border border-[#2a2a2a] hover:border-[#404040] bg-[#161616] transition-colors group"
                   >
                     <div className="w-12 h-12 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors">
@@ -102,7 +102,7 @@ export function CtaSection() {
                     </div>
                     <div>
                       <span className="block font-medium text-[#f0f0f0]">Sähköposti</span>
-                      <span className="text-sm text-[#a0a0a0]">info@leodigital.fi</span>
+                      <span className="text-sm text-[#a0a0a0]">leo@leodigital.fi</span>
                     </div>
                     <ArrowRight className="w-4 h-4 ml-auto text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>

@@ -18,11 +18,13 @@ const testimonials = [
   },
 ];
 
-// Client logos - placeholder images
+// Client logos
 const clients = [
-  { name: "Rautaranta", logo: "/logos/rautaranta.png" },
-  { name: "Repola", logo: "/logos/repola.png" },
-  { name: "Asiakas 3", logo: "/logos/client3.png" },
+  { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
+  { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
+  { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png" },
+  { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
+  { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
 ];
 
 export function TestimonialsSection() {
@@ -59,30 +61,43 @@ export function TestimonialsSection() {
           </h2>
           
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-3 gap-6 lg:gap-8 max-w-3xl">
-            {clients.map((client, index) => (
-              <div
-                key={client.name}
-                className={`aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center p-8 transition-all duration-500 group ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                {/* Placeholder logo - replace with actual images */}
-                <div className="w-full h-full flex items-center justify-center bg-[#2a2a2a]/30 rounded-lg">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-3 bg-[#2a2a2a] rounded-full flex items-center justify-center group-hover:bg-[#404040] transition-colors">
-                      <span className="text-xl font-display text-[#606060] group-hover:text-[#f0f0f0] transition-colors">
-                        {client.name.charAt(0)}
-                      </span>
-                    </div>
-                    <span className="text-xs text-[#606060] group-hover:text-[#a0a0a0] transition-colors">
-                      {client.name}
-                    </span>
-                  </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-8 max-w-5xl">
+            {clients.map((client, index) => {
+              const cardContent = (
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                  />
                 </div>
-              </div>
-            ))}
+              );
+
+              const className = `aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`;
+
+              return client.url ? (
+                <a
+                  key={client.name}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div
+                  key={client.name}
+                  className={className}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
 

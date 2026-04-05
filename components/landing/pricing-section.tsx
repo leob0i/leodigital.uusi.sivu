@@ -1,58 +1,54 @@
 "use client";
 
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const plans = [
   {
     name: "Perus",
-    description: "Pienyrityksille ja aloittaville yrityksille",
-    price: 17,
+    description: "Pienyrityksille ja aloittaville yrityksille. Sisältää kaikki mitä tarvitset jatkuvaan näkyvyyteen netissä.",
+    price: 14,
     features: [
       "Domain & SSL-sertifikaatti",
       "Hosting & varmuuskopiot",
-      "Pienet sisältöpäivitykset",
       "Sähköpostituki",
-      "Tietoturvapäivitykset",
     ],
     cta: "Valitse Perus",
     popular: false,
   },
   {
     name: "Plus",
-    description: "Kasvaville yrityksille",
+    description: "Kun tavoite on pysyä kilpailijoiden edellä ja pitää sivusto aina ajantasalla. ",
     price: 39,
     features: [
       "Kaikki Perus-paketin ominaisuudet",
       "Sisältöpäivitys kerran kuussa halutessasi",
       "SEO kehitys ja seuranta",
-      "Google Maps -optimointi",
-      "Arvostelut & QR-koodi",
       "WhatsApp-tuki",
       "Kuukausiraportti",
     ],
     cta: "Valitse Plus",
     popular: true,
   },
-  {
-    name: "Premium + Kirjanpito",
-    description: "Kokonaisvaltainen kumppanuus",
-    price: 149,
-    features: [
-      "Kaikki Plus-paketin ominaisuudet",
-      "Kirjanpito Repolan kanssa",
-      "Kattava SEO kehitys ja seuranta",
-      "Jatkuva kehitystyö",
-      "Laaja markkinointituki",
-      "Sosiaalisen median hallinta",
-      "Henkilökohtainen yhteyshenkilö",
-      "Strategiapalaverit kuukausittain",
-      "Räätälöidyt lisäominaisuudet",
-      "Täysi digitaalinen kumppanuus",
-    ],
-    cta: "Valitse Premium",
-    popular: false,
-    highlight: true,
-  },
+  // {
+  //   name: "Premium + Kirjanpito",
+  //   description: "Kokonaisvaltainen kumppanuus",
+  //   price: 149,
+  //   features: [
+  //     "Kaikki Plus-paketin ominaisuudet",
+  //     "Kirjanpito Repolan kanssa",
+  //     "Kattava SEO kehitys ja seuranta",
+  //     "Jatkuva kehitystyö",
+  //     "Laaja markkinointituki",
+  //     "Sosiaalisen median hallinta",
+  //     "Henkilökohtainen yhteyshenkilö",
+  //     "Strategiapalaverit kuukausittain",
+  //     "Räätälöidyt lisäominaisuudet",
+  //     "Täysi digitaalinen kumppanuus",
+  //   ],
+  //   cta: "Valitse Premium",
+  //   popular: false,
+  //   highlight: true,
+  // },
 ];
 
 export function PricingSection() {
@@ -76,13 +72,8 @@ export function PricingSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="max-w-3xl mb-20">
-          <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
-            Paketit
-          </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight text-[#f0f0f0] mb-6">
+<h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight text-[#f0f0f0] mb-6">
             Ylläpitopaketit
-            <br />
-            <span className="text-stroke">yrityksellesi</span>
           </h2>
           <p className="text-lg text-[#a0a0a0] max-w-xl">
             Valitse tarpeisiisi sopiva ylläpitopaketti. Kaikki paketit sisältävät domain, hostingin ja teknisen tuen.
@@ -95,11 +86,9 @@ export function PricingSection() {
             <div
               key={plan.name}
               className={`relative p-6 lg:p-8 backdrop-blur-sm ${
-                plan.popular 
-                  ? "border-2 border-[#f0f0f0] bg-[#1a1a1a]/90" 
-                  : plan.highlight 
-                    ? "border-2 border-[#f0f0f0]/50 bg-[#1a1a1a]/90" 
-                    : "border border-[#2a2a2a] bg-[#161616]/90"
+                plan.popular
+                  ? "border-2 border-[#f0f0f0] bg-[#1a1a1a]/90"
+                  : "border border-[#2a2a2a] bg-[#161616]/90"
               }`}
             >
               {plan.popular && (
@@ -108,13 +97,6 @@ export function PricingSection() {
                 </span>
               )}
               
-              {plan.highlight && (
-                <div className="absolute -top-3 left-6 px-3 py-1 bg-[#a0a0a0] text-[#0d0d0d] text-xs font-mono uppercase tracking-widest flex items-center gap-1">
-                  <Star className="w-3 h-3" />
-                  Kokonaisuus
-                </div>
-              )}
-
               {/* Plan Header */}
               <div className="mb-6">
                 <span className="font-mono text-xs text-[#a0a0a0]">
@@ -146,9 +128,9 @@ export function PricingSection() {
 
               {/* CTA */}
               <a
-                href={plan.highlight ? "/kumppanuus" : "#yhteystiedot"}
+                href="#yhteystiedot"
                 className={`w-full py-3 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
-                  plan.popular || plan.highlight
+                  plan.popular
                     ? "bg-[#f0f0f0] text-[#0d0d0d] hover:bg-[#e0e0e0]"
                     : "border border-[#2a2a2a] text-[#f0f0f0] hover:border-[#f0f0f0] hover:bg-[#1a1a1a]"
                 }`}
@@ -162,9 +144,9 @@ export function PricingSection() {
 
         {/* Bottom Note */}
         <p className="mt-12 text-center text-sm text-[#a0a0a0]">
-          Kaikki paketit sisältävät domain, SSL-sertifikaatin ja teknisen tuen.{" "}
-          <a href="#yhteystiedot" className="underline underline-offset-4 hover:text-[#f0f0f0] transition-colors">
-            Kysy lisää
+          Isommat muutokset hinnoitellaan erikseen. {" "}
+          <a href="/kayttoehdot" className="underline underline-offset-4 hover:text-[#f0f0f0] transition-colors">
+            Pakettien käyttö- ja sopimusehdot.
           </a>
         </p>
       </div>

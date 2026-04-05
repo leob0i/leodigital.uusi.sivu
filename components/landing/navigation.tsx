@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 
@@ -24,8 +25,21 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<'fi' | 'en'>('fi');
+  const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = language === 'fi' ? navLinksFi : navLinksEn;
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return; // Let normal links work as-is
+    e.preventDefault();
+    const sectionId = href.slice(1);
+    if (pathname === "/") {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${sectionId}`);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +74,7 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <span className={`font-display tracking-tight transition-all duration-500 text-[#f0f0f0] ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
           </a>
 
@@ -70,6 +84,7 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
                 className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors duration-300 relative group"
               >
                 {link.name}
@@ -81,21 +96,25 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             {/* Language Toggle */}
-            <button
+            {/* <button
               onClick={toggleLanguage}
               className={`flex items-center gap-1.5 text-[#a0a0a0] hover:text-[#f0f0f0] transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}
             >
               <Globe className="w-4 h-4" />
               {language === 'fi' ? 'EN' : 'FI'}
-            </button>
+            </button> */}
             <Button
               size="sm"
               className={`bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
-              asChild
+              onClick={() => {
+                if (pathname === "/") {
+                  document.getElementById("yhteystiedot")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  router.push("/#yhteystiedot");
+                }
+              }}
             >
-              <a href="#yhteystiedot">
-                {language === 'fi' ? 'Ota yhteyttä' : 'Contact'}
-              </a>
+              Ota yhteyttä
             </Button>
           </div>
 
@@ -131,7 +150,7 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => { handleAnchorClick(e, link.href); setIsMobileMenuOpen(false); }}
                 className={`text-5xl font-display text-[#f0f0f0] hover:text-[#a0a0a0] transition-all duration-500 ${
                   isMobileMenuOpen 
                     ? "opacity-100 translate-y-0" 
@@ -152,8 +171,8 @@ export function Navigation() {
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
-            <Button 
-              variant="outline" 
+            {/* <Button
+              variant="outline"
               className="flex-1 rounded-full h-14 text-base border-[#2a2a2a] text-[#f0f0f0] hover:bg-[#1a1a1a]"
               onClick={() => {
                 toggleLanguage();
@@ -162,15 +181,19 @@ export function Navigation() {
             >
               <Globe className="w-4 h-4 mr-2" />
               {language === 'fi' ? 'English' : 'Suomi'}
-            </Button>
-            <Button 
+            </Button> */}
+            <Button
               className="flex-1 bg-[#f0f0f0] text-[#0d0d0d] rounded-full h-14 text-base hover:bg-[#e0e0e0]"
-              onClick={() => setIsMobileMenuOpen(false)}
-              asChild
+              onClick={() => {
+                if (pathname === "/") {
+                  document.getElementById("yhteystiedot")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  router.push("/#yhteystiedot");
+                }
+                setIsMobileMenuOpen(false);
+              }}
             >
-              <a href="#yhteystiedot">
-                {language === 'fi' ? 'Ota yhteyttä' : 'Contact'}
-              </a>
+              Ota yhteyttä
             </Button>
           </div>
         </div>

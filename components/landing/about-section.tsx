@@ -32,8 +32,18 @@ export function AboutSection() {
     <section
       id="meista"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]"
+      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d] overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/taustakuva.webp"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0d0d0d]/70" />
+      </div>
+
       {/* Background gradient effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f0f0f0]/5 rounded-full blur-3xl" />
@@ -55,7 +65,7 @@ export function AboutSection() {
             {/* Header */}
             <div className="mb-10">
               <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display tracking-tight text-[#f0f0f0] mb-4">
-                Kotisivut alkaen <span className="text-stroke">499 €</span>
+                Kotisivut alkaen <span className="font-black text-[#f0f0f0]">499 €</span>
               </h2>
               <p className="text-xl lg:text-2xl text-[#f0f0f0]/90 font-medium">
                 Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
@@ -94,9 +104,6 @@ export function AboutSection() {
 
             {/* Additional info */}
             <div className="space-y-6 mb-10 max-w-4xl">
-              <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                <span className="text-[#f0f0f0] font-medium">Juuri sinun brändisi ja tavoitteidesi mukaan.</span> Halutessasi toteutamme myös täysin räätälöidyt designit ja laajemmat toiminnallisuudet.
-              </p>
               <p className="text-lg text-[#a0a0a0] leading-relaxed">
                 Voit hankkia pelkän nettisivun kertaprojektina tai yhdistää sen ylläpitoon ja jatkuvaan kehitykseen.
               </p>

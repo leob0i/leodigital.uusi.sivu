@@ -6,13 +6,13 @@ const features = [
   {
     number: "01",
     title: "Räätälöidyt Verkkosivut",
-    description: "Jokainen sivu koodataan yksilöllisesti alusta alkaen - ei valmispohjia. Tämä takaa nopean latausajan, täyden muokattavuuden ja erottuvan ulkoasun.",
+    description: "Jokainen sivu räätälöidään sinun yrityksellesi sopivaksi. Ulkoasu, sisältö ja rakenne tehdään brändisi mukaan. Tämä takaa nopean latausajan, täyden muokattavuuden ja siistin, ammattimaisen ulkoasun.",
     visual: "code",
   },
   {
     number: "02",
     title: "SEO & Hakukonenäkyvyys",
-    description: "Hakukoneoptimointi huomioidaan jokaisessa projektissa alusta alkaen. Oikeat avainsanat, tekninen SEO ja rakenne, joka miellyttää Googlea.",
+    description: "Hakukoneoptimointi huomioidaan jokaisessa projektissa alusta alkaen. Oikeat avainsanat, tekninen SEO ja rakenne, joka miellyttää Googlea ja tekoälypohjaista hakua.",
     visual: "seo",
   },
   {
@@ -21,12 +21,12 @@ const features = [
     description: "Sivut toimivat moitteettomasti kaikilla laitteilla. Responsiivinen suunnittelu varmistaa, että asiakkaasi löytävät sinut puhelimella, tabletilla ja tietokoneella.",
     visual: "mobile",
   },
-  {
-    number: "04",
-    title: "Tekoäly-botti 24/7",
-    description: "Älykäs asiakaspalvelubotti vastaa kysymyksiin ympäri vuorokauden. Toimii WhatsAppissa, nettisivuilla tai Instagramissa - ohjaa tarvittaessa ihmiselle.",
-    visual: "ai",
-  },
+  // {
+  //   number: "04",
+  //   title: "Tekoäly-botti 24/7",
+  //   description: "Älykäs asiakaspalvelubotti vastaa kysymyksiin ympäri vuorokauden. Toimii WhatsAppissa, nettisivuilla tai Instagramissa - ohjaa tarvittaessa ihmiselle.",
+  //   visual: "ai",
+  // },
 ];
 
 function CodeVisual() {
@@ -253,9 +253,6 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-[#2a2a2a]">
-        <div className="shrink-0">
-          <span className="font-mono text-sm text-[#a0a0a0]">{feature.number}</span>
-        </div>
         
         <div className="flex-1 grid lg:grid-cols-2 gap-8 items-center">
           <div>
@@ -302,10 +299,6 @@ export function FeaturesSection() {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
-            <span className="w-8 h-px bg-[#f0f0f0]/30" />
-            Palvelut
-          </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"

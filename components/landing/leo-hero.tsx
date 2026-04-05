@@ -1,16 +1,39 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, Mail, Phone, MapPin } from "lucide-react";
-import Link from "next/link";
+import { Mail, Phone, ArrowRight, Building2 } from "lucide-react";
+import Image from "next/image";
+
+interface Particle {
+  left: string;
+  top: string;
+  animationDelay: string;
+  animationDuration: string;
+}
 
 export function LeoHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   useEffect(() => {
     setIsLoaded(true);
+    setParticles(
+      Array.from({ length: 20 }, () => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${10 + Math.random() * 10}s`,
+      }))
+    );
   }, []);
 
   useEffect(() => {
@@ -40,15 +63,15 @@ export function LeoHero() {
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/20 rounded-full animate-float"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${10 + Math.random() * 10}s`,
+              left: p.left,
+              top: p.top,
+              animationDelay: p.animationDelay,
+              animationDuration: p.animationDuration,
             }}
           />
         ))}
@@ -63,18 +86,8 @@ export function LeoHero() {
         }}
       />
 
-      {/* Back button */}
-      <Link 
-        href="/"
-        className={`fixed top-6 left-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full border border-[#2a2a2a] bg-[#111111]/80 backdrop-blur-xl text-[#a0a0a0] hover:text-[#f0f0f0] hover:border-[#404040] transition-all duration-500 ${
-          isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-        }`}
-      >
-        <ArrowLeft className="w-4 h-4" />
-        <span className="text-sm">Takaisin</span>
-      </Link>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
+<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left content */}
@@ -107,7 +120,7 @@ export function LeoHero() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Leo Digitalin perustaja ja omistaja. Autan yrityksia menestymaan verkossa modernien verkkosivujen ja digitaalisten ratkaisujen avulla.
+              Rakennan yrityksille toimivia ja näyttäviä kokonaisuuksia aina verkkosivuista räätälöityihin sovelluksiin ja täysin uusiin digitaalisiin palveluihin.
             </p>
 
             {/* Animated line */}
@@ -123,13 +136,12 @@ export function LeoHero() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h2 className="text-2xl font-display text-[#f0f0f0]">Tarina</h2>
               <div className="space-y-4 text-[#a0a0a0] leading-relaxed">
                 <p>
-                  Leo Digital syntyi halusta auttaa suomalaisia yrityksia erottumaan digitaalisessa maailmassa. Uskon, etta jokainen yritys ansaitsee toimivan ja naytt&auml;van verkkolasnaolon - koosta tai budjetista riippumatta.
+                  Toimin täysin etänä ja hyödynnän uusimpia teknologioita tehokkaasti, minkä ansiosta pystyn tarjoamaan modernia web- ja sovelluskehitystä erittäin kilpailukykyiseen hintaan. En veloita vanhanaikaisista ja turhista työvaiheista. 
                 </p>
                 <p>
-                  Erikoisalani on rakentaa nopeita, hakukoneystav&auml;llisia ja moderneja verkkosivuja, jotka eivat ainoastaan nayta hyvilta vaan myos tuottavat tuloksia. Jokainen projekti on minulle henkilokohtainen - en ole vain palveluntarjoaja, vaan kumppani yrityksesi digitaalisella matkalla.
+                  Halutessasi pääset mukaan seuraamaan työn etenemistä ja vaikuttamaan lopputulokseen omilla näkemyksilläsi. Vastaan kuitenkin aina kokonaisuudesta alusta loppuun, joten sinulle prosessi on vaivaton ja turvallinen. Jokainen projekti rakennetaan yksilöllisesti yrityksesi tavoitteiden mukaan.
                 </p>
               </div>
             </div>
@@ -140,30 +152,33 @@ export function LeoHero() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <a 
-                href="mailto:info@leodigital.fi"
+              <a
+                href="mailto:leo@leodigital.fi"
                 className="flex items-center gap-2 text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors group"
               >
                 <div className="p-2 rounded-full border border-[#2a2a2a] group-hover:border-[#404040] group-hover:bg-[#1a1a1a] transition-all">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-sm">info@leodigital.fi</span>
-              </a>
-              <a 
-                href="tel:+358401234567"
-                className="flex items-center gap-2 text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors group"
-              >
-                <div className="p-2 rounded-full border border-[#2a2a2a] group-hover:border-[#404040] group-hover:bg-[#1a1a1a] transition-all">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <span className="text-sm">+358 40 123 4567</span>
+                <span className="text-sm">leo@leodigital.fi</span>
               </a>
               <div className="flex items-center gap-2 text-[#a0a0a0]">
                 <div className="p-2 rounded-full border border-[#2a2a2a]">
-                  <MapPin className="w-4 h-4" />
+                  <Building2 className="w-4 h-4" />
                 </div>
-                <span className="text-sm">Suomi</span>
+                <span className="text-sm">Y-3452422-4</span>
               </div>
+              <a
+                href="https://wa.me/358452031377"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] transition-colors shadow-md shadow-black/30"
+              >
+                <svg viewBox="0 0 32 32" className="w-4 h-4 shrink-0 text-white" aria-hidden="true">
+                  <path fill="currentColor" transform="translate(1.5 -0)" d="M19.11 17.53c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.18.28-.74.9-.9 1.08-.17.18-.33.2-.6.06-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.56-1.94-.17-.28-.02-.43.13-.57.13-.13.28-.33.42-.49.14-.17.18-.28.28-.46.1-.18.05-.35-.02-.49-.07-.14-.64-1.55-.87-2.12-.23-.56-.46-.49-.64-.49h-.55c-.2 0-.49.07-.74.35-.26.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.97 3 4.77 4.2.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z" />
+                  <path fill="currentColor" d="M16.01 3.2c-7.03 0-12.75 5.7-12.75 12.7 0 2.23.6 4.41 1.73 6.33L3.2 28.8l6.75-1.77a12.8 12.8 0 0 0 6.06 1.54c7.03 0 12.75-5.7 12.75-12.7S23.04 3.2 16.01 3.2zm0 23.12c-1.93 0-3.82-.52-5.47-1.5l-.39-.23-4.01 1.05 1.07-3.9-.25-.4a10.51 10.51 0 0 1-1.61-5.57c0-5.8 4.75-10.52 10.66-10.52 5.9 0 10.66 4.72 10.66 10.52 0 5.8-4.76 10.55-10.66 10.55z" />
+                </svg>
+                <span className="text-sm font-medium text-white">WhatsApp</span>
+              </a>
             </div>
           </div>
 
@@ -189,20 +204,15 @@ export function LeoHero() {
                 transition: 'transform 0.3s ease-out',
               }}
             >
-              {/* Profile image placeholder */}
+              {/* Profile image */}
               <div className="aspect-[4/5] relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d]">
-                  {/* Decorative elements */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-[#2a2a2a]" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-[#2a2a2a]/50" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full border border-[#2a2a2a]/25" />
-                  
-                  {/* Initials */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-display text-[#f0f0f0]/10">
-                    LA
-                  </div>
-                </div>
-                
+                <Image
+                  src="/images/leoprofiilikuva.jpeg"
+                  alt="Leo Apell"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
               </div>
@@ -215,85 +225,152 @@ export function LeoHero() {
                     <p className="text-sm text-[#a0a0a0]">Perustaja & Omistaja</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs text-[#a0a0a0]">Vapaana projekteihin</span>
+                    
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Floating badge */}
-            <div 
-              className={`absolute -top-4 -right-4 px-4 py-2 rounded-full border border-[#2a2a2a] bg-[#111111]/90 backdrop-blur-xl transition-all duration-1000 delay-1000 ${
-                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
-              }`}
-            >
-              <span className="text-sm font-medium text-[#f0f0f0]">Leo Digital</span>
-            </div>
+            
           </div>
         </div>
 
-        {/* Bottom section - Values */}
-        <div 
+        {/* Contact form */}
+        <div
           className={`mt-24 lg:mt-32 transition-all duration-1000 delay-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-display text-[#f0f0f0] text-center mb-16">
-            Arvot joiden takana seison
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Laatu",
-                description: "Jokainen projekti saa saman omistautumisen. En tee kompromisseja laadun suhteen.",
-                delay: 0,
-              },
-              {
-                title: "Läpinäkyvyys",
-                description: "Selkeä kommunikaatio ja rehellinen hinnoittelu. Ei piilokustannuksia tai yllätyksiä.",
-                delay: 100,
-              },
-              {
-                title: "Kumppanuus",
-                description: "En ole vain palveluntarjoaja vaan aidosti kiinnostunut yrityksesi menestyksesta.",
-                delay: 200,
-              },
-            ].map((value, i) => (
-              <div 
-                key={value.title}
-                className="group relative p-8 rounded-2xl border border-[#2a2a2a] bg-[#111111]/40 backdrop-blur-sm hover:border-[#404040] hover:bg-[#1a1a1a]/60 transition-all duration-500"
-                style={{ transitionDelay: `${1200 + value.delay}ms` }}
-              >
-                {/* Number */}
-                <span className="absolute top-4 right-4 text-6xl font-display text-[#f0f0f0]/5 group-hover:text-[#f0f0f0]/10 transition-colors">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                
-                <h3 className="text-xl font-display text-[#f0f0f0] mb-3">{value.title}</h3>
-                <p className="text-[#a0a0a0] leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+          <div className="relative border border-[#f0f0f0] bg-[#1a1a1a]">
+            <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
+              <div className="grid lg:grid-cols-2 gap-16">
+                {/* Left content */}
+                <div>
+                  <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
+                    Yhteystiedot
+                  </span>
+                  <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-8 leading-[0.95]">
+                    Pyydä tarjous
+                    <br />
+                    <span className="text-stroke">tai kysy lisää</span>
+                  </h2>
+                  <p className="text-xl text-[#a0a0a0] mb-12 leading-relaxed max-w-md">
+                    Kerro lyhyesti mitä tarvitset. Vastaan mahdollisimman pian!
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    <a
+                      href="https://wa.me/358452031377"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 border border-[#2a2a2a] hover:border-[#404040] bg-[#161616] transition-colors group"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="block font-medium text-[#f0f0f0]">WhatsApp</span>
+                        <span className="text-sm text-[#a0a0a0]">+358 45 203 1377</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 ml-auto text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                    <a
+                      href="mailto:leo@leodigital.fi"
+                      className="flex items-center gap-4 p-4 border border-[#2a2a2a] hover:border-[#404040] bg-[#161616] transition-colors group"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors">
+                        <Mail className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="block font-medium text-[#f0f0f0]">Sähköposti</span>
+                        <span className="text-sm text-[#a0a0a0]">leo@leodigital.fi</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 ml-auto text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </div>
+                </div>
 
-        {/* CTA Section */}
-        <div 
-          className={`mt-24 text-center transition-all duration-1000 delay-[1500ms] ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <p className="text-xl text-[#a0a0a0] mb-8">
-            Kiinnostaako yhteistyo? Ota yhteytta ja jutellaan projektistasi.
-          </p>
-          <a
-            href="/#yhteystiedot"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors"
-          >
-            Ota yhteyttä
-            <span className="text-lg">→</span>
-          </a>
+                {/* Right - Form */}
+                <div>
+                  <form onSubmit={(e) => { e.preventDefault(); console.log(contactForm); }} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="leo-name" className="block text-sm font-medium text-[#f0f0f0] mb-2">Nimi *</label>
+                        <input
+                          type="text"
+                          id="leo-name"
+                          required
+                          value={contactForm.name}
+                          onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                          className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors"
+                          placeholder="Nimesi"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="leo-company" className="block text-sm font-medium text-[#f0f0f0] mb-2">Yritys</label>
+                        <input
+                          type="text"
+                          id="leo-company"
+                          value={contactForm.company}
+                          onChange={(e) => setContactForm({ ...contactForm, company: e.target.value })}
+                          className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors"
+                          placeholder="Yrityksen nimi (valinnainen)"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="leo-email" className="block text-sm font-medium text-[#f0f0f0] mb-2">Sähköposti *</label>
+                        <input
+                          type="email"
+                          id="leo-email"
+                          required
+                          value={contactForm.email}
+                          onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                          className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors"
+                          placeholder="sahkoposti@esimerkki.fi"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="leo-phone" className="block text-sm font-medium text-[#f0f0f0] mb-2">Puhelin</label>
+                        <input
+                          type="tel"
+                          id="leo-phone"
+                          value={contactForm.phone}
+                          onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
+                          className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors"
+                          placeholder="+358 40 123 4567"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="leo-message" className="block text-sm font-medium text-[#f0f0f0] mb-2">Viesti *</label>
+                      <textarea
+                        id="leo-message"
+                        required
+                        rows={5}
+                        value={contactForm.message}
+                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                        className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors resize-none"
+                        placeholder="Kerro mitä tarvitset..."
+                      />
+                    </div>
+                    <p className="text-xs text-[#a0a0a0]">
+                      Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä.
+                    </p>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] font-medium rounded-full transition-colors group"
+                    >
+                      Lähetä tarjouspyyntö
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {/* Decorative corners */}
+            <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-[#2a2a2a]" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-[#2a2a2a]" />
+          </div>
         </div>
       </div>
 

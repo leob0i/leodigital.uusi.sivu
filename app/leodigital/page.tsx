@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { LeoHero } from "@/components/landing/leo-hero";
 import { FooterSection } from "@/components/landing/footer-section";
+import { Navigation } from "@/components/landing/navigation";
 
 export const metadata: Metadata = {
   title: "Kuka on Leo? | Leo Digital",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function LeoDigitalPage() {
   return (
     <main className="min-h-screen bg-[#0d0d0d]">
+      <Navigation />
       <LeoHero />
       <FooterSection />
     </main>
