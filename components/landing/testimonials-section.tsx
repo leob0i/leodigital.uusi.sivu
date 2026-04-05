@@ -44,7 +44,7 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
+    <section id="asiakkaat" ref={sectionRef} className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Clients */}
         <div className="mb-20">

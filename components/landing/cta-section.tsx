@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
@@ -44,6 +45,13 @@ export function CtaSection() {
 
   return (
     <section id="yhteystiedot" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden border-t border-[#2a2a2a] bg-[#0d0d0d]">
+      <Image
+        src="/images/punanen.tausta.webp"
+        alt=""
+        fill
+        className="object-cover opacity-20"
+        priority={false}
+      />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
           className={`relative border border-[#f0f0f0] bg-[#1a1a1a] transition-all duration-1000 ${

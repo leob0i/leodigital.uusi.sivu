@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const words = ["Nettisivu", "Ylläpito", "Näkyvyys"];
 
@@ -131,15 +131,14 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
               asChild
             >
-              <a href="https://wa.me/358452031377" target="_blank" rel="noopener noreferrer">
-                <Phone className="w-4 h-4 mr-2" />
-                WhatsApp
+              <a href="#kotisivut-499">
+                Hinnat
               </a>
             </Button>
           </div>
@@ -149,7 +148,7 @@ export function HeroSection() {
       
       {/* Stats marquee */}
       <div 
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 z-10 ${
+        className={`absolute bottom-10 lg:bottom-18 left-0 right-0 transition-all duration-700 delay-500 z-10 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >

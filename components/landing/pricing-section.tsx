@@ -60,11 +60,11 @@ export function PricingSection() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/pricing-bg.jpg')",
+            backgroundImage: "url('/images/tumma.tausta.webp')",
           }}
         />
         {/* Dark overlay - 40% opacity */}
-        <div className="absolute inset-0 bg-[#0d0d0d]/60" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/95" />
         {/* Fallback gradient if no image */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-[#111111] -z-10" />
       </div>

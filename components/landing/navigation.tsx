@@ -3,32 +3,23 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinksFi = [
-  { name: "Palvelut", href: "#palvelut" },
-  { name: "Ylläpito", href: "#yllapito" },
-  { name: "Paketit", href: "#paketit" },
+  { name: "Hinnat", href: "#kotisivut-499" },
+  { name: "Ylläpitopaketit", href: "#paketit" },
   { name: "Kuka on Leo?", href: "/leodigital" },
-  { name: "Yhteystiedot", href: "#yhteystiedot" },
-];
-
-const navLinksEn = [
-  { name: "Services", href: "#palvelut" },
-  { name: "Maintenance", href: "#yllapito" },
-  { name: "Packages", href: "#paketit" },
-  { name: "Who is Leo?", href: "/leodigital" },
-  { name: "Contact", href: "#yhteystiedot" },
+  { name: "Työni", href: "#asiakkaat" },
+  { name: "Yhteys", href: "#yhteystiedot" },
 ];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<'fi' | 'en'>('fi');
   const pathname = usePathname();
   const router = useRouter();
 
-  const navLinks = language === 'fi' ? navLinksFi : navLinksEn;
+  const navLinks = navLinksFi;
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith("#")) return; // Let normal links work as-is
@@ -48,10 +39,6 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'fi' ? 'en' : 'fi');
-  };
 
   return (
     <header
@@ -144,6 +131,14 @@ export function Navigation() {
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-6 right-6 p-2 text-[#f0f0f0]"
+            aria-label="Close menu"
+          >
+            <X className="w-7 h-7" />
+          </button>
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
             {navLinks.map((link, i) => (

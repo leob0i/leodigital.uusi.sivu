@@ -123,13 +123,56 @@ export function LeoHero() {
               Rakennan yrityksille toimivia ja näyttäviä kokonaisuuksia aina verkkosivuista räätälöityihin sovelluksiin ja täysin uusiin digitaalisiin palveluihin.
             </p>
 
-            {/* Animated line */}
-            <div 
+ {/* Animated line */}
+            <div
               className={`h-px bg-gradient-to-r from-[#f0f0f0] via-[#404040] to-transparent transition-all duration-1000 delay-500 ${
                 isLoaded ? "opacity-100 w-full" : "opacity-0 w-0"
               }`}
             />
 
+
+            {/* Profile image - mobile only */}
+            <div
+              className={`lg:hidden relative transition-all duration-1000 delay-500 ${
+                isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
+            >
+              <div
+                className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-xl opacity-50"
+                style={{
+                  transform: `translate(${(mousePosition.x - 0.5) * 20}px, ${(mousePosition.y - 0.5) * 20}px)`,
+                }}
+              />
+              <div
+                className="relative rounded-3xl border border-[#2a2a2a] bg-[#111111]/60 backdrop-blur-xl overflow-hidden"
+                style={{
+                  transform: `perspective(1000px) rotateY(${(mousePosition.x - 0.5) * 5}deg) rotateX(${(mousePosition.y - 0.5) * -5}deg)`,
+                  transition: 'transform 0.3s ease-out',
+                }}
+              >
+                <div className="aspect-[4/5] relative">
+                  <Image
+                    src="/images/leoprofiilikuva.jpeg"
+                    alt="Leo Apell"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#111111] to-transparent">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-display text-[#f0f0f0]">Leo Apell</h3>
+                      <p className="text-sm text-[#a0a0a0]">Perustaja & Omistaja</p>
+                    </div>
+                    <div className="flex items-center gap-2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          
             {/* Story section */}
             <div 
               className={`space-y-6 transition-all duration-1000 delay-700 ${
@@ -183,8 +226,8 @@ export function LeoHero() {
           </div>
 
           {/* Right side - Profile with 3D effect */}
-          <div 
-            className={`relative transition-all duration-1000 delay-500 ${
+          <div
+            className={`hidden lg:block relative transition-all duration-1000 delay-500 ${
               isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >

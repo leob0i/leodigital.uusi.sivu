@@ -52,7 +52,8 @@ export function AboutSection() {
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         {/* Main Glass Box */}
-        <div 
+        <div
+          id="kotisivut-499"
           className={`relative p-8 lg:p-12 xl:p-16 rounded-3xl border border-[#2a2a2a]/60 bg-[#1a1a1a]/40 backdrop-blur-xl shadow-2xl transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
