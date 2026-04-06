@@ -8,6 +8,7 @@
     "allowJs": true,
     "target": "ES6",
     "skipLibCheck": true,
+     "allowArbitraryExtensions": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,

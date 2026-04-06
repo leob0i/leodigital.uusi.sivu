@@ -17,14 +17,9 @@ const services = [
   {
     icon: TrendingUp,
     title: "SEO & Näkyvyyden Kehitys",
-    description: "Hakukoneoptimointi ja näkyvyyden jatkuva kehittäminen. Google Maps -profiili kuntoon ja arvostelut esille.",
+    description: "Hakukoneoptimointi myös tekoälyyn perustuvassa haussa. Näkyvyyden jatkuva kehittäminen. ",
   },
-  {
-    icon: Headphones,
-    title: "Tuki & Asiakaspalvelu",
-    description: "Olen aina tavoitettavissa. Nopea reagointi ongelmiin ja muutostoiveisiin WhatsAppin tai sähköpostin kautta.",
-  },
-  {
+ {
     icon: RefreshCw,
     title: "Jatkuva Kehitys",
     description: "Sivustosi ei jää paikoilleen. Teen jatkuvaa kehitystä ja parannuksia pitääkseni sivut kilpailukykyisinä.",
@@ -34,6 +29,12 @@ const services = [
     title: "Tietoturva & Päivitykset",
     description: "Huolehdin sivujesi tietoturvasta ja pidän kaikki järjestelmät ajan tasalla. Ei huolta tietoturvapäivityksistä.",
   },
+  {
+    icon: Headphones,
+    title: "Tuki & Asiakaspalvelu",
+    description: "Olen aina tavoitettavissa. Nopea reagointi ongelmiin ja muutostoiveisiin WhatsAppin tai sähköpostin kautta.",
+  },
+ 
 ];
 
 export function MaintenanceSection() {

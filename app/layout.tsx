@@ -21,14 +21,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Leo Digital | Verkkosivut, Ylläpito & Digitaalinen Näkyvyys',
-  description: 'Suunnittelen ja toteutan moderneja verkkosivuja sekä tarjoan täyden ylläpitopalvelun. Räätälöidyt kotisivut, SEO-optimointi ja digitaalinen näkyvyys yrityksellesi.',
-  keywords: ['verkkosivut', 'kotisivut', 'ylläpito', 'SEO', 'hakukoneoptimointi', 'digitaalinen markkinointi', 'Leo Digital', 'nettisivut', 'verkkokauppa'],
+  metadataBase: new URL('https://www.leodigital.fi'),
+  title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille – Kaikki Samasta',
+  description: 'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta. Sinä keskityt bisnekseen, minä hoidan digin.',
+  keywords: [
+    'kotisivut edullisesti',
+    'GEO optimointi',
+'generative engine optimization',
+    'kotisivut ylläpito',
+    'verkkosivut ylläpito',
+    'hakukoneoptimointi',
+    'tekoälyhakuoptimointi',
+    'AI SEO',
+    'kotisivut alkaville yrityksille',
+    'verkkosivut alusta alkaen',
+    'Leo Digital',
+    'kotisivut Suomi',
+  ],
   authors: [{ name: 'Leo Apell' }],
   creator: 'Leo Digital',
   openGraph: {
-    title: 'Leo Digital | Verkkosivut, Ylläpito & Digitaalinen Näkyvyys',
-    description: 'Suunnittelen ja toteutan moderneja verkkosivuja sekä tarjoan täyden ylläpitopalvelun. Räätälöidyt kotisivut yrityksellesi.',
+    title: 'Leo Digital | Kotisivut & Ylläpito – Kaikki Hoituu Puolestasi',
+    description: 'Räätälöidyt kotisivut, ylläpito ja näkyvyys Googlessa sekä tekoälyhauissa. Kaikki samasta paikasta helposti ja vaivattomasti.',
     url: 'https://www.leodigital.fi',
     siteName: 'Leo Digital',
     locale: 'fi_FI',
@@ -36,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leo Digital | Verkkosivut & Ylläpito',
-    description: 'Moderneja verkkosivuja ja täysi ylläpitopalvelu yrityksellesi.',
+    title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille',
+    description: 'Räätälöidyt kotisivut, ylläpito ja hakukoneoptimointi. Kaikki hoituu sinulle – ei säätöä.',
   },
   robots: {
     index: true,
@@ -45,10 +59,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.leodigital.fi',
-    languages: {
-      'fi': 'https://www.leodigital.fi',
-      'en': 'https://www.leodigital.fi/en',
-    },
   },
 }
 

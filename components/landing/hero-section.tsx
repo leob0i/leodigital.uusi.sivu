@@ -68,13 +68,16 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0]">
             <span className="w-8 h-px bg-[#f0f0f0]/30" />
-            Verkkosivut & digitaalinen näkyvyys
+            Verkkosivut, ylläpito & hakukonenäkyvyys
           </span>
         </div>
         
         {/* Main headline */}
         <div className="mb-12">
-          <h1 
+
+<h1 className="sr-only">Kotisivut, Verkkosivut, ylläpito, tekoälyhaku ja hakukoneoptimointi. Leo Digital</h1>
+
+          <div 
             className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
@@ -101,7 +104,7 @@ export function HeroSection() {
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
               </span>
             </span>
-          </h1>
+          </div> 
         </div>
         
         {/* Description */}
@@ -111,8 +114,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Suunnittelen ja toteutan moderneja verkkosivuja sekä huolehdin koko digitaalisesta näkyvyydestäsi. 
-            Sinä keskityt liiketoimintaan, minä hoidan loput.
+           Modernit verkkosivut, näkyvyys Googlessa ja tekoälyhauissa sekä jatkuva ylläpito samasta paikasta. Jätä digipuoli mulle ja keskity liiketoimintasi kasvattamiseen.
           </p>
           
           {/* CTAs */}

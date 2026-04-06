@@ -333,7 +333,7 @@ export function LeoHero() {
 
                 {/* Right - Form */}
                 <div>
-                  <form onSubmit={(e) => { e.preventDefault(); console.log(contactForm); }} className="space-y-6">
+                 <form onSubmit={async (e) => { e.preventDefault(); await fetch("https://formsubmit.co/ajax/leo@leodigital.fi", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(contactForm) }); }} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="leo-name" className="block text-sm font-medium text-[#f0f0f0] mb-2">Nimi *</label>

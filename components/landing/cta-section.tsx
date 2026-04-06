@@ -37,11 +37,17 @@ export function CtaSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  await fetch("https://formsubmit.co/ajax/leo@leodigital.fi", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+};
 
   return (
     <section id="yhteystiedot" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden border-t border-[#2a2a2a] bg-[#0d0d0d]">
@@ -75,13 +81,11 @@ export function CtaSection() {
                   Yhteystiedot
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-8 leading-[0.95]">
-                  Pyydä tarjous
-                  <br />
-                  <span className="text-stroke">tai kysy lisää</span>
+                  Pyydä maksuton suunnitelma
                 </h2>
 
                 <p className="text-xl text-[#a0a0a0] mb-12 leading-relaxed max-w-md">
-                  Kerro lyhyesti mitä tarvitset. Vastaan mahdollisimman pian!
+                  Maksuton suunnitelma sisältää karkean suunnitelman työstä ja arvioidun hinnan, eikä se sido ostopäätökseen. Voit myös kysyä mitä tahansa, vastaan mahdollisimman pian!
                 </p>
 
                 <div className="space-y-4 mb-8">
