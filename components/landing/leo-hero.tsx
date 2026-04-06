@@ -16,6 +16,7 @@ export function LeoHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [submitted, setSubmitted] = useState(false);
   const [contactForm, setContactForm] = useState({
     name: "",
     company: "",
@@ -50,6 +51,20 @@ export function LeoHero() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await fetch("https://formsubmit.co/ajax/leo@leodigital.fi", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(contactForm),
+    });
+    setContactForm({ name: "", company: "", email: "", phone: "", message: "" });
+    setSubmitted(true);
+  };
 
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-[#0d0d0d]">
@@ -333,7 +348,12 @@ export function LeoHero() {
 
                 {/* Right - Form */}
                 <div>
-                 <form onSubmit={async (e) => { e.preventDefault(); await fetch("https://formsubmit.co/ajax/leo@leodigital.fi", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(contactForm) }); }} className="space-y-6">
+                  {submitted && (
+                    <div className="mb-6 p-4 border border-[#404040] bg-[#1f1f1f] text-[#f0f0f0] text-sm">
+                      ✓ Viesti lähetetty! Otan sinuun yhteyttä pian.
+                    </div>
+                  )}
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="leo-name" className="block text-sm font-medium text-[#f0f0f0] mb-2">Nimi *</label>
@@ -401,7 +421,7 @@ export function LeoHero() {
                     </p>
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] font-medium rounded-full transition-colors group"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] font-medium rounded-full transition-colors group cursor-pointer"
                     >
                       Lähetä tarjouspyyntö
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

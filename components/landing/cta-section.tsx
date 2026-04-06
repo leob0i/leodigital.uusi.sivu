@@ -9,6 +9,7 @@ export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -47,6 +48,8 @@ export function CtaSection() {
     },
     body: JSON.stringify(formData),
   });
+  setFormData({ name: "", company: "", email: "", phone: "", message: "" });
+  setSubmitted(true);
 };
 
   return (
@@ -123,6 +126,12 @@ export function CtaSection() {
 
               {/* Right - Form */}
               <div>
+{submitted && (
+  <div className="mb-6 p-4 border border-[#404040] bg-[#1f1f1f] text-[#f0f0f0] text-sm">
+    ✓ Viesti lähetetty! Otan sinuun yhteyttä pian.
+  </div>
+)}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
@@ -196,7 +205,7 @@ export function CtaSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full sm:w-auto bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group"
+                    className="w-full sm:w-auto bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group cursor-pointer"
                   >
                     Lähetä tarjouspyyntö
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

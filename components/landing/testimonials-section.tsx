@@ -21,9 +21,9 @@ const testimonials = [
 // Client logos
 const clients = [
   { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
-  { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
-  { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png" },
   { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
+  { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
+  { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
   { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
 ];
 
@@ -101,8 +101,10 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div>
+
+
+{/* Testimonials */}
+        {/* <div>
           <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8">
             <span className="w-8 h-px bg-[#f0f0f0]/30" />
             Arvostelut
@@ -124,19 +126,14 @@ export function TestimonialsSection() {
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 150}ms` }}
               >
-                {/* Rating */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-[#f0f0f0] text-[#f0f0f0]" />
                   ))}
                 </div>
-
-                {/* Quote */}
                 <blockquote className="text-lg lg:text-xl font-display text-[#f0f0f0] leading-relaxed mb-8">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
-
-                {/* Author */}
                 <div>
                   <div className="font-medium text-[#f0f0f0]">{testimonial.author}</div>
                   <div className="text-sm text-[#a0a0a0]">{testimonial.role}</div>
@@ -144,7 +141,7 @@ export function TestimonialsSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
