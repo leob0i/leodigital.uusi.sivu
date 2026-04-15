@@ -35,7 +35,8 @@ const plans = [
   },
   {
     name: "Premium + Kirjanpito",
-    description: "Kokonaisvaltainen kumppanuus",
+    description: "All in one Kumppanuus",
+    descriptionGold: true,
     price: 149,
     features: [
       "Kaikki Plus-paketin ominaisuudet",
@@ -121,7 +122,7 @@ export function PricingSection() {
                   {String(idx + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-2xl text-[#f0f0f0] mt-2">{plan.name}</h3>
-                <p className="text-sm text-[#a0a0a0] mt-2">{plan.description}</p>
+                <p className={`text-sm mt-2 ${plan.descriptionGold ? "text-[#d4af37] font-medium" : "text-[#a0a0a0]"}`}>{plan.description}</p>
               </div>
 
               {/* Price */}
@@ -163,8 +164,8 @@ export function PricingSection() {
         {/* Bottom Note */}
         <p className="mt-12 text-center text-sm text-[#a0a0a0]">
           Kaikki paketit sisältävät domain, SSL-sertifikaatin ja teknisen tuen.{" "}
-          <a href="#yhteystiedot" className="underline underline-offset-4 hover:text-[#f0f0f0] transition-colors">
-            Kysy lisää
+          <a href="/kayttoehdot" className="underline underline-offset-4 hover:text-[#f0f0f0] transition-colors">
+            Pakettien käyttö- ja sopimusehdot
           </a>
         </p>
       </div>
