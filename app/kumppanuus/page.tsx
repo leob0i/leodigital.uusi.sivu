@@ -2,11 +2,12 @@ import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { PartnershipHero } from "@/components/landing/partnership-hero";
 import { PartnershipDetails } from "@/components/landing/partnership-details";
+import { PartnershipContact } from "@/components/landing/partnership-contact";
 
 export const metadata = {
-  title: "Premium Kumppanuus - Leo Digital | Kirjanpito & Digitaalinen Näkyvyys",
-  description: "Kaikki samasta paikasta. Premium-kumppanuus sisältää kirjanpidon Repolan kanssa, digitaalisen näkyvyyden, maksuominaisuudet ja kuukausiraportoinnin. 299€/kk.",
-  keywords: "kumppanuus, kirjanpito, repola, digitaalinen näkyvyys, ylläpito, maksuominaisuudet, raportointi",
+  title: "All in one Kumppanuus - Leo Digital | Kirjanpito & Digitaalinen Näkyvyys",
+  description: "Kaikki samasta paikasta. All in one Kumppanuus sisältää kirjanpidon Repolan kanssa, digitaalisen näkyvyyden, jatkuvasti kehittyvät kotisivut ja kuukausiraportoinnin. 299€/kk.",
+  keywords: "kumppanuus, kirjanpito, repola, digitaalinen näkyvyys, ylläpito, kotisivut, raportointi",
 };
 
 export default function KumppanuusPage() {
@@ -15,6 +16,7 @@ export default function KumppanuusPage() {
       <Navigation />
       <PartnershipHero />
       <PartnershipDetails />
+      <PartnershipContact />
       <FooterSection />
     </main>
   );

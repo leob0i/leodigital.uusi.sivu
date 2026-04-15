@@ -21,9 +21,9 @@ const features = [
     description: "Ammattimainen kirjanpito ja taloushallinto yhteistyössä Repolan kanssa. Saat luotettavan kumppanin, joka hoitaa yrityksesi taloudelliset asiat. Kuukausittaiset raportit ja neuvonta sisältyvät palveluun.",
   },
   {
-    icon: CreditCard,
-    title: "Maksuominaisuudet sivulle",
-    description: "Integroidut maksuominaisuudet suoraan verkkosivuillesi. Asiakkaasi voivat maksaa verkossa turvallisesti. Tuemme yleisimpiä maksutapoja kuten korttimaksut, verkkopankit ja mobiilimaksut.",
+    icon: Zap,
+    title: "Jatkuvasti kehittyvät Kotisivut",
+    description: "Sivustosi ei jää paikalleen vaan kehittyy jatkuvasti yrityksesi tarpeiden mukana. Teemme säännöllisesti parannuksia, lisäämme uusia ominaisuuksia ja varmistamme, että sivustosi pysyy ajan tasalla.",
   },
   {
     icon: BarChart3,

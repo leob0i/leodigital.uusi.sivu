@@ -56,8 +56,8 @@ export function PartnershipHero() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-[#f0f0f0] mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-[#f0f0f0] font-medium">Maksuominaisuudet sivulle</h3>
-                    <p className="text-sm text-[#a0a0a0]">Verkkomaksaminen integroituna</p>
+                    <h3 className="text-[#f0f0f0] font-medium">Jatkuvasti kehittyvät Kotisivut</h3>
+                    <p className="text-sm text-[#a0a0a0]">Sivustosi kasvaa yrityksesi mukana</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
