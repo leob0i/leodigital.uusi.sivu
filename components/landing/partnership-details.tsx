@@ -10,7 +10,8 @@ import {
   Zap, 
   Users,
   Check,
-  ArrowRight
+  ArrowRight,
+  Building2
 } from "lucide-react";
 
 const features = [
@@ -81,7 +82,7 @@ const allIncluded = [
 
 export function PartnershipDetails() {
   return (
-    <section className="py-24 lg:py-32 bg-[#0d0d0d] border-t border-[#2a2a2a]">
+    <section className="py-24 lg:py-32 bg-[#080808] border-t border-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
@@ -98,14 +99,39 @@ export function PartnershipDetails() {
           </p>
         </div>
 
+        {/* Repola Glass Card */}
+        <div className="mb-20 relative">
+          <div className="relative bg-[#0d0d0d]/80 backdrop-blur-xl border-2 border-[#1a1a1a] rounded-3xl p-8 md:p-12 overflow-hidden">
+            {/* Background glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-8">
+              <div className="w-20 h-20 flex items-center justify-center bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-2xl shrink-0">
+                <Building2 className="w-10 h-10 text-[#d4af37]" />
+              </div>
+              
+              <div className="flex-1">
+                <h3 className="font-display text-2xl md:text-3xl text-[#f0f0f0] mb-3">
+                  Kirjanpito yhteistyössä <span className="text-[#d4af37]">Repolan</span> kanssa
+                </h3>
+                <p className="text-[#a0a0a0] leading-relaxed max-w-3xl">
+                  Repola on luotettava suomalainen kirjanpitotoimisto, joka hoitaa yrityksesi taloushallinnon ammattitaidolla. 
+                  Yhdessä tarjoamme sinulle kokonaisvaltaisen ratkaisun, jossa sekä digitaalinen näkyvyys että kirjanpito 
+                  kulkevat saumattomasti käsi kädessä. Yksi lasku, yksi kumppani, täysi mielenrauha.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-          {features.map((feature, idx) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="group p-6 bg-[#161616] border border-[#2a2a2a] hover:border-[#404040] transition-colors"
+              className="group p-6 bg-[#0d0d0d] border-2 border-[#1a1a1a] hover:border-[#2a2a2a] transition-colors rounded-xl"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-[#1a1a1a] border border-[#2a2a2a] mb-6">
+              <div className="w-12 h-12 flex items-center justify-center bg-[#111111] border border-[#1a1a1a] rounded-lg mb-6">
                 <feature.icon className="w-5 h-5 text-[#f0f0f0]" />
               </div>
               <h3 className="font-display text-xl text-[#f0f0f0] mb-3">{feature.title}</h3>
@@ -115,7 +141,7 @@ export function PartnershipDetails() {
         </div>
 
         {/* All Included Section */}
-        <div className="bg-[#111111] border border-[#2a2a2a] rounded-2xl p-8 md:p-12 lg:p-16">
+        <div className="bg-[#0a0a0a] border-2 border-[#1a1a1a] rounded-3xl p-8 md:p-12 lg:p-16">
           <div className="text-center mb-12">
             <h3 className="font-display text-3xl md:text-4xl text-[#f0f0f0] mb-4">
               Kaikki tämä sisältyy hintaan
@@ -128,14 +154,14 @@ export function PartnershipDetails() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {allIncluded.map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-[#f0f0f0] shrink-0" />
+                <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
                 <span className="text-sm text-[#a0a0a0]">{item}</span>
               </div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="text-center pt-8 border-t border-[#2a2a2a]">
+          <div className="text-center pt-8 border-t border-[#1a1a1a]">
             <p className="text-[#a0a0a0] mb-6">
               Haluatko kuulla lisää <span className="text-[#d4af37] font-medium">All in one Kumppanuudesta</span>? Ota yhteyttä ja kerromme lisää.
             </p>
@@ -149,11 +175,13 @@ export function PartnershipDetails() {
           </div>
         </div>
 
-        {/* Repola Partnership Note */}
-        <div className="mt-16 text-center">
+        {/* Terms Link */}
+        <div className="mt-12 text-center">
           <p className="text-sm text-[#a0a0a0]">
-            Kirjanpitopalvelut toteutetaan yhteistyössä{" "}
-            <span className="text-[#f0f0f0]">Repolan</span> kanssa, joka on luotettava suomalainen kirjanpitotoimisto.
+            Kaikki paketit sisältävät domain, SSL-sertifikaatin ja teknisen tuen.{" "}
+            <a href="/kayttoehdot" className="text-[#f0f0f0] underline underline-offset-4 hover:no-underline transition-colors">
+              Pakettien käyttö- ja sopimusehdot
+            </a>
           </p>
         </div>
       </div>
