@@ -94,7 +94,7 @@ export function PartnershipDetails() {
             <span className="text-stroke">kaikki palvelut</span>
           </h2>
           <p className="text-lg text-[#a0a0a0] max-w-2xl">
-            Premium-kumppanuus yhdistää digitaalisen näkyvyyden, verkkosivujen ylläpidon ja kirjanpidon yhteen pakettiin. Sinun ei tarvitse huolehtia useista toimittajista tai erillisistä laskuista.
+            <span className="text-[#d4af37] font-medium">All in one Kumppanuus</span> yhdistää digitaalisen näkyvyyden, verkkosivujen ylläpidon ja kirjanpidon yhteen pakettiin. Sinun ei tarvitse huolehtia useista toimittajista tai erillisistä laskuista.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export function PartnershipDetails() {
           {/* CTA */}
           <div className="text-center pt-8 border-t border-[#2a2a2a]">
             <p className="text-[#a0a0a0] mb-6">
-              Haluatko kuulla lisää Premium-kumppanuudesta? Ota yhteyttä ja kerromme lisää.
+              Haluatko kuulla lisää <span className="text-[#d4af37] font-medium">All in one Kumppanuudesta</span>? Ota yhteyttä ja kerromme lisää.
             </p>
             <a
               href="#yhteystiedot"

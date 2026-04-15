@@ -20,9 +20,9 @@ export function PartnershipHero() {
           
           {/* Badge */}
           <div className="relative mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#f0f0f0]/10 border border-[#f0f0f0]/20 rounded-full text-sm text-[#f0f0f0]">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-full text-sm text-[#d4af37] font-medium">
               <Star className="w-4 h-4" />
-              Premium Kumppanuus
+              All in one Kumppanuus
             </span>
           </div>
 
@@ -41,7 +41,7 @@ export function PartnershipHero() {
               </p>
 
               <p className="text-[#a0a0a0] mb-10 max-w-2xl leading-relaxed">
-                Premium-kumppanuus on suunniteltu yrityksille, jotka haluavat keskittyä ydintoimintaansa ja antaa digitaalisen puolen sekä taloushallinnon ammattilaisten hoitoon. Saat henkilökohtaisen yhteyshenkilön, joka tuntee yrityksesi ja auttaa sinua kasvamaan.
+                <span className="text-[#d4af37] font-medium">All in one Kumppanuus</span> on suunniteltu yrityksille, jotka haluavat keskittyä ydintoimintaansa ja antaa digitaalisen puolen sekä taloushallinnon ammattilaisten hoitoon. Saat henkilökohtaisen yhteyshenkilön, joka tuntee yrityksesi ja auttaa sinua kasvamaan.
               </p>
 
               {/* Key highlights */}
@@ -89,7 +89,7 @@ export function PartnershipHero() {
             {/* Right - Price Card */}
             <div className="lg:col-span-1 flex items-center">
               <div className="w-full bg-[#111111]/80 backdrop-blur-sm border border-[#2a2a2a] rounded-2xl p-8 text-center">
-                <span className="text-sm text-[#a0a0a0] uppercase tracking-widest">Premium Kumppanuus</span>
+                <span className="text-sm text-[#d4af37] uppercase tracking-widest font-medium">All in one Kumppanuus</span>
                 
                 <div className="mt-6 mb-4">
                   <span className="font-display text-6xl md:text-7xl text-[#f0f0f0]">299</span>
