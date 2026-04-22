@@ -10,7 +10,7 @@ const footerLinks = {
    
   ],
   Yritys: [
-    { name: "Tietoa meistä", href: "#meista" },
+    { name: "Tietoa meistä", href: "/leodigital" },
     { name: "Yhteystiedot", href: "#yhteystiedot" },
   ],
 };

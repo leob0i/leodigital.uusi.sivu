@@ -104,10 +104,10 @@ export default function KayttoehdotPage() {
           </div>
           <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
             <p>Paketti kattaa domain-rekisteröinnin ja uusinnan, SSL-sertifikaatin, hosting-palvelun sekä automaattiset varmuuskopiot.</p>
-            <p><span className="text-[#f0f0f0]">Kuukausipäivitys:</span> Asiakas voi pyytää yhden sisältöpäivityksen kuukaudessa, esimerkiksi uuden alasivun, median lisäämisen/poiston, blogikirjoituksen tai muuta muokkausta vaativaa työtä. (Huom. Sisältää noin 2h työtä, ja isommat päivitykset sovitaan erikseen.) Päivityspyynnöt tulee toimittaa kuukauden 20.päivän mennessä. Käyttämättä jäänyt kuukausipäivitys ei siirry seuraavalle kuukaudelle.</p>
+            <p><span className="text-[#f0f0f0]">Kuukausipäivitys:</span> Asiakas voi pyytää yhden sisältöpäivityksen kuukaudessa, esimerkiksi hintamuutoksen, kuvien vaihdon tai muuta muokkausta vaativaa työtä. (Huom. Sisältää noin 1h työtä, ja isommat päivitykset sovitaan erikseen.) Päivityspyynnöt tulee toimittaa kuukauden 20.päivän mennessä. Käyttämättä jäänyt kuukausipäivitys ei siirry seuraavalle kuukaudelle. Lisätyöt laskutetaan (30 €/h + ALV).</p>
             <p><span className="text-[#f0f0f0]">SEO ja näkyvyys:</span> Paketti sisältää perus hakukoneoptimoinnin seurannan ja kehitystyön joka päivityksen yhteydessä.</p>
              <p><span className="text-[#f0f0f0]">Kuukausiraportti:</span> Paketti sisältää kuukausittaisen raportin, joka kokoaa sivuston näkyvyyden ja kävijätiedot, sekä mahdolliset parannusehdotukset. Raportti toimitetaan sähköpostitse kuukauden lopussa.</p>
-            <p><span className="text-[#f0f0f0]">Tuki:</span> Tekninen tuki WhatsAppin ja sähköpostin kautta, vastausaika 0–2 arkipäivää.</p>
+            <p><span className="text-[#f0f0f0]">Tuki:</span> Tekninen tuki WhatsAppin ja sähköpostin kautta, vastausaika 24 sisällä.</p>
           </div>
         </div>
 
