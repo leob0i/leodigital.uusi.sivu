@@ -74,7 +74,7 @@ export default function KayttoehdotPage() {
           <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
             <p>Kaikki ylläpitopaketit sisältävät domain-rekisteröinnin, SSL-sertifikaatin ja hostingin.</p>
             <p>Ylläpitopaketin voi vaihtaa pienemmästä suurempaan tarvittaessa ilman lisäkustannuksia.</p>
-            <p>Sopimus on määräaikainen 6kk, jonka jälkeen se muuttuu toistaiseksi voimassa olevaksi. Tämä jälkeen irtisanomisaika on 30 päivää. Irtisanomisilmoitus toimitetaan kirjallisesti sähköpostitse osoitteeseen <span className="text-[#f0f0f0]">leo@leodigital.fi</span>.</p>
+            <p>Sopimus on määräaikainen 12kk, jonka jälkeen se muuttuu toistaiseksi voimassa olevaksi. Tämä jälkeen irtisanomisaika on 30 päivää. Irtisanomisilmoitus toimitetaan kirjallisesti sähköpostitse osoitteeseen <span className="text-[#f0f0f0]">leo@leodigital.fi</span>.</p>
             <p>Sopimuksen loppuessa asiakas ei saa pitää domainosoitettaan, eikä asiakas itse omista domainia tai hostingia ellei erikseen sovita. Domain osoite maksetaan vuodeksi kerralla, ja kun kausi on loppu domain osoite voi vapautua.</p>
             <p>Leo Digital pidättää oikeuden päivittää hintoja tai ehtoja 30 päivän ennakkoilmoituksella. Asiakkaalla on tällöin oikeus irtisanoa sopimus ilman ylimääräistä irtisanomisaikaa.</p>
             <p>Asiakas sitoutuu toimittamaan tarvittavan materiaalin (tekstit, kuvat, tiedot) sovitussa aikataulussa. Viiveet asiakkaan puolelta eivät oikeuta hinnanalennukseen.</p>
