@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\apell\\\\leodigital.uusi.sivu\" -Recurse -Depth 2)"
+    ]
+  }
+}

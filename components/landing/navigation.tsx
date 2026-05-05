@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinksFi = [
-  { name: "Hinnat", href: "#kotisivut-499" },
+  { name: "Nettisivut", href: "/nettisivut" },
   { name: "Ylläpitopaketit", href: "#paketit" },
   { name: "Kuka on Leo?", href: "/leodigital" },
   { name: "Työni", href: "#asiakkaat" },
@@ -159,13 +159,25 @@ export function Navigation() {
           </div>
           
           {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-[#2a2a2a] transition-all duration-500 ${
-            isMobileMenuOpen 
-              ? "opacity-100 translate-y-0" 
+          <div className={`flex flex-col gap-4 pt-8 border-t border-[#2a2a2a] transition-all duration-500 ${
+            isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
+            <a
+              href="https://wa.me/358452031377"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 w-full h-14 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] transition-colors shadow-md shadow-black/30"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 text-white" fill="currentColor">
+                <path fill="currentColor" d="M16.01 3.2c-7.03 0-12.75 5.7-12.75 12.7 0 2.23.6 4.41 1.73 6.33L3.2 28.8l6.75-1.77a12.8 12.8 0 0 0 6.06 1.54c7.03 0 12.75-5.7 12.75-12.7S23.04 3.2 16.01 3.2zm0 23.12c-1.93 0-3.82-.52-5.47-1.5l-.39-.23-4.01 1.05 1.07-3.9-.25-.4a10.51 10.51 0 0 1-1.61-5.57c0-5.8 4.75-10.52 10.66-10.52 5.9 0 10.66 4.72 10.66 10.52 0 5.8-4.76 10.55-10.66 10.55z" />
+              </svg>
+              <span className="text-base font-medium text-white">WhatsApp</span>
+            </a>
             {/* <Button
               variant="outline"
               className="flex-1 rounded-full h-14 text-base border-[#2a2a2a] text-[#f0f0f0] hover:bg-[#1a1a1a]"
@@ -178,7 +190,7 @@ export function Navigation() {
               {language === 'fi' ? 'English' : 'Suomi'}
             </Button> */}
             <Button
-              className="flex-1 bg-[#f0f0f0] text-[#0d0d0d] rounded-full h-14 text-base hover:bg-[#e0e0e0]"
+              className="w-full bg-[#f0f0f0] text-[#0d0d0d] rounded-full h-14 text-base hover:bg-[#e0e0e0]"
               onClick={() => {
                 if (pathname === "/") {
                   document.getElementById("yhteystiedot")?.scrollIntoView({ behavior: "smooth" });

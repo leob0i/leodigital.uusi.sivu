@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://www.leodigital.fi/nettisivut',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.leodigital.fi/kayttoehdot',
       lastModified: new Date(),
       changeFrequency: 'yearly',

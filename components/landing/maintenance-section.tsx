@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Shield, RefreshCw, TrendingUp, Headphones, Globe, Palette } from "lucide-react";
+import { Shield, RefreshCw, TrendingUp, Headphones, Globe, Palette, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -10,19 +10,19 @@ const services = [
     description: "Suunnittelen sivuston alusta loppuun tyylisi mukaan. Pääset myös kehitysvaiheessa mukaan vaikuttamaan halutessa.",
   },
   {
-    icon: Globe,
-    title: "Kaikki samasta, ei säätöä",
-    description: "Kaikki maksut samasta,\nDomain, hosting, SSL ja varmuuskopiot. Kaikki hoituu puolestasi kätevästi.",
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO & Näkyvyyden Kehitys",
-    description: "Hakukoneoptimointi myös tekoälyyn perustuvassa haussa. Näkyvyyden jatkuva kehittäminen. ",
-  },
- {
     icon: RefreshCw,
     title: "Jatkuva Kehitys",
     description: "Sivustosi ei jää paikoilleen. Teen jatkuvaa kehitystä ja parannuksia pitääkseni sivut kilpailukykyisinä.",
+  },
+  {
+    icon: TrendingUp,
+    title: "SEO & Tekoälyyn perustuva haku",
+    description: "Hakukoneoptimointi myös tekoälyyn perustuvassa haussa. Näkyvyyden jatkuva kehittäminen. ",
+  },
+ {
+    icon: Globe,
+    title: "Kaikki samasta, ei säätöä",
+    description: "Kaikki maksut samasta,\nDomain, hosting, SSL ja varmuuskopiot. Kaikki hoituu puolestasi kätevästi.",
   },
   {
     icon: Shield,
@@ -57,7 +57,7 @@ export function MaintenanceSection() {
     <section
       id="yllapito"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]"
+      className="relative pt-24 lg:pt-32 pb-12 lg:pb-14 border-t border-[#2a2a2a] bg-[#0d0d0d]"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
@@ -98,6 +98,17 @@ export function MaintenanceSection() {
               <p className="text-[#a0a0a0] leading-relaxed">{service.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className={`mt-12 flex justify-center transition-all duration-700 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+          <a
+            href="#paketit"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-gray-100 text-black text-sm font-medium rounded-full transition-colors group"
+          >
+            Hinnasto
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
 
         {/* Bottom CTA */}

@@ -1,0 +1,470 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  ArrowDown,
+  Fingerprint,
+  Smartphone,
+  Search,
+  Mail,
+  TrendingUp,
+  Layers,
+  Check,
+} from "lucide-react";
+
+function useInView(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true);
+      },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return { ref, inView };
+}
+
+const features = [
+  {
+    icon: Fingerprint,
+    title: "Yksilöllisesti suunniteltu",
+    desc: "Ei valmispohjia, ei kompromisseja. Sivustosi on rakennettu juuri sinun liiketoimintaasi varten.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobiiliystävällinen & nopea",
+    desc: "Toimii sujuvasti kaikilla laitteilla ja parantaa sijoitustasi hakutuloksissa.",
+  },
+  {
+    icon: Search,
+    title: "Hakukoneystävällinen pohja",
+    desc: "SEO-optimoitu rakenne, joka auttaa asiakkaitasi löytämään sinut Googlesta.",
+  },
+  {
+    icon: Mail,
+    title: "Lomakkeet & integraatiot",
+    desc: "Yhteydenottolomakkeet, kartat ja tarvittavat integraatiot valmiina käyttöön heti julkaisusta alkaen.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Google-näkyvyyden perusta",
+    desc: "Arvostelujen hyödyntäminen luottamuksen rakentamisessa ja näkyvyyden kasvattamisessa.",
+  },
+  {
+    icon: Layers,
+    title: "Skaalautuva ratkaisu",
+    desc: "Mahdollisuus laajentaa sivustoa ja lisätä toiminnallisuuksia myöhemmin liiketoimintasi kasvaessa.",
+  },
+];
+
+const projectTypes = [
+  { label: "Esittelysivu", desc: "Selkeä ja tehokas yritysesittely" },
+  { label: "Räätälöity kokonaisuus", desc: "Täysin yksilöllinen toteutus" },
+  { label: "Varausjärjestelmä", desc: "Integroitu ajanvaraus tai maksaminen" },
+  { label: "Verkkokauppa", desc: "Tuotteiden myynti verkossa" },
+];
+
+export function NettisivutContent() {
+  const [isVisible, setIsVisible] = useState(false);
+  const featuresInView = useInView(0.1);
+  const uniqueInView = useInView(0.1);
+  const pricingInView = useInView(0.1);
+  const ctaInView = useInView(0.2);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {/* ── Hero ── */}
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/herokuva.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0d0d0d]/75" />
+        </div>
+
+        {/* Grid overlay */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-[1]">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={`h-${i}`}
+              className="absolute h-px bg-[#f0f0f0]/10"
+              style={{ top: `${12.5 * (i + 1)}%`, left: 0, right: 0 }}
+            />
+          ))}
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="absolute w-px bg-[#f0f0f0]/10"
+              style={{ left: `${8.33 * (i + 1)}%`, top: 0, bottom: 0 }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+          {/* Eyebrow */}
+          <div
+            className={`mb-8 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0]">
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
+              Kotisivut & verkkosivut yrityksellesi
+            </span>
+          </div>
+
+          {/* Headline */}
+          <div className="mb-12">
+            <div
+              className={`text-[clamp(2.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <span className="block">Enemmän kuin</span>
+              <span className="block relative">
+                pelkkä nettisivu
+                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
+              </span>
+            </div>
+          </div>
+
+          {/* Description + CTAs */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mt-8">
+            <div
+              className={`transition-all duration-700 delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <p className="text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl mb-6">
+                Rakennamme yrityksellesi yksilölliset kotisivut, jotka eivät
+                ainoastaan näytä hyvältä – vaan myös toimivat.
+              </p>
+              <div className="inline-flex items-baseline gap-2">
+                <span className="text-sm font-mono text-[#a0a0a0]">alkaen</span>
+                <span className="text-4xl font-display text-[#f0f0f0] leading-none">499€</span>
+              </div>
+            </div>
+            <div
+              className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <Button
+                size="lg"
+                className="bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group"
+                asChild
+              >
+                <a href="/#yhteystiedot">
+                  Pyydä tarjous
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
+                asChild
+              >
+                <a href="#hinnoittelu">Hinnoittelu</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 delay-700 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <ArrowDown className="w-5 h-5 text-[#a0a0a0] animate-bounce" />
+        </div>
+      </section>
+
+      {/* ── Features ── */}
+      <section className="relative overflow-hidden py-24 lg:py-32 border-t border-[#2a2a2a]">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/taustakuva.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0d0d0d]/88" />
+        </div>
+        <div ref={featuresInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div
+            className={`mb-16 transition-all duration-700 ${
+              featuresInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
+              Kaikki mitä tarvitset menestyäksesi verkossa
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {features.map((feature, i) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={i}
+                  className={`group p-8 border border-[#2a2a2a] rounded-2xl bg-[#111111] hover:bg-[#151515] hover:border-[#3a3a3a] transition-all duration-500 ${
+                    featuresInView.inView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transitionDelay: featuresInView.inView ? `${i * 80}ms` : "0ms",
+                  }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center mb-6 group-hover:border-[#3a3a3a] transition-colors">
+                    <Icon className="w-5 h-5 text-[#f0f0f0]" />
+                  </div>
+                  <h3 className="text-[#f0f0f0] font-medium text-lg mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#a0a0a0] text-sm leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Unique Projects ── */}
+      <section className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
+        <div ref={uniqueInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div
+              className={`transition-all duration-700 ${
+                uniqueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
+                <span className="w-8 h-px bg-[#f0f0f0]/30" />
+                Jokainen projekti on yksilöllinen
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8">
+                Ei yhden koon
+                <br />
+                ratkaisuja
+              </h2>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6">
+                Emme usko yhden koon ratkaisuihin. Jokainen projekti on
+                ainutlaatuinen, ja olen aina innokas ideoimaan lisää ominaisuuksia
+                juuri sinun liiketoimintasi parantamiseksi ja helpottamiseksi.
+              </p>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Kerro tarpeistasi – keksitään yhdessä paras ratkaisu.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {projectTypes.map((item, i) => (
+                <div
+                  key={i}
+                  className={`flex items-center gap-4 p-6 border border-[#2a2a2a] rounded-xl bg-[#161616] hover:border-[#3a3a3a] hover:bg-[#1a1a1a] transition-all duration-500 ${
+                    uniqueInView.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                  }`}
+                  style={{
+                    transitionDelay: uniqueInView.inView ? `${(i + 1) * 100}ms` : "0ms",
+                  }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-[#f0f0f0] shrink-0" />
+                  <div>
+                    <p className="text-[#f0f0f0] font-medium">{item.label}</p>
+                    <p className="text-sm text-[#a0a0a0]">{item.desc}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-[#3a3a3a] ml-auto shrink-0" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ── */}
+      <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/herokuva.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0d0d0d]/75" />
+        </div>
+        <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div
+            className={`mb-16 transition-all duration-700 ${
+              pricingInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
+              Hinnoittelu
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
+              Selkeä ja läpinäkyvä hinnoittelu
+            </h2>
+          </div>
+
+          <div
+            className={`grid lg:grid-cols-3 gap-6 transition-all duration-700 delay-100 ${
+              pricingInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            {/* Main pricing card */}
+            <div className="lg:col-span-2 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+                <h3 className="text-[#f0f0f0] text-2xl font-display">
+                  Kertaostos – ei sitoutumista
+                </h3>
+                <div className="flex items-baseline gap-2 shrink-0">
+                  <span className="font-mono text-sm text-[#a0a0a0]">alkaen</span>
+                  <span className="font-display text-5xl text-[#f0f0f0] leading-none">499€</span>
+                </div>
+              </div>
+              <div className="space-y-5 mb-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                  </div>
+                  <p className="text-[#a0a0a0] leading-relaxed">
+                    Kotisivut voi hankkia kertaostoksena ilman sitoutumista.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                  </div>
+                  <p className="text-[#a0a0a0] leading-relaxed">
+                    Maksu on mahdollista jakaa kahteen erään: 50 % projektin
+                    alkaessa ja loput 50 % luovutuksen yhteydessä.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                  </div>
+                  <p className="text-[#a0a0a0] leading-relaxed">
+                    Aloitushinta sisältää enintään 6 sivua sekä pakolliset
+                    tietosuoja- ja käyttöehtosivut.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                  </div>
+                  <p className="text-[#a0a0a0] leading-relaxed">
+                    Laajemmat kokonaisuudet – kuten varausjärjestelmät,
+                    maksutoiminnot, integraatiot ja muut räätälöidyt ratkaisut –
+                    suunnitellaan ja hinnoitellaan aina erikseen projektin laajuuden
+                    mukaan.
+                  </p>
+                </div>
+              </div>
+              <p className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-snug mb-6 whitespace-nowrap">
+                Toteutamme kaikki projektit intohimolla ja ammattitaidolla.
+              </p>
+              <p className="text-sm text-[#a0a0a0] italic mb-6">
+                Otan mielelläni vastaan isommatkin projektit –{" "}
+                <a
+                  href="/#yhteystiedot"
+                  className="text-[#f0f0f0] underline underline-offset-2 hover:text-[#a0a0a0] transition-colors"
+                >
+                  kysy lisää!
+                </a>
+              </p>
+
+            </div>
+
+            {/* Discount card + CTA */}
+            <div className="flex flex-col gap-4">
+            <div className="relative p-8 border border-[#2a2a2a] rounded-2xl bg-[#f0f0f0]/[0.03] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f0f0f0]/5 via-transparent to-transparent pointer-events-none rounded-2xl" />
+              <div className="relative">
+                <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
+                  Ylläpitopaketti
+                </span>
+                <div className="mb-6">
+                  <span className="font-display text-7xl text-[#f0f0f0] leading-none">
+                    −25%
+                  </span>
+                </div>
+                <p className="text-[#a0a0a0] text-sm leading-relaxed mb-8">
+                  Huolenpito- tai ylläpitopaketin tilaajat saavat kotisivun
+                  hinnasta 25 % alennuksen.
+                </p>
+                <div className="pt-6 border-t border-[#2a2a2a]">
+                  <a
+                    href="/#paketit"
+                    className="inline-flex items-center gap-2 text-sm text-[#f0f0f0] hover:text-[#a0a0a0] transition-colors group"
+                  >
+                    Lue lisää ylläpitopaketeista
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a
+              href="/#yhteystiedot"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full group"
+            >
+              Pyydä tarjous
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact CTA ── */}
+      <section className="relative overflow-hidden py-24 lg:py-32 border-t border-[#2a2a2a]">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/tumma.tausta.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0d0d0d]/70" />
+        </div>
+        <div
+          ref={ctaInView.ref}
+          className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center"
+        >
+          <div
+            className={`transition-all duration-700 ${
+              ctaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8 justify-center">
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
+              Otetaan yhteyttä
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
+            </span>
+            <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-6">
+              Suunnitellaan yhdessä
+            </h2>
+            <p className="text-xl text-[#a0a0a0] mb-12 max-w-2xl mx-auto leading-relaxed">
+              Onko sinulla idea, tarve tai kysymys? Ota yhteyttä – suunnitellaan
+              yhdessä kotisivut, jotka todella palvelevat liiketoimintaasi.
+            </p>
+            <Button
+              size="lg"
+              className="bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-10 h-16 text-lg rounded-full group"
+              asChild
+            >
+              <a href="/#yhteystiedot">
+                Ota yhteyttä
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
