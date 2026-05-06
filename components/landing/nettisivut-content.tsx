@@ -122,7 +122,7 @@ export function NettisivutContent() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0]">
               <span className="w-8 h-px bg-[#f0f0f0]/30" />
-              Kotisivut & verkkosivut yrityksellesi
+             Nettisivut yritykselle • Google & tekoälyhaut huomioiden
             </span>
           </div>
 
@@ -133,9 +133,9 @@ export function NettisivutContent() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="block">Enemmän kuin</span>
+              <span className="block">Nettisivut yritykselle,</span>
               <span className="block relative">
-                pelkkä nettisivu
+                jotka tuovat asiakkaita
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
               </span>
             </div>
@@ -149,8 +149,8 @@ export function NettisivutContent() {
               }`}
             >
               <p className="text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl mb-6">
-                Rakennamme yrityksellesi yksilölliset kotisivut, jotka eivät
-                ainoastaan näytä hyvältä – vaan myös toimivat.
+                Rakennamme sivuja, jotka on suunniteltu löytymään, vakuuttamaan ja muuttamaan kävijät asiakkaiksi.
+Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
               </p>
               <div className="inline-flex items-baseline gap-2">
                 <span className="text-sm font-mono text-[#a0a0a0]">alkaen</span>
@@ -194,6 +194,40 @@ export function NettisivutContent() {
         </div>
       </section>
 
+      {/* ── Why ── */}
+      <section className="relative py-12 lg:py-16 border-t border-[#2a2a2a] bg-[#0d0d0d]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-3 gap-12 text-center">
+            <div>
+              <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">
+                Mitä nettisivut maksavat vuonna 2026?
+              </h3>
+              <p className="text-[#a0a0a0] leading-relaxed">
+                Itse tehtynä: muutamia kymppejä<br />
+                Ammattilaisella: 500€ – 10.000€
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">
+                Internet on täynnä turhia nettisivuja
+              </h3>
+              <p className="text-[#a0a0a0] leading-relaxed">
+                Nykyään kuka tahansa voi tehdä hienot sivut, mutta ne ovat hitaita, näkymättömiä hakutuloksissa, ei myy eikä erotu joukosta.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">
+                Me emme rakenna &ldquo;nettisivuja&rdquo;
+              </h3>
+              <p className="text-[#a0a0a0] leading-relaxed">
+                Meidän sivumme eivät ole vain näyttäviä, niiden tarkoitus on
+                tuoda sinulle asiakkaita, helpottaa liiketoimintaasi ja kasvattaa mainetta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Features ── */}
       <section className="relative overflow-hidden py-24 lg:py-32 border-t border-[#2a2a2a]">
         <div className="absolute inset-0 z-0">
@@ -217,7 +251,7 @@ export function NettisivutContent() {
               return (
                 <div
                   key={i}
-                  className={`group p-8 border border-[#2a2a2a] rounded-2xl bg-[#111111] hover:bg-[#151515] hover:border-[#3a3a3a] transition-all duration-500 ${
+                  className={`group p-5 md:p-8 border border-[#2a2a2a] rounded-2xl bg-[#111111] hover:bg-[#151515] hover:border-[#3a3a3a] transition-all duration-500 ${
                     featuresInView.inView
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
@@ -226,15 +260,19 @@ export function NettisivutContent() {
                     transitionDelay: featuresInView.inView ? `${i * 80}ms` : "0ms",
                   }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center mb-6 group-hover:border-[#3a3a3a] transition-colors">
-                    <Icon className="w-5 h-5 text-[#f0f0f0]" />
+                  <div className="flex flex-row md:flex-col gap-4 md:gap-0 items-start">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center md:mb-6 group-hover:border-[#3a3a3a] transition-colors shrink-0">
+                      <Icon className="w-4 h-4 md:w-5 md:h-5 text-[#f0f0f0]" />
+                    </div>
+                    <div>
+                      <h3 className="text-[#f0f0f0] font-medium text-base md:text-lg mb-2 md:mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-[#a0a0a0] text-sm leading-relaxed">
+                        {feature.desc}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-[#f0f0f0] font-medium text-lg mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#a0a0a0] text-sm leading-relaxed">
-                    {feature.desc}
-                  </p>
                 </div>
               );
             })}
@@ -370,7 +408,7 @@ export function NettisivutContent() {
                   </p>
                 </div>
               </div>
-              <p className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-snug mb-6 whitespace-nowrap">
+              <p className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-snug mb-6">
                 Toteutamme kaikki projektit intohimolla ja ammattitaidolla.
               </p>
               <p className="text-sm text-[#a0a0a0] italic mb-6">

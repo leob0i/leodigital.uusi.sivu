@@ -86,16 +86,20 @@ export function MaintenanceSection() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group p-8 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 ${
+              className={`group p-5 md:p-8 border border-[#2a2a2a] hover:border-[#404040] bg-[#1a1a1a] transition-all duration-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] mb-6 group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors duration-300">
-                <service.icon className="w-5 h-5" />
+              <div className="flex flex-row md:flex-col gap-4 md:gap-0 items-start">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-[#2a2a2a] text-[#f0f0f0] md:mb-6 group-hover:bg-[#f0f0f0] group-hover:text-[#0d0d0d] transition-colors duration-300 shrink-0">
+                  <service.icon className="w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-display text-[#f0f0f0] mb-2 md:mb-3">{service.title}</h3>
+                  <p className="text-[#a0a0a0] leading-relaxed text-sm md:text-base">{service.description}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-display text-[#f0f0f0] mb-3">{service.title}</h3>
-              <p className="text-[#a0a0a0] leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>
