@@ -55,9 +55,15 @@ export function AboutSection() {
           {/* Content */}
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0] mb-2">
-                Kotisivut alkaen <span className="font-black text-[#f0f0f0]">499 €</span>
-              </h2>
+              <div className="flex flex-wrap items-center gap-4 mb-2">
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0]">
+                  Kotisivut alkaen <span className="font-black text-[#f0f0f0]">499 €</span>
+                </h2>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#b8960c]/60 bg-[#b8960c]/8 backdrop-blur-sm">
+                  <span className="text-xs font-medium text-[#d4a017] tracking-wide">Ylläpitopaketin ostajalle</span>
+                  <span className="text-xs font-black text-[#f0c040]">−25% aloitusmaksu</span>
+                </div>
+              </div>
               <p className="text-base text-[#f0f0f0]/80 font-medium mb-3">
                 Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
               </p>

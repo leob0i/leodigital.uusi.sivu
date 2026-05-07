@@ -5,226 +5,249 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Räätälöidyt Verkkosivut",
-    description: "Jokainen sivu räätälöidään sinun yrityksellesi sopivaksi. Ulkoasu, sisältö ja rakenne tehdään brändisi mukaan. Tämä takaa nopean latausajan, täyden muokattavuuden ja siistin, ammattimaisen ulkoasun.",
-    visual: "code",
+    title: "Kilpailukyky ja näkyvyys",
+    description: "Jokaisen päivityksen yhteydessä käymme aina läpi hakusanat jotta yrityksesi pysyy aina kilpailukykyisenä myös tekoälyyn pohjautuvissa hauissa. Näin sivusi pysyy aina \"freshin\" näköisenä.",
+    visual: "ranking",
   },
   {
     number: "02",
-    title: "SEO ja AI hakukonenäkyvyys",
-    description: "Hakukoneoptimointi huomioidaan jokaisessa projektissa alusta alkaen. Oikeat avainsanat, tekninen SEO ja rakenne, joka miellyttää Googlea ja tekoälypohjaista hakua.",
-    visual: "seo",
+    title: "Huoleton yhteistyö",
+    description: "Tavoitteena on tehdä verkkopuolesta yrittäjälle mahdollisimman yksinkertainen. Saat yhden yhteyshenkilön verkkosivuihin, näkyvyyteen ja digitaaliseen kehitykseen liittyvissä asioissa ilman turhaa teknistä säätöä.",
+    visual: "collaboration",
   },
   {
     number: "03",
-    title: "Mobiilioptimoidut Sivut",
-    description: "Sivut toimivat moitteettomasti kaikilla laitteilla. Responsiivinen suunnittelu varmistaa, että asiakkaasi löytävät sinut puhelimella, tabletilla ja tietokoneella.",
-    visual: "mobile",
+    title: "Jatkuva kehitys",
+    description: "Sivustoa voidaan päivittää myös julkaisun jälkeen ilman että kaikkea tarvitsee rakentaa uudelleen. Uudet palvelut, sisältömuutokset, lisäsivut ja parannukset onnistuvat hallitusti yrityksen kasvaessa.",
+    visual: "development",
   },
-  // {
-  //   number: "04",
-  //   title: "Tekoäly-botti 24/7",
-  //   description: "Älykäs asiakaspalvelubotti vastaa kysymyksiin ympäri vuorokauden. Toimii WhatsAppissa, nettisivuilla tai Instagramissa - ohjaa tarvittaessa ihmiselle.",
-  //   visual: "ai",
-  // },
 ];
 
-function CodeVisual() {
+function RankingVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
-      <defs>
-        <clipPath id="codeClip">
-          <rect x="30" y="20" width="140" height="120" rx="4" />
-        </clipPath>
-      </defs>
-      
-      <rect x="30" y="20" width="140" height="120" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
-      
-      <g clipPath="url(#codeClip)">
-        {[0, 1, 2, 3, 4, 5].map((i) => (
+      {/* Search result rows */}
+      {[
+        { y: 22, w: 88, primary: true },
+        { y: 62, w: 64, primary: false },
+        { y: 102, w: 72, primary: false },
+      ].map((item, i) => (
+        <g key={i}>
           <rect
-            key={i}
-            x="40"
-            y={35 + i * 16}
-            width="120"
-            height="10"
-            rx="2"
+            x="22"
+            y={item.y}
+            width="130"
+            height="28"
+            rx="5"
             fill="currentColor"
-            opacity="0.15"
+            opacity={item.primary ? 0.18 : 0.07}
+            stroke="currentColor"
+            strokeWidth={item.primary ? 1 : 0.5}
+            strokeOpacity={item.primary ? 0.6 : 0.2}
           >
-            <animate
-              attributeName="opacity"
-              values="0.15;0.8;0.15"
-              dur="2s"
-              begin={`${i * 0.15}s`}
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="width"
-              values="20;120;20"
-              dur="2s"
-              begin={`${i * 0.15}s`}
-              repeatCount="indefinite"
-            />
-          </rect>
-        ))}
-      </g>
-      
-      <circle cx="100" cy="155" r="3" fill="currentColor" opacity="0.3">
-        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
-      </circle>
-    </svg>
-  );
-}
-
-function SEOVisual() {
-  return (
-    <svg viewBox="0 0 200 160" className="w-full h-full">
-      <circle cx="100" cy="80" r="12" fill="currentColor">
-        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" />
-      </circle>
-      
-      {[0, 1, 2, 3, 4, 5].map((i) => {
-        const angle = (i * 60) * (Math.PI / 180);
-        const radius = 50;
-        return (
-          <g key={i}>
-            <line
-              x1="100"
-              y1="80"
-              x2={100 + Math.cos(angle) * radius}
-              y2={80 + Math.sin(angle) * radius}
-              stroke="currentColor"
-              strokeWidth="1"
-              opacity="0.3"
-            >
+            {item.primary && (
               <animate
                 attributeName="opacity"
-                values="0.3;0.8;0.3"
-                dur="2s"
-                begin={`${i * 0.3}s`}
+                values="0.18;0.38;0.18"
+                dur="2.5s"
                 repeatCount="indefinite"
               />
-            </line>
-            
-            <circle
-              cx={100 + Math.cos(angle) * radius}
-              cy={80 + Math.sin(angle) * radius}
-              r="6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <animate
-                attributeName="r"
-                values="6;8;6"
-                dur="2s"
-                begin={`${i * 0.3}s`}
-                repeatCount="indefinite"
-              />
-            </circle>
-          </g>
-        );
-      })}
-      
-      <circle cx="100" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
-        <animate attributeName="r" values="20;60" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.5;0" dur="2s" repeatCount="indefinite" />
-      </circle>
-    </svg>
-  );
-}
-
-function MobileVisual() {
-  return (
-    <svg viewBox="0 0 200 160" className="w-full h-full">
-      {/* Phone outline */}
-      <rect x="70" y="20" width="60" height="120" rx="8" fill="none" stroke="currentColor" strokeWidth="2" />
-      
-      {/* Screen */}
-      <rect x="75" y="35" width="50" height="90" rx="2" fill="currentColor" opacity="0.1">
-        <animate attributeName="opacity" values="0.1;0.2;0.1" dur="2s" repeatCount="indefinite" />
-      </rect>
-      
-      {/* Content lines */}
-      {[0, 1, 2, 3].map((i) => (
-        <rect
-          key={i}
-          x="80"
-          y={45 + i * 18}
-          width="40"
-          height="8"
-          rx="2"
-          fill="currentColor"
-          opacity="0.3"
-        >
-          <animate
-            attributeName="width"
-            values="20;40;20"
-            dur="2s"
-            begin={`${i * 0.2}s`}
-            repeatCount="indefinite"
+            )}
+          </rect>
+          <text
+            x="33"
+            y={item.y + 18}
+            fill="currentColor"
+            fillOpacity={item.primary ? 0.9 : 0.3}
+            fontSize="9"
+            fontFamily="monospace"
+            fontWeight={item.primary ? "bold" : "normal"}
+          >
+            #{i + 1}
+          </text>
+          <rect
+            x="55"
+            y={item.y + 10}
+            width={item.w}
+            height="8"
+            rx="2"
+            fill="currentColor"
+            opacity={item.primary ? 0.5 : 0.15}
           />
-        </rect>
+        </g>
       ))}
-      
-      {/* Home button */}
-      <circle cx="100" cy="130" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      {/* Rising arrow */}
+      <line x1="172" y1="138" x2="172" y2="30" stroke="currentColor" strokeWidth="1.5" opacity="0.25" strokeDasharray="3,3" />
+      <polygon points="172,22 167,33 177,33" fill="currentColor" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite" />
+      </polygon>
+      {/* Pulse on #1 row */}
+      <rect x="22" y="22" width="130" height="28" rx="5" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
+        <animate attributeName="opacity" values="0.4;0" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="x" values="22;16" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="y" values="22;16" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="width" values="130;142" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="height" values="28;40" dur="2.5s" repeatCount="indefinite" />
+      </rect>
     </svg>
   );
 }
 
-function AIVisual() {
+function CollaborationVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
-      {/* Chat bubble */}
-      <path
-        d="M 50 40 L 150 40 Q 160 40 160 50 L 160 100 Q 160 110 150 110 L 80 110 L 60 130 L 60 110 L 50 110 Q 40 110 40 100 L 40 50 Q 40 40 50 40"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      
-      {/* Typing dots */}
-      {[0, 1, 2].map((i) => (
-        <circle
+      {/* Center hub */}
+      <circle cx="100" cy="80" r="20" fill="currentColor" opacity="0.12" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.4">
+        <animate attributeName="r" values="20;23;20" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      {/* Person head */}
+      <circle cx="100" cy="74" r="6" fill="currentColor" opacity="0.7" />
+      {/* Person shoulders */}
+      <path d="M89 88 Q100 84 111 88" fill="none" stroke="currentColor" strokeWidth="2" strokeOpacity="0.7" />
+
+      {/* Spoke lines — coordinates pre-computed to avoid SSR/client float mismatch */}
+      {[
+        { x2: 136.77, y2: 116.77 },
+        { x2: 63.23,  y2: 116.77 },
+        { x2: 63.23,  y2: 43.23  },
+        { x2: 136.77, y2: 43.23  },
+      ].map((pt, i) => (
+        <line
           key={i}
-          cx={85 + i * 15}
-          cy="75"
-          r="5"
-          fill="currentColor"
+          x1="100"
+          y1="80"
+          x2={pt.x2}
+          y2={pt.y2}
+          stroke="currentColor"
+          strokeWidth="1"
+          opacity="0.15"
         >
           <animate
             attributeName="opacity"
-            values="0.3;1;0.3"
-            dur="1s"
-            begin={`${i * 0.2}s`}
+            values="0.15;0.5;0.15"
+            dur="2s"
+            begin={`${i * 0.5}s`}
+            repeatCount="indefinite"
+          />
+        </line>
+      ))}
+
+      {/* Satellite nodes — coordinates pre-computed to avoid SSR/client float mismatch */}
+      {[
+        { cx: 140.31, cy: 120.31 },
+        { cx: 59.69,  cy: 120.31 },
+        { cx: 59.69,  cy: 39.69  },
+        { cx: 140.31, cy: 39.69  },
+      ].map((pt, i) => (
+        <circle
+          key={i}
+          cx={pt.cx}
+          cy={pt.cy}
+          r="9"
+          fill="currentColor"
+          opacity="0.08"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeOpacity="0.35"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.08;0.22;0.08"
+            dur="2s"
+            begin={`${i * 0.5}s`}
             repeatCount="indefinite"
           />
         </circle>
       ))}
-      
-      {/* Pulse effect */}
-      <circle cx="100" cy="75" r="20" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
-        <animate attributeName="r" values="20;50" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite" />
+
+      {/* Ripple pulse from center */}
+      <circle cx="100" cy="80" r="20" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
+        <animate attributeName="r" values="20;65" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.4;0" dur="2.5s" repeatCount="indefinite" />
       </circle>
     </svg>
   );
 }
 
+function DevelopmentVisual() {
+  const layers = [
+    { width: 88, offsetX: 56 },
+    { width: 104, offsetX: 48 },
+    { width: 116, offsetX: 42 },
+    { width: 126, offsetX: 37 },
+  ];
+  return (
+    <svg viewBox="0 0 200 160" className="w-full h-full">
+      {/* Static stacked layers from bottom */}
+      {layers.map((l, i) => (
+        <rect
+          key={i}
+          x={l.offsetX}
+          y={118 - i * 24}
+          width={l.width}
+          height="16"
+          rx="3"
+          fill="currentColor"
+          opacity={0.12 + i * 0.06}
+          stroke="currentColor"
+          strokeWidth="0.5"
+          strokeOpacity="0.25"
+        />
+      ))}
+
+      {/* New layer dropping in */}
+      <rect
+        x="30"
+        y="22"
+        width="140"
+        height="16"
+        rx="3"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeOpacity="0.8"
+        opacity="0"
+      >
+        <animate
+          attributeName="y"
+          values="10;22;22;22"
+          keyTimes="0;0.35;0.7;1"
+          dur="2.2s"
+          begin="0.3s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0;0.55;0.55;0"
+          keyTimes="0;0.3;0.65;1"
+          dur="2.2s"
+          begin="0.3s"
+          repeatCount="indefinite"
+        />
+      </rect>
+
+      {/* Plus icon above the incoming layer */}
+      <line x1="100" y1="4" x2="100" y2="14" stroke="currentColor" strokeWidth="2" opacity="0.4">
+        <animate attributeName="opacity" values="0.3;0.75;0.3" dur="2.2s" begin="0.3s" repeatCount="indefinite" />
+      </line>
+      <line x1="95" y1="9" x2="105" y2="9" stroke="currentColor" strokeWidth="2" opacity="0.4">
+        <animate attributeName="opacity" values="0.3;0.75;0.3" dur="2.2s" begin="0.3s" repeatCount="indefinite" />
+      </line>
+    </svg>
+  );
+}
+
+
 function AnimatedVisual({ type }: { type: string }) {
   switch (type) {
-    case "code":
-      return <CodeVisual />;
-    case "seo":
-      return <SEOVisual />;
-    case "mobile":
-      return <MobileVisual />;
-    case "ai":
-      return <AIVisual />;
+    case "ranking":
+      return <RankingVisual />;
+    case "collaboration":
+      return <CollaborationVisual />;
+    case "development":
+      return <DevelopmentVisual />;
     default:
-      return <CodeVisual />;
+      return <RankingVisual />;
   }
 }
 
@@ -314,9 +337,7 @@ export function FeaturesSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Kaikki mitä tarvitset.
-            <br />
-            <span className="text-[#a0a0a0]">Ei turhaa monimutkaisuutta.</span>
+            Kumppani yrityksellesi helpottamaan arkeasi ja edistämään liiketoimintaasi.
           </h2>
         </div>
 

@@ -25,6 +25,7 @@ const clients = [
   { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
   { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
   { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
+  { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
 ];
 
 export function TestimonialsSection() {
@@ -61,7 +62,7 @@ export function TestimonialsSection() {
           </h2>
           
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-8 max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
             {clients.map((client, index) => {
               const cardContent = (
                 <div className="w-full h-full flex items-center justify-center">

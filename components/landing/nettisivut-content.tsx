@@ -2,17 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  ArrowDown,
-  Fingerprint,
-  Smartphone,
-  Search,
-  Mail,
-  TrendingUp,
-  Layers,
-  Check,
-} from "lucide-react";
+import { ArrowRight, ArrowDown, Check } from "lucide-react";
+import { NettisivutFeaturesSection } from "@/components/landing/nettisivut-features-section";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,39 +21,6 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-const features = [
-  {
-    icon: Fingerprint,
-    title: "Yksilöllisesti suunniteltu",
-    desc: "Ei valmispohjia, ei kompromisseja. Sivustosi on rakennettu juuri sinun liiketoimintaasi varten.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobiiliystävällinen & nopea",
-    desc: "Toimii sujuvasti kaikilla laitteilla ja parantaa sijoitustasi hakutuloksissa.",
-  },
-  {
-    icon: Search,
-    title: "Hakukoneystävällinen pohja",
-    desc: "SEO-optimoitu rakenne, joka auttaa asiakkaitasi löytämään sinut Googlesta.",
-  },
-  {
-    icon: Mail,
-    title: "Lomakkeet & integraatiot",
-    desc: "Yhteydenottolomakkeet, kartat ja tarvittavat integraatiot valmiina käyttöön heti julkaisusta alkaen.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Google-näkyvyyden perusta",
-    desc: "Arvostelujen hyödyntäminen luottamuksen rakentamisessa ja näkyvyyden kasvattamisessa.",
-  },
-  {
-    icon: Layers,
-    title: "Skaalautuva ratkaisu",
-    desc: "Mahdollisuus laajentaa sivustoa ja lisätä toiminnallisuuksia myöhemmin liiketoimintasi kasvaessa.",
-  },
-];
-
 const projectTypes = [
   { label: "Esittelysivu", desc: "Selkeä ja tehokas yritysesittely" },
   { label: "Räätälöity kokonaisuus", desc: "Täysin yksilöllinen toteutus" },
@@ -72,7 +30,6 @@ const projectTypes = [
 
 export function NettisivutContent() {
   const [isVisible, setIsVisible] = useState(false);
-  const featuresInView = useInView(0.1);
   const uniqueInView = useInView(0.1);
   const pricingInView = useInView(0.1);
   const ctaInView = useInView(0.2);
@@ -228,57 +185,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
         </div>
       </section>
 
-      {/* ── Features ── */}
-      <section className="relative overflow-hidden py-24 lg:py-32 border-t border-[#2a2a2a]">
-        <div className="absolute inset-0 z-0">
-          <img src="/images/taustakuva.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#0d0d0d]/88" />
-        </div>
-        <div ref={featuresInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div
-            className={`mb-16 transition-all duration-700 ${
-              featuresInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
-              Kaikki mitä tarvitset menestyäksesi verkossa
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature, i) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={i}
-                  className={`group p-5 md:p-8 border border-[#2a2a2a] rounded-2xl bg-[#111111] hover:bg-[#151515] hover:border-[#3a3a3a] transition-all duration-500 ${
-                    featuresInView.inView
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
-                  }`}
-                  style={{
-                    transitionDelay: featuresInView.inView ? `${i * 80}ms` : "0ms",
-                  }}
-                >
-                  <div className="flex flex-row md:flex-col gap-4 md:gap-0 items-start">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center md:mb-6 group-hover:border-[#3a3a3a] transition-colors shrink-0">
-                      <Icon className="w-4 h-4 md:w-5 md:h-5 text-[#f0f0f0]" />
-                    </div>
-                    <div>
-                      <h3 className="text-[#f0f0f0] font-medium text-base md:text-lg mb-2 md:mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-[#a0a0a0] text-sm leading-relaxed">
-                        {feature.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <NettisivutFeaturesSection />
 
       {/* ── Unique Projects ── */}
       <section className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
@@ -425,25 +332,25 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
 
             {/* Discount card + CTA */}
             <div className="flex flex-col gap-4">
-            <div className="relative p-8 border border-[#2a2a2a] rounded-2xl bg-[#f0f0f0]/[0.03] overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#f0f0f0]/5 via-transparent to-transparent pointer-events-none rounded-2xl" />
+            <div className="relative p-8 border border-[#b8960c]/60 rounded-2xl bg-black/30 overflow-hidden backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
               <div className="relative">
-                <span className="font-mono text-xs tracking-widest text-[#a0a0a0] uppercase block mb-6">
+                <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-6">
                   Ylläpitopaketti
                 </span>
                 <div className="mb-6">
-                  <span className="font-display text-7xl text-[#f0f0f0] leading-none">
+                  <span className="font-display text-7xl text-[#f0c040] leading-none">
                     −25%
                   </span>
                 </div>
-                <p className="text-[#a0a0a0] text-sm leading-relaxed mb-8">
+                <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-8">
                   Huolenpito- tai ylläpitopaketin tilaajat saavat kotisivun
                   hinnasta 25 % alennuksen.
                 </p>
-                <div className="pt-6 border-t border-[#2a2a2a]">
+                <div className="pt-6 border-t border-[#b8960c]/40">
                   <a
                     href="/#paketit"
-                    className="inline-flex items-center gap-2 text-sm text-[#f0f0f0] hover:text-[#a0a0a0] transition-colors group"
+                    className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
                   >
                     Lue lisää ylläpitopaketeista
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

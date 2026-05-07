@@ -76,7 +76,7 @@ export function PricingSection() {
             Ylläpitopaketit
           </h2>
           <p className="text-lg text-[#a0a0a0] max-w-xl">
-            Valitse tarpeisiisi sopiva ylläpitopaketti. Kaikki paketit sisältävät domain, hostingin ja teknisen tuen.
+            Valitse tarpeisiisi sopiva ylläpitopaketti. Kaikki paketit sisältävät domain, hostingin ja teknisen tuen. Ylläpitopaketti ostetaan nettisivun oston yhteydessä.
           </p>
         </div>
 
