@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
-export function CtaSection() {
+export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: { backgroundImage?: string }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -55,7 +55,7 @@ export function CtaSection() {
   return (
     <section id="yhteystiedot" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden border-t border-[#2a2a2a] bg-[#0d0d0d]">
       <Image
-        src="/images/punanen.tausta.webp"
+        src={backgroundImage}
         alt=""
         fill
         className="object-cover opacity-20"

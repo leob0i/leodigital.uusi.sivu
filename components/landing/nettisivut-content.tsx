@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown, Check } from "lucide-react";
 import { NettisivutFeaturesSection } from "@/components/landing/nettisivut-features-section";
+import { CtaSection } from "@/components/landing/cta-section";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,8 +33,6 @@ export function NettisivutContent() {
   const [isVisible, setIsVisible] = useState(false);
   const uniqueInView = useInView(0.1);
   const pricingInView = useInView(0.1);
-  const ctaInView = useInView(0.2);
-
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
@@ -90,9 +89,9 @@ export function NettisivutContent() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="block">Nettisivut yritykselle,</span>
+              <span className="block">Enemmän kuin</span>
               <span className="block relative">
-                jotka tuovat asiakkaita
+                pelkkä nettisivu
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
               </span>
             </div>
@@ -370,46 +369,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
         </div>
       </section>
 
-      {/* ── Contact CTA ── */}
-      <section className="relative overflow-hidden py-24 lg:py-32 border-t border-[#2a2a2a]">
-        <div className="absolute inset-0 z-0">
-          <img src="/images/tumma.tausta.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#0d0d0d]/70" />
-        </div>
-        <div
-          ref={ctaInView.ref}
-          className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center"
-        >
-          <div
-            className={`transition-all duration-700 ${
-              ctaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8 justify-center">
-              <span className="w-8 h-px bg-[#f0f0f0]/30" />
-              Otetaan yhteyttä
-              <span className="w-8 h-px bg-[#f0f0f0]/30" />
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-6">
-              Suunnitellaan yhdessä
-            </h2>
-            <p className="text-xl text-[#a0a0a0] mb-12 max-w-2xl mx-auto leading-relaxed">
-              Onko sinulla idea, tarve tai kysymys? Ota yhteyttä – suunnitellaan
-              yhdessä kotisivut, jotka todella palvelevat liiketoimintaasi.
-            </p>
-            <Button
-              size="lg"
-              className="bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-10 h-16 text-lg rounded-full group"
-              asChild
-            >
-              <a href="/#yhteystiedot">
-                Ota yhteyttä
-                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection backgroundImage="/images/tumma.tausta.webp" />
     </>
   );
 }
