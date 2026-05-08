@@ -22,12 +22,6 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-const projectTypes = [
-  { label: "Esittelysivu", desc: "Selkeä ja tehokas yritysesittely" },
-  { label: "Räätälöity kokonaisuus", desc: "Täysin yksilöllinen toteutus" },
-  { label: "Varausjärjestelmä", desc: "Integroitu ajanvaraus tai maksaminen" },
-  { label: "Verkkokauppa", desc: "Tuotteiden myynti verkossa" },
-];
 
 export function NettisivutContent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +38,7 @@ export function NettisivutContent() {
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/herokuva.webp"
+            src="/images/sininen.tausta.webp"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -200,39 +194,24 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 Jokainen projekti on yksilöllinen
               </span>
               <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8">
-                Ei yhden koon
-                <br />
-                ratkaisuja
+                Helpotusta yrityksesi arkeen
               </h2>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6">
-                Emme usko yhden koon ratkaisuihin. Jokainen projekti on
-                ainutlaatuinen, ja olen aina innokas ideoimaan lisää ominaisuuksia
-                juuri sinun liiketoimintasi parantamiseksi ja helpottamiseksi.
-              </p>
               <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Kerro tarpeistasi – keksitään yhdessä paras ratkaisu.
+                Meille tärkeintä ei ole tehdä vain hyvännäköisiä verkkosivuja, vaan rakentaa ratkaisu, joka tukee yrityksesi toimintaa myös käytännössä. Sivuston tarkoitus on auttaa liiketoimintaasi, oli tavoitteena sitten saada enemmän yhteydenottoja, helpottaa ajanvarausta tai vähentää manuaalista työtä.
               </p>
             </div>
 
-            <div className="space-y-4">
-              {projectTypes.map((item, i) => (
-                <div
-                  key={i}
-                  className={`flex items-center gap-4 p-6 border border-[#2a2a2a] rounded-xl bg-[#161616] hover:border-[#3a3a3a] hover:bg-[#1a1a1a] transition-all duration-500 ${
-                    uniqueInView.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-                  }`}
-                  style={{
-                    transitionDelay: uniqueInView.inView ? `${(i + 1) * 100}ms` : "0ms",
-                  }}
-                >
-                  <div className="w-2 h-2 rounded-full bg-[#f0f0f0] shrink-0" />
-                  <div>
-                    <p className="text-[#f0f0f0] font-medium">{item.label}</p>
-                    <p className="text-sm text-[#a0a0a0]">{item.desc}</p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-[#3a3a3a] ml-auto shrink-0" />
-                </div>
-              ))}
+            <div
+              className={`transition-all duration-700 delay-150 ${
+                uniqueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8">
+                Kaikkea ei tarvitse päättää heti
+              </h2>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Verkkosivua voidaan kehittää myös julkaisun jälkeen yrityksesi tarpeiden mukaan. Ylläpitopakettien kautta sivustoon voidaan myöhemmin lisätä esimerkiksi ajanvarausjärjestelmä, asiakaspalvelubotti, uusia toimintoja tai muita integraatioita ilman että koko sivusto täytyy rakentaa uudelleen.
+              </p>
             </div>
           </div>
         </div>

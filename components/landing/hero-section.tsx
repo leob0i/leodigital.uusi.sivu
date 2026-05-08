@@ -114,7 +114,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-           Modernit verkkosivut, näkyvyys Googlessa ja tekoälyhauissa sekä jatkuva ylläpito samasta paikasta. Jätä digipuoli mulle ja keskity liiketoimintasi kasvattamiseen.
+           Modernit verkkosivut, hakukonenäkyvyys, hosting, päivitykset ja jatkuva ylläpito samasta paikasta. Jätä yrityksesi digipuoli yhdelle kumppanille ja keskity itse liiketoiminnan kasvattamiseen.
           </p>
           
           {/* CTAs */}
