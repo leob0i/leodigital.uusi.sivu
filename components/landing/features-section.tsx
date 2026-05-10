@@ -318,19 +318,9 @@ export function FeaturesSection() {
     <section
       id="palvelut"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative pt-24 lg:pt-32 pb-8 lg:pb-10 bg-[#0a0a0a]"
     >
-      {/* Background image with very dark overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/tumma.tausta.webp"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#0a0a0a]/92" />
-      </div>
-
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-24">
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] transition-all duration-700 ${

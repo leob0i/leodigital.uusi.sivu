@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://www.leodigital.fi/yllapito',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.leodigital.fi/kayttoehdot',
       lastModified: new Date(),
       changeFrequency: 'yearly',
