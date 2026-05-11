@@ -75,7 +75,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="mb-12">
 
-<h1 className="sr-only">Nettisivut, ylläpito ja näkyvyys</h1>
+<h1 className="sr-only">Yrityksellesi nettisivu, ylläpito ja näkyvyys</h1>
 
           <div 
             className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
