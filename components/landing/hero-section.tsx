@@ -128,8 +128,8 @@ export function HeroSection() {
               className="bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group"
               asChild
             >
-              <a href="#yhteystiedot">
-                Pyydä tarjous
+              <a href="/nettisivut">
+                Nettisivut
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -139,8 +139,8 @@ export function HeroSection() {
               className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
               asChild
             >
-              <a href="#kotisivut-499">
-                Hinnat
+              <a href="/yllapito">
+                Ylläpito
               </a>
             </Button>
           </div>
