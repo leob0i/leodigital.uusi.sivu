@@ -19,7 +19,7 @@ const steps = [
     number: "03",
     title: "Julkaisu ja jatko",
     description:
-      "Sivut voidaan toteuttaa kertamaksulla tai jatkuvalla ylläpidolla sisältäen kaiken mitä netissä näkymiseen tarvitset helposti ja edullisesti.",
+      "Sivut voidaan toteuttaa kertamaksulla tai jatkuvalla ylläpidolla sisältäen kaiken mitä netissä näkymiseen tarvitset helposti ja edullisesti. Valmis nettisivu sisältää yhden korjauskierroksen noin viikon kuluttua sivun valmistuttua.",
   },
 ];
 

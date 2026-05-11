@@ -75,7 +75,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="mb-12">
 
-<h1 className="sr-only">Kotisivut, Verkkosivut, ylläpito, tekoälyhaku ja hakukoneoptimointi. Leo Digital</h1>
+<h1 className="sr-only">Nettisivut, ylläpito ja näkyvyys</h1>
 
           <div 
             className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
@@ -114,7 +114,8 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-           Modernit verkkosivut, hakukonenäkyvyys, hosting, päivitykset ja jatkuva ylläpito samasta paikasta. Jätä yrityksesi digipuoli yhdelle kumppanille ja keskity itse liiketoiminnan kasvattamiseen.
+           Verkkosivut, jotka eivät jää vain sivuiksi, vaan tuovat asiakkaita yrityksellesi!
+Hoidan näkyvyyden, päivitykset ja kehityksen, jotta sinun ei tarvitse huolehtia digistä lainkaan.
           </p>
           
           {/* CTAs */}
