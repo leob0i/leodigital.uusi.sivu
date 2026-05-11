@@ -1,0 +1,82 @@
+import { ImageResponse } from 'next/og'
+
+export const runtime = 'edge'
+export const alt = 'Ylläpitopaketit | Leo Digital'
+export const size = { width: 1200, height: 630 }
+export const contentType = 'image/png'
+
+export default async function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          background: '#0d0d0d',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          padding: '80px',
+          fontFamily: 'sans-serif',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ width: '32px', height: '1px', background: 'rgba(240,240,240,0.3)' }} />
+          <span style={{ color: '#a0a0a0', fontSize: '18px' }}>
+            Täysi ylläpitopalvelu · leodigital.fi
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div
+            style={{
+              color: '#f0f0f0',
+              fontSize: '88px',
+              fontWeight: 700,
+              lineHeight: '0.92',
+              letterSpacing: '-2px',
+            }}
+          >
+            <div>Jätä digitaalinen</div>
+            <div>huoli minulle</div>
+          </div>
+          <div style={{ color: '#a0a0a0', fontSize: '26px', maxWidth: '760px', lineHeight: '1.5' }}>
+            Domain, hosting, tietoturva, päivitykset ja jatkuva kehitys – kaikki samasta paikasta.
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ color: '#f0f0f0', fontSize: '36px', fontWeight: 700 }}>Leo Digital</span>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <span
+              style={{
+                color: '#f0f0f0',
+                background: '#1a1a1a',
+                border: '1px solid #2a2a2a',
+                fontSize: '22px',
+                fontWeight: 600,
+                padding: '12px 28px',
+                borderRadius: '100px',
+              }}
+            >
+              Perus 14 €/kk
+            </span>
+            <span
+              style={{
+                color: '#0d0d0d',
+                background: '#f0f0f0',
+                fontSize: '22px',
+                fontWeight: 600,
+                padding: '12px 28px',
+                borderRadius: '100px',
+              }}
+            >
+              Plus 39 €/kk
+            </span>
+          </div>
+        </div>
+      </div>
+    ),
+    { ...size }
+  )
+}
