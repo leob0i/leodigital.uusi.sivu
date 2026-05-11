@@ -130,6 +130,14 @@ export function Navigation() {
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
+          {/* Logo Link */}
+          <a
+            href="/"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-6 left-6 p-2 font-display text-xl text-[#f0f0f0]"
+          >
+            Leo Digital
+          </a>
           {/* Close Button */}
           <button
             onClick={() => setIsMobileMenuOpen(false)}
