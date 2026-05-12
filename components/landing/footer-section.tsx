@@ -7,7 +7,7 @@ const footerLinks = {
   Paketit: [
     { name: "Perus", href: "#paketit" },
     { name: "Plus", href: "#paketit" },
-   
+    { name: "Autokorjaamot ja muu autoala", href: "/autokorjaamonsivut" },
   ],
   Yritys: [
     { name: "Tietoa meistä", href: "/leodigital" },
@@ -34,7 +34,7 @@ export function FooterSection() {
               </a>
 
               <p className="text-[#a0a0a0] leading-relaxed max-w-xs">
-                Suunnittelen ja toteutan moderneja verkkosivuja sekä huolehdin koko digitaalisesta näkyvyydestäsi.
+                Suunnittelen ja toteutan moderneja digiratkaisuja suomalaisille yrityksille, seuroille ja yksityisille etänä.
               </p>
             </div>
 
@@ -88,7 +88,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-[#2a2a2a] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[#a0a0a0]">
-            2025 Leo Digital. Kaikki oikeudet pidätetään.
+            2026 Leo Digital. Kaikki oikeudet pidätetään.
           </p>
 
           <div className="flex items-center gap-6 text-sm text-[#a0a0a0]">
