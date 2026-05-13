@@ -4,8 +4,8 @@ import { FooterSection } from "@/components/landing/footer-section";
 import { Navigation } from "@/components/landing/navigation";
 
 export const metadata: Metadata = {
-  title: "Kuka on Leo? | Leo Digital – Leo Apell",
-  description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan ja omistajaan. Lue lisää tarinastamme ja intohimostamme auttaa yrityksiä menestymään verkossa.",
+  title: "Kuka on Leo? | Leo Digital",
+  description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan. Yli 6 vuoden taustalla autoalalta ja intohimo digitaalisiin ratkaisuihin suomalaisille yrityksille.",
   keywords: [
     "Leo Apell",
     "Leo Digital",
@@ -16,16 +16,22 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Kuka on Leo? | Leo Digital",
-    description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan ja omistajaan.",
+    description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan. Yli 6 vuoden taustalla autoalalta ja intohimo digitaalisiin ratkaisuihin suomalaisille yrityksille.",
     url: "https://www.leodigital.fi/leodigital",
     siteName: "Leo Digital",
     locale: "fi_FI",
     type: "profile",
+    images: [
+      {
+        url: "/images/leoprofiilikuva.jpeg",
+        alt: "Leo Apell – Leo Digital",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kuka on Leo? | Leo Digital",
-    description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan ja omistajaan.",
+    description: "Tutustu Leo Apelliin, Leo Digitalin perustajaan. Yli 6 vuoden taustalla autoalalta ja intohimo digitaalisiin ratkaisuihin suomalaisille yrityksille.",
   },
   robots: {
     index: true,

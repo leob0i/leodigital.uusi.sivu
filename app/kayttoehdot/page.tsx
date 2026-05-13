@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Käyttö- ja sopimusehdot | Leo Digital",
   description: "Leo Digitalin pakettien käyttö- ja sopimusehdot. Perus, Plus ja Premium + Kirjanpito -pakettien ehdot.",
+  alternates: {
+    canonical: 'https://www.leodigital.fi/kayttoehdot',
+  },
 };
 
 export default function KayttoehdotPage() {
