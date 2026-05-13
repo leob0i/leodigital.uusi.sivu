@@ -68,7 +68,7 @@ export function AboutSection() {
                 Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
               </p>
               <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-2xl">
-                Räätälöidyt kotisivut yrityksesi tarpeisiin – SEO, mobiilioptimoint ja kaikki tarpeelliset toiminnot mukana alusta alkaen. Kertaprojektina tai yhdistettynä ylläpitoon.
+                Räätälöidyt kotisivut yrityksesi tarpeisiin – SEO, mobiilioptimoitu ja kaikki tarpeelliset toiminnot mukana alusta alkaen. Kertaprojektina tai yhdistettynä ylläpitoon.
               </p>
             </div>
 
