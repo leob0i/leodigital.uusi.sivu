@@ -52,54 +52,30 @@ export function AutokorjaamoPricingSection() {
           <div className="lg:col-span-2 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
               <h3 className="text-[#f0f0f0] text-2xl font-display">
-                Kertaostos – ei sitoutumista
+                Mitä autokorjaamon sivuihin kuuluu
               </h3>
-              <div className="flex items-baseline gap-2 shrink-0">
-                <span className="font-mono text-sm text-[#a0a0a0]">alkaen</span>
-                <span className="font-display text-5xl text-[#f0f0f0] leading-none">499€</span>
-              </div>
             </div>
             <div className="space-y-5 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+              {[
+                "Räätälöity ulkoasu – ei templaatteja, ei WordPressiä. Sivu tehdään juuri sinun korjaamolle sopivaksi.",
+                "Hakukoneoptimointi (SEO) – oikeat avainsanat, tekninen rakenne ja sisältö, joka löytyy Googlesta kun asiakas etsii korjaamoa läheltä.",
+                "Tekoälyhakuoptimointi (GEO) – sivusto on rakennettu niin, että ChatGPT, Perplexity ja muut tekoälypohjaiset haut suosittelevat yritystäsi.",
+                "Mobiilioptimoidut sivut – toimii moitteettomasti puhelimella, tabletilla ja tietokoneella.",
+                "Nopea latausaika – nopeus vaikuttaa suoraan hakukonenäkyvyyteen ja siihen, jääkö asiakas sivulle.",
+                "Yhteydenottolomake – asiakkaat voivat ottaa yhteyttä suoraan sivulta.",
+                "Tietosuoja- ja käyttöehtosivut – lakisääteiset sivut mukana automaattisesti.",
+                "Enintään 6 sivua – etusivu, palvelut, tietoa korjaamosta, yhteystiedot ja muut tarpeelliset.",
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                  </div>
+                  <p className="text-[#a0a0a0] leading-relaxed">{text}</p>
                 </div>
-                <p className="text-[#a0a0a0] leading-relaxed">
-                  Autokorjaamon nettisivut voi hankkia kertaostoksena ilman sitoutumista.
-                </p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                </div>
-                <p className="text-[#a0a0a0] leading-relaxed">
-                  Maksu on mahdollista jakaa kahteen erään: 50 % projektin
-                  alkaessa ja loput 50 % luovutuksen yhteydessä.
-                </p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                </div>
-                <p className="text-[#a0a0a0] leading-relaxed">
-                  Aloitushinta sisältää enintään 6 sivua sekä pakolliset
-                  tietosuoja- ja käyttöehtosivut.
-                </p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                </div>
-                <p className="text-[#a0a0a0] leading-relaxed">
-                  Laajemmat kokonaisuudet – kuten ajanvarausjärjestelmät,
-                  integraatiot ja muut räätälöidyt ratkaisut –
-                  suunnitellaan ja hinnoitellaan aina erikseen projektin laajuuden
-                  mukaan.
-                </p>
-              </div>
+              ))}
             </div>
             <p className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-snug mb-6">
-              Toteutamme kaikki projektit intohimolla ja ammattitaidolla.
+              Laajemmat kokonaisuudet – kuten ajanvarausjärjestelmät, integraatiot ja räätälöidyt ratkaisut – hinnoitellaan erikseen.
             </p>
             <p className="text-sm text-[#a0a0a0] italic mb-6">
               Otan mielelläni vastaan isommatkin projektit –{" "}
@@ -117,27 +93,51 @@ export function AutokorjaamoPricingSection() {
             <div className="relative p-8 border border-[#b8960c]/60 rounded-2xl bg-black/30 overflow-hidden backdrop-blur-sm">
               <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
               <div className="relative">
-                <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-6">
-                  Ylläpitopaketti
+                <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-4">
+                  ⭐ Starter – Sivut + ylläpito
                 </span>
-                <div className="mb-6">
-                  <span className="font-display text-7xl text-[#f0c040] leading-none">
-                    −25%
-                  </span>
+                <div className="mb-4">
+                  <span className="font-display text-4xl text-[#f0c040] leading-none">399 €</span>
+                  <span className="font-mono text-sm text-[#d4a017] ml-2">+ 14 €/kk</span>
                 </div>
-                <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-8">
-                  Huolenpito- tai ylläpitopaketin tilaajat saavat kotisivun
-                  hinnasta 25 % alennuksen.
+                <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
+                  Sivun rakennushinta + Perus-ylläpitopaketti sisältäen:
                 </p>
+                <ul className="space-y-2 mb-8">
+                  {["Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot", "Sähköpostituki"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-[#d4a017]/80">
+                      <Check className="w-3.5 h-3.5 text-[#d4a017] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 <div className="pt-6 border-t border-[#b8960c]/40">
                   <a
-                    href="/#paketit"
+                    href="/yllapito"
                     className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
                   >
-                    Lue lisää ylläpitopaketeista
+                    Lue lisää Perus-ylläpitopaketeista
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
+              </div>
+            </div>
+            {/* One-time purchase card */}
+            <div className="relative p-8 border border-[#f0f0f0]/20 rounded-2xl bg-black/30 overflow-hidden backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
+              <div className="relative">
+                <span className="font-mono text-xs tracking-widest text-[#f0f0f0] uppercase block mb-4">
+                  Tai kertaostos – ei sitoutumista
+                </span>
+                <div className="mb-4">
+                  <span className="font-display text-4xl text-[#f0f0f0] leading-none">499 €</span>
+                </div>
+                <p className="text-[#f0f0f0]/70 text-sm leading-relaxed">
+                  Kaikki sama sisältö, mutta ilman kuukausimaksua. Domain, hosting ja ylläpito järjestetään itse tai lisätään myöhemmin.{" "}
+                  <span className="italic">(Huomaa sivumme tarvitsee jonkin webhotellin,{" "}
+                    <a href="#yhteydenotto" className="underline underline-offset-2 hover:text-[#f0f0f0] transition-colors">kysy lisää</a>)
+                  </span>
+                </p>
               </div>
             </div>
             <a
