@@ -11,12 +11,23 @@ interface Particle {
   animationDuration: string;
 }
 
+const clients = [
+  { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
+  { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
+  { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
+  { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
+  { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
+  { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
+];
+
 export function LeoHero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const clientsRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [clientsVisible, setClientsVisible] = useState(false);
   const [contactForm, setContactForm] = useState({
     name: "",
     company: "",
@@ -35,6 +46,15 @@ export function LeoHero() {
         animationDuration: `${10 + Math.random() * 10}s`,
       }))
     );
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setClientsVisible(true); },
+      { threshold: 0.2 }
+    );
+    if (clientsRef.current) observer.observe(clientsRef.current);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -68,6 +88,25 @@ export function LeoHero() {
 
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-[#0d0d0d]">
+      {/* Background image with fade */}
+      <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: 'url(/images/taustakuva.webp)',
+            backgroundSize: '100% auto',
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(13,13,13,0) 0%, rgba(13,13,13,0.6) 20%, rgba(13,13,13,0.92) 35%, #0d0d0d 48%)',
+          }}
+        />
+      </div>
+
       {/* Animated gradient background that follows mouse */}
       <div 
         className="absolute inset-0 opacity-30 transition-all duration-1000 ease-out"
@@ -292,13 +331,106 @@ export function LeoHero() {
           </div>
         </div>
 
+        {/* Mekaanikosta kehittäjäksi */}
+        <div
+          className={`mt-24 lg:mt-32 relative transition-all duration-1000 delay-900 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+          }`}
+        >
+          {/* Background image with dark overlay */}
+          <div className="absolute inset-0 -mx-6 lg:-mx-8 rounded-2xl overflow-hidden">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'url(/images/mese.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="absolute inset-0 bg-[#0d0d0d]/88" />
+          </div>
+          <div className="relative z-10 px-8 py-14 lg:py-20">
+            <h2 className="text-3xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-10 leading-tight">
+              Mekaanikosta kehittäjäksi
+            </h2>
+            <div className="space-y-5 text-[#a0a0a0] leading-relaxed max-w-2xl">
+              <p>
+                Autot ja kaikenlaiset menopelit ovat olleet lähellä sydäntä jo pienestä asti, mikä veikin nuorena suoraan mekaanikon hommiin. Uraa tuli rakennettua BMW:n ja Mercedes-Benzin merkkihuolloissa, ja samalla harrasteautot, viritys sekä tuning pysyivät vahvasti mukana elämässä.
+              </p>
+              <p>
+                Autot ovat edelleen iso osa omaa kiinnostusta, enkä vieläkään oikein suostu ajamaan tavallisella kauppakassilla. Sama ajattelutapa näkyy myös nykyisissä projekteissa — vaikka nykyään verkkosivujen ulkonäkö ei yksin ratkaise kaikkea, pitää kokonaisuuden silti olla viimeistelty myös omaan silmään.
+              </p>
+              <p>
+                Vaikka ala vaihtui autoista ohjelmistokehitykseen, samat toimintatavat ovat pysyneet mukana: huolellisuus, ongelmanratkaisukyky ja halu rakentaa asioita, jotka toimivat oikeasti myös käytännössä.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Asiakkaat */}
+        <div ref={clientsRef} className="mt-24 lg:mt-32 relative z-10">
+          <h2
+            className={`text-3xl lg:text-4xl font-display text-[#f0f0f0] mb-12 transition-all duration-700 ${
+              clientsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            Yritykset, jotka luottavat osaamiseeni
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
+            {clients.map((client, index) => {
+              const cardContent = (
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                  />
+                </div>
+              );
+              const cardClass = `aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
+                clientsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`;
+              return client.url ? (
+                <a
+                  key={client.name}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClass}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div
+                  key={client.name}
+                  className={cardClass}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {cardContent}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Contact form */}
         <div
           className={`mt-24 lg:mt-32 transition-all duration-1000 delay-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
           }`}
         >
-          <div className="relative border border-[#f0f0f0] bg-[#1a1a1a]">
+          <div className="relative border border-[#f0f0f0] overflow-hidden">
+            {/* Background image */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'url(/images/herokuva.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="absolute inset-0 bg-[#0d0d0d]/85" />
             <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
               <div className="grid lg:grid-cols-2 gap-16">
                 {/* Left content */}
