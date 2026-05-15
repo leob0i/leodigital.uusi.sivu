@@ -210,7 +210,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl">
-              Meillä ei ole tarkoitusta rakentaa vain näyttävää kotisivua
+              Minulla ei ole tarkoitusta rakentaa vain näyttävää kotisivua
             </h2>
           </div>
 
@@ -221,14 +221,14 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
           >
             <div>
               <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8">
-                Rehellisesti — mitä nettisivu tekee? Ei mitään muuta kuin näyttää
+                Rehellisesti. Mitä nettisivu tekee? Ei mitään muuta kuin näyttää
                 hyvältä, jos se ei ratkaise ongelmaa, tuo uusia yhteydenottoja tai
                 helpota yrityksesi arkea.
               </p>
               <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Meidän nettisivujen tarkoitus on ratkaista oikea ongelma ja tuottaa
+                Minun nettisivujen tarkoitus on ratkaista oikea ongelma ja tuottaa
                 rahallista arvoa yrityksellesi. Onko se liian vähän yhteydenottoja,
-                liikaa niitä — vai kuka niihin kerkeää vastata?
+                liikaa niitä, vai kuka niihin kerkeää vastata?
               </p>
             </div>
             <div>
@@ -238,7 +238,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
                 rakentaa uusi sovellus arjen helpottamiseksi.
               </p>
               <p className="text-xl font-display text-[#f0f0f0] leading-snug">
-                Tarkoituksemme on ratkaista ongelma ja tuottaa arvoa yrityksellesi —
+                Tarkoitukseni on ratkaista ongelma ja tuottaa arvoa yrityksellesi,
                 ei vain tehdä näyttävä nettisivu.
               </p>
             </div>
@@ -279,6 +279,18 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>
+        </div>
+      </section>
+
+      {/* ── Verkkosivut koko autoalalle ── */}
+      <section className="relative py-12 lg:py-16 border-t border-[#2a2a2a]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl mb-10">
+            Verkkosivut koko autoalalle
+          </h2>
+          <p className="text-lg text-[#a0a0a0] leading-relaxed max-w-2xl">
+            Teen verkkosivuja myös detailing-yrityksille, autoteippauksille, tuning-pajoille ja muille autoalan yrityksille, ymmärtäen miltä alan pitää näyttää myös verkossa.
+          </p>
         </div>
       </section>
 
