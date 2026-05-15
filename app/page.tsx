@@ -118,11 +118,10 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <IntroSection />
-      <HowItWorksSection />
       <AboutSection />
+      <HowItWorksSection />
       <NoSubscriptionSection />
       <LeoTeaserSection />
-      <PricingSection />
       <TestimonialsSection />
       <CtaSection />
       <FooterSection />

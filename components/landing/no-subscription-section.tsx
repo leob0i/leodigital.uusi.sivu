@@ -21,9 +21,19 @@ export function NoSubscriptionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 lg:py-28 bg-[#0a0a0a] border-t border-[#2a2a2a]"
+      className="relative py-20 lg:py-28 border-t border-[#2a2a2a] overflow-hidden"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/herokuva.webp"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0a0a0a]/80" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-3xl">
           <h2
             className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8 transition-all duration-700 ${
@@ -37,14 +47,14 @@ export function NoSubscriptionSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Kaikki verkkosivut voidaan toteuttaa myös kertamaksulla ilman jatkuvaa sopimusta. Moni asiakkaista kuitenkin valitsee ylläpitopaketin, jolloin huolehdin teknisestä ylläpidosta, tietoturvasta, pienistä muutoksista ja näkyvyyden kehittämisestä jatkuvasti.
+            Kaikki verkkosivut voidaan toteuttaa myös kertamaksulla ilman jatkuvaa sopimusta. Mutta sivut tarvitsevat vähintäänkin domainin, webhotellin toimiakseen.
           </p>
           <p
             className={`text-lg text-[#a0a0a0] leading-relaxed transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Ylläpitopaketti sopii erityisesti yrityksille, jotka haluavat keskittyä omaan liiketoimintaan ilman huolta verkkosivujen toimivuudesta tai päivityksistä. Sinä keskityt liiketoimintaan ja me pidetään digi kunnossa!
+            Ylläpitopaketti sopii erityisesti yrityksille, jotka haluavat keskittyä omaan liiketoimintaan ilman huolta verkkosivujen toimivuudesta tai päivityksistä. Sinä keskityt liiketoimintaan, me pidetään digi ajantasalla ja aina valmiina!
           </p>
         </div>
       </div>
