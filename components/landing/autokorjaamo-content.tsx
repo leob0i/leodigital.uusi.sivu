@@ -210,7 +210,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl">
-              Minulla ei ole tarkoitusta rakentaa vain näyttävää kotisivua
+              Tarkoitus ei ole rakentaa vain näyttävää kotisivua
             </h2>
           </div>
 
@@ -282,19 +282,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
         </div>
       </section>
 
-      {/* ── Verkkosivut koko autoalalle ── */}
-      <section className="relative py-12 lg:py-16 border-t border-[#2a2a2a]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl mb-10">
-            Verkkosivut koko autoalalle
-          </h2>
-          <p className="text-lg text-[#a0a0a0] leading-relaxed max-w-2xl">
-            Teen verkkosivuja myös detailing-yrityksille, autoteippauksille, tuning-pajoille ja muille autoalan yrityksille, ymmärtäen miltä alan pitää näyttää myös verkossa.
-          </p>
-        </div>
-      </section>
-
-      <AutokorjaamoPricingSection />
+<AutokorjaamoPricingSection />
 
       {/* ── Aiempia töitäni ── */}
       <section className="relative py-8 lg:py-12 bg-[#0d0d0d] border-t border-[#2a2a2a]">
