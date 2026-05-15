@@ -44,6 +44,7 @@ import { NoSubscriptionSection } from "@/components/landing/no-subscription-sect
 import { AboutSection } from "@/components/landing/about-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
+import { LeoTeaserSection } from "@/components/landing/leo-teaser-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
@@ -120,6 +121,7 @@ export default function Home() {
       <HowItWorksSection />
       <AboutSection />
       <NoSubscriptionSection />
+      <LeoTeaserSection />
       <PricingSection />
       <TestimonialsSection />
       <CtaSection />
