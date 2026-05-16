@@ -61,7 +61,8 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-0.5 group">
+            <img src="/images/leodigital.logo.webp" alt="Leo Digital logo" className={`transition-all duration-500 object-contain ${isScrolled ? "h-10" : "h-14"}`} />
             <span className={`font-display tracking-tight transition-all duration-500 text-[#f0f0f0] ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
           </a>
 
@@ -135,8 +136,9 @@ export function Navigation() {
           <a
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-6 left-6 p-2 font-display text-xl text-[#f0f0f0]"
+            className="absolute top-6 left-6 p-2 flex items-center gap-0.5 font-display text-xl text-[#f0f0f0]"
           >
+            <img src="/images/leodigital.logo.webp" alt="Leo Digital logo" className="h-10 object-contain" />
             Leo Digital
           </a>
           {/* Close Button */}
