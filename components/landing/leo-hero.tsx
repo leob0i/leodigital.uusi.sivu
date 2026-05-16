@@ -74,13 +74,13 @@ export function LeoHero() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("https://formsubmit.co/ajax/leo@leodigital.fi", {
+    await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(contactForm),
+      body: JSON.stringify({ access_key: "a399d30b-4e5f-44e7-8591-64f8677eb68b", ...contactForm }),
     });
     setContactForm({ name: "", company: "", email: "", phone: "", message: "" });
     setSubmitted(true);
