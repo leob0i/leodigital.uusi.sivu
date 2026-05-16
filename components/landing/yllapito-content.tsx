@@ -6,7 +6,7 @@ import { ArrowRight, ArrowDown, Check } from "lucide-react";
 import { CtaSection } from "@/components/landing/cta-section";
 import { MaintenanceSection } from "@/components/landing/maintenance-section";
 import { FeaturesSection } from "@/components/landing/features-section";
-import { AboutSection } from "@/components/landing/about-section";
+import { AboutSectionYllapito } from "@/components/landing/about-section-yllapito";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -310,7 +310,7 @@ export function YllapitoContent() {
         </div>
       </section>
 
-      <AboutSection />
+      <AboutSectionYllapito />
       <CtaSection backgroundImage="/images/tumma.tausta.webp" />
     </>
   );
