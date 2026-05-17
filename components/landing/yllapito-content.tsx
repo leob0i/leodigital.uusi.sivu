@@ -26,30 +26,28 @@ function useInView(threshold = 0.15) {
 
 const plans = [
   {
-    idx: 1,
-    name: "Perus",
-    description:
-      "Pienyrityksille ja aloittaville yrityksille. Sisältää kaikki mitä tarvitset jatkuvaan näkyvyyteen netissä.",
-    price: 14,
-    features: ["Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot", "Sähköpostituki"],
-    cta: "Valitse Perus",
-    popular: false,
-  },
-  {
-    idx: 2,
     name: "Plus",
     description:
-      "Kun tavoite on pysyä kilpailijoiden edellä ja pitää sivusto aina ajantasalla.",
-    price: 39,
+      "Kun tavoite on pysyä kilpailijoiden edellä ja pitää sivusto aina ajantasalla. ",
+    price: 49,
     features: [
-      "Kaikki Perus-paketin ominaisuudet",
-      "Sisältöpäivitys kerran kuussa halutessasi",
+      "Kaikki edellämainitut",
+      "Pienet sisältöpäivitykset",
       "SEO kehitys ja seuranta",
       "WhatsApp-tuki",
       "Kuukausiraportti",
     ],
     cta: "Valitse Plus",
     popular: true,
+  },
+  {
+    name: "Perus",
+    description:
+      "Ei sisällä sisältöpäivityksiä tai muuta aktiivista kehitystä",
+    price: 19,
+    features: ["Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot", "Sähköpostituki"],
+    cta: "Valitse Perus",
+    popular: false,
   },
 ];
 
@@ -135,7 +133,7 @@ export function YllapitoContent() {
               </p>
               <div className="inline-flex items-baseline gap-2">
                 <span className="text-sm font-mono text-[#a0a0a0]">alkaen</span>
-                <span className="text-4xl font-display text-[#f0f0f0] leading-none">14€/kk</span>
+                <span className="text-4xl font-display text-[#f0f0f0] leading-none">19€/kk</span>
               </div>
             </div>
             <div
@@ -258,10 +256,7 @@ export function YllapitoContent() {
                 )}
 
                 <div className="mb-6">
-                  <span className="font-mono text-xs text-[#a0a0a0]">
-                    {String(plan.idx).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-2xl text-[#f0f0f0] mt-2">{plan.name}</h3>
+                  <h3 className="font-display text-2xl text-[#f0f0f0]">{plan.name}</h3>
                   <p className="text-sm text-[#a0a0a0] mt-2">{plan.description}</p>
                 </div>
 

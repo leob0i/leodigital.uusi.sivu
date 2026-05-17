@@ -98,7 +98,7 @@ export function AutokorjaamoPricingSection() {
                 </span>
                 <div className="mb-4">
                   <span className="font-display text-4xl text-[#f0c040] leading-none">399 €</span>
-                  <span className="font-mono text-sm text-[#d4a017] ml-2">+ 14 €/kk</span>
+                  <span className="font-mono text-sm text-[#d4a017] ml-2">+ 19 €/kk</span>
                 </div>
                 <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
                   Sivun rakennushinta + Perus-ylläpitopaketti sisältäen:
@@ -134,7 +134,7 @@ export function AutokorjaamoPricingSection() {
                 </div>
                 <p className="text-[#f0f0f0]/70 text-sm leading-relaxed">
                   Kaikki sama sisältö, mutta ilman kuukausimaksua. Domain, hosting ja ylläpito järjestetään itse tai lisätään myöhemmin.{" "}
-                  <span className="italic">(Huomaa sivumme tarvitsee jonkin webhotellin,{" "}
+                  <span className="italic">(Huomaa sivumme tarvitsee jatkuvaa ylläpitoa toimiakseen,{" "}
                     <a href="#yhteydenotto" className="underline underline-offset-2 hover:text-[#f0f0f0] transition-colors">kysy lisää</a>)
                   </span>
                 </p>

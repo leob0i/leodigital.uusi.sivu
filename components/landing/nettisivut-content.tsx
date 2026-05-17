@@ -247,7 +247,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
             <div className="lg:col-span-2 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
                 <h3 className="text-[#f0f0f0] text-2xl font-display">
-                  Kertaostos – ei sitoutumista
+                  Mitä aloitushinta sisältää?
                 </h3>
                 <div className="flex items-baseline gap-2 shrink-0">
                   <span className="font-mono text-sm text-[#a0a0a0]">alkaen</span>
@@ -260,7 +260,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                     <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
                   </div>
                   <p className="text-[#a0a0a0] leading-relaxed">
-                    Kotisivut voi hankkia kertaostoksena ilman sitoutumista.
+                   Räätälöity Next.js + Tailwind kokonaisuus, ei wordpressiä tai muita valmispohjia. 
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
@@ -268,8 +268,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                     <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
                   </div>
                   <p className="text-[#a0a0a0] leading-relaxed">
-                    Maksu on mahdollista jakaa kahteen erään: 50 % projektin
-                    alkaessa ja loput 50 % luovutuksen yhteydessä.
+                    Hakukone ja tekoälyhaku huomioitu alusta alkaen
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
@@ -293,8 +292,8 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                   </p>
                 </div>
               </div>
-              <p className="text-xl lg:text-2xl font-display text-[#f0f0f0] leading-snug mb-6">
-                Toteutamme kaikki projektit intohimolla ja ammattitaidolla.
+              <p className="text-base lg:text-lg font-display text-[#f0f0f0] leading-snug mb-6">
+                Kaikki sivumme tarvitsevat ylläpitoa toimiakseen nopeina ja luotettavina. Siksi suosittelemme ylläpitoa jotta sivustosi pysyy nopeana ja laadukkaana päivästä toiseen.
               </p>
               <p className="text-sm text-[#a0a0a0] italic mb-6">
                 Otan mielelläni vastaan isommatkin projektit –{" "}

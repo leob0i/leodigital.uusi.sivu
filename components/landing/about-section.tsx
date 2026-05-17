@@ -93,7 +93,7 @@ export function AboutSection() {
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0] mb-3">
-                Ylläpito alkaen <span className="font-black text-[#f0c040]">14€</span>
+                Ylläpito alkaen <span className="font-black text-[#f0c040]">19€</span>
               </h2>
               <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-2xl">
                 Sisältää domainin, hostingin ja teknisen tuen. Plus-paketissa lisäksi sisältöpäivitykset, SEO-seuranta ja jatkuva kehitys yrityksesi näkyvyyden tueksi.

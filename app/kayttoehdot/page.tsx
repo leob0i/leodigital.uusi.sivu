@@ -90,7 +90,7 @@ export default function KayttoehdotPage() {
         <div className="mb-16 border-t border-[#2a2a2a] pt-12">
           <div className="flex items-baseline gap-4 mb-6">
             <h2 className="text-2xl font-light text-[#f0f0f0]">Perus-paketti</h2>
-            <span className="font-mono text-sm text-[#a0a0a0]">14 €/kk + ALV</span>
+            <span className="font-mono text-sm text-[#a0a0a0]">19 €/kk + ALV</span>
           </div>
           <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
             <p>Perus-paketti on tarkoitettu pienyrityksille ja aloittaville yrityksille. Paketti kattaa domain-rekisteröinnin ja uusinnan, SSL-sertifikaatin, hosting-palvelun sekä automaattiset varmuuskopiot.</p>
@@ -103,7 +103,7 @@ export default function KayttoehdotPage() {
         <div className="mb-16 border-t border-[#2a2a2a] pt-12">
           <div className="flex items-baseline gap-4 mb-6">
             <h2 className="text-2xl font-light text-[#f0f0f0]">Plus-paketti</h2>
-            <span className="font-mono text-sm text-[#a0a0a0]">39 €/kk + ALV</span>
+            <span className="font-mono text-sm text-[#a0a0a0]">49 €/kk + ALV</span>
           </div>
           <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
             <p>Paketti kattaa domain-rekisteröinnin ja uusinnan, SSL-sertifikaatin, hosting-palvelun sekä automaattiset varmuuskopiot.</p>
