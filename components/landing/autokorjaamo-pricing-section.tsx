@@ -97,7 +97,7 @@ export function AutokorjaamoPricingSection() {
                   ⭐ Starter – Sivut + ylläpito
                 </span>
                 <div className="mb-4">
-                  <span className="font-display text-4xl text-[#f0c040] leading-none">399 €</span>
+                  <span className="font-display text-4xl text-[#f0c040] leading-none">499 €</span>
                   <span className="font-mono text-sm text-[#d4a017] ml-2">+ 19 €/kk</span>
                 </div>
                 <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
@@ -120,24 +120,6 @@ export function AutokorjaamoPricingSection() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
-              </div>
-            </div>
-            {/* One-time purchase card */}
-            <div className="relative p-8 border border-[#f0f0f0]/20 rounded-2xl bg-black/30 overflow-hidden backdrop-blur-sm">
-              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
-              <div className="relative">
-                <span className="font-mono text-xs tracking-widest text-[#f0f0f0] uppercase block mb-4">
-                  Tai kertaostos – ei sitoutumista
-                </span>
-                <div className="mb-4">
-                  <span className="font-display text-4xl text-[#f0f0f0] leading-none">499 €</span>
-                </div>
-                <p className="text-[#f0f0f0]/70 text-sm leading-relaxed">
-                  Kaikki sama sisältö, mutta ilman kuukausimaksua. Domain, hosting ja ylläpito järjestetään itse tai lisätään myöhemmin.{" "}
-                  <span className="italic">(Huomaa sivumme tarvitsee jatkuvaa ylläpitoa toimiakseen,{" "}
-                    <a href="#yhteydenotto" className="underline underline-offset-2 hover:text-[#f0f0f0] transition-colors">kysy lisää</a>)
-                  </span>
-                </p>
               </div>
             </div>
             <a
