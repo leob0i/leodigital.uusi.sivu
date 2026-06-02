@@ -4,23 +4,12 @@ import { ArrowRight, Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Perus",
-    description: "Pienyrityksille ja aloittaville yrityksille. Sisältää kaikki mitä tarvitset jatkuvaan näkyvyyteen netissä.",
-    price: 14,
+    name: "Plus",
+    description: "Kun tavoite on pysyä kilpailijoiden edellä ja pitää sivusto aina ajantasalla. ",
+    price: 49,
     features: [
       "Domain & SSL-sertifikaatti",
       "Hosting & varmuuskopiot",
-      "Sähköpostituki",
-    ],
-    cta: "Valitse Perus",
-    popular: false,
-  },
-  {
-    name: "Plus",
-    description: "Kun tavoite on pysyä kilpailijoiden edellä ja pitää sivusto aina ajantasalla. ",
-    price: 39,
-    features: [
-      "Kaikki Perus-paketin ominaisuudet",
       "Sisältöpäivitys kerran kuussa halutessasi",
       "SEO kehitys ja seuranta",
       "WhatsApp-tuki",

@@ -5,21 +5,21 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
+    title: "Jatkuva kehitys",
+    description: "Sivustoa voidaan päivittää myös julkaisun jälkeen ilman että kaikkea tarvitsee rakentaa uudelleen. Uudet palvelut, sisältömuutokset, kuvat, lisäsivut ja parannukset onnistuvat hallitusti yrityksen kasvaessa. Päivitykset onnistuu helposti 24/7 WhatsApp:in kautta.",
+    visual: "development",
+  },
+  {
+    number: "02",
     title: "Kilpailukyky ja näkyvyys",
     description: "Jokaisen päivityksen yhteydessä käymme aina läpi hakusanat jotta yrityksesi pysyy aina kilpailukykyisenä myös tekoälyyn pohjautuvissa hauissa. Näin sivusi pysyy aina \"freshin\" näköisenä.",
     visual: "ranking",
   },
   {
-    number: "02",
-    title: "Huoleton yhteistyö",
-    description: "Tavoitteena on tehdä verkkopuolesta yrittäjälle mahdollisimman yksinkertainen. Saat yhden yhteyshenkilön verkkosivuihin, näkyvyyteen ja digitaaliseen kehitykseen liittyvissä asioissa ilman turhaa teknistä säätöä.",
-    visual: "collaboration",
-  },
-  {
     number: "03",
-    title: "Jatkuva kehitys",
-    description: "Sivustoa voidaan päivittää myös julkaisun jälkeen ilman että kaikkea tarvitsee rakentaa uudelleen. Uudet palvelut, sisältömuutokset, lisäsivut ja parannukset onnistuvat hallitusti yrityksen kasvaessa.",
-    visual: "development",
+    title: "Huoleton yhteistyö",
+    description: "Tavoitteena on tehdä verkkopuolesta yrittäjälle mahdollisimman yksinkertainen. Sä saat keskittyä liiketoimintaasi ja mä pidän kaikki digiasiat kunnossa! Päivitykset, tuki ja muutkin yhteydenotot onnituvat nopeasti ja vaivattomasti myös viikonloppuisinkin.",
+    visual: "collaboration",
   },
 ];
 

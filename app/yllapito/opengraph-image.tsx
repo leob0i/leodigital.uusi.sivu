@@ -50,19 +50,6 @@ export default async function Image() {
           <div style={{ display: 'flex', gap: '16px' }}>
             <span
               style={{
-                color: '#f0f0f0',
-                background: '#1a1a1a',
-                border: '1px solid #2a2a2a',
-                fontSize: '22px',
-                fontWeight: 600,
-                padding: '12px 28px',
-                borderRadius: '100px',
-              }}
-            >
-              Perus 14 €/kk
-            </span>
-            <span
-              style={{
                 color: '#0d0d0d',
                 background: '#f0f0f0',
                 fontSize: '22px',
@@ -71,7 +58,7 @@ export default async function Image() {
                 borderRadius: '100px',
               }}
             >
-              Plus 39 €/kk
+              Plus 49 €/kk
             </span>
           </div>
         </div>

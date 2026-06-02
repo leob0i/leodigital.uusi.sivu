@@ -60,19 +60,10 @@ const jsonLd = {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Perus',
-        description:
-          'Pienyrityksille ja aloittaville yrityksille. Sisältää domain, SSL-sertifikaatin, hostingin, varmuuskopiot ja sähköpostituen.',
-        price: '14',
-        priceCurrency: 'EUR',
-        eligibleRegion: { '@type': 'Country', name: 'Finland' },
-      },
-      {
-        '@type': 'Offer',
         name: 'Plus',
         description:
-          'Kaikki Perus-paketin ominaisuudet sekä sisältöpäivitys kerran kuussa, SEO kehitys ja seuranta, WhatsApp-tuki ja kuukausiraportti.',
-        price: '39',
+          'Sisältää domain, SSL-sertifikaatin, hostingin, varmuuskopiot, sisältöpäivityksen kerran kuussa, SEO kehitys ja seuranta, WhatsApp-tuki ja kuukausiraportti.',
+        price: '49',
         priceCurrency: 'EUR',
         eligibleRegion: { '@type': 'Country', name: 'Finland' },
       },

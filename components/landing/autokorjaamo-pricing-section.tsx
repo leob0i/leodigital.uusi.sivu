@@ -60,10 +60,7 @@ export function AutokorjaamoPricingSection() {
                 "Räätälöity ulkoasu – ei templaatteja, ei WordPressiä. Sivu tehdään juuri sinun korjaamolle sopivaksi.",
                 "Hakukoneoptimointi (SEO) – oikeat avainsanat, tekninen rakenne ja sisältö, joka löytyy Googlesta kun asiakas etsii korjaamoa läheltä.",
                 "Tekoälyhakuoptimointi (GEO) – sivusto on rakennettu niin, että ChatGPT, Perplexity ja muut tekoälypohjaiset haut suosittelevat yritystäsi.",
-                "Mobiilioptimoidut sivut – toimii moitteettomasti puhelimella, tabletilla ja tietokoneella.",
-                "Nopea latausaika – nopeus vaikuttaa suoraan hakukonenäkyvyyteen ja siihen, jääkö asiakas sivulle.",
-                "Yhteydenottolomake – asiakkaat voivat ottaa yhteyttä suoraan sivulta.",
-                "Tietosuoja- ja käyttöehtosivut – lakisääteiset sivut mukana automaattisesti.",
+                "Mobiilioptimoidut ja nopeat sivut toimii moitteettomasti puhelimella, tabletilla ja tietokoneella.",
                 "Enintään 6 sivua – etusivu, palvelut, tietoa korjaamosta, yhteystiedot ja muut tarpeelliset.",
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -97,14 +94,14 @@ export function AutokorjaamoPricingSection() {
                   ⭐ Starter – Sivut + ylläpito
                 </span>
                 <div className="mb-4">
-                  <span className="font-display text-4xl text-[#f0c040] leading-none">499 €</span>
-                  <span className="font-mono text-sm text-[#d4a017] ml-2">+ 19 €/kk</span>
+                  <span className="font-display text-4xl text-[#f0c040] leading-none">99 €</span>
+                  <span className="font-mono text-sm text-[#d4a017] ml-2">+ 49 €/kk</span>
                 </div>
                 <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
-                  Sivun rakennushinta + Perus-ylläpitopaketti sisältäen:
+                  Sivun rakennushinta + ylläpitopaketti sisältäen:
                 </p>
                 <ul className="space-y-2 mb-8">
-                  {["Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot", "Sähköpostituki"].map((item) => (
+                  {["Päivitykset ja muutokset WhatsApp:in kautta","Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot"].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-[#d4a017]/80">
                       <Check className="w-3.5 h-3.5 text-[#d4a017] shrink-0" />
                       {item}
@@ -116,7 +113,7 @@ export function AutokorjaamoPricingSection() {
                     href="/yllapito"
                     className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
                   >
-                    Lue lisää Perus-ylläpitopaketeista
+                    Lue lisää ylläpitopaketeista
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>

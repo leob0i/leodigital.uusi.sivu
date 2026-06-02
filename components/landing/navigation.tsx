@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinksFi = [
   { name: "Nettisivut", href: "/nettisivut" },
-  { name: "Ylläpitopaketit", href: "/yllapito" },
+  { name: "Ylläpito", href: "/yllapito" },
   { name: "Autoala", href: "/autokorjaamonsivut" },
   { name: "Kuka on Leo?", href: "/leodigital" },
   { name: "Työni", href: "#asiakkaat" },

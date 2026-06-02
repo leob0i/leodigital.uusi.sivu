@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const features = [
   {
@@ -23,6 +25,15 @@ const features = [
     description:
       "Sivut toimivat moitteettomasti kaikilla laitteilla. Responsiivinen suunnittelu varmistaa, että asiakkaasi löytävät sinut puhelimella, tabletilla ja tietokoneella.",
     visual: "mobile",
+  },
+  {
+    number: "04",
+    title: "Jatkuva ylläpito",
+    description:
+      "Sivun päivitykset helposti ja nopeasti WhatsApp:in välityksellä, kuten uudet kuvat, palvelu tai puhelinnumeron vaihdos. Huolehdin myös domainista, hostingista, varmuuskopioista ja muusta digistä puolestasi.",
+    visual: "update",
+    link: "/yllapito",
+    linkLabel: "Lue lisää ylläpidosta",
   },
 ];
 
@@ -101,11 +112,37 @@ function MobileVisual() {
   );
 }
 
+function UpdateVisual() {
+  return (
+    <svg viewBox="0 0 200 160" className="w-full h-full">
+      <circle cx="100" cy="80" r="40" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.2" />
+      <path
+        d="M 100 45 A 35 35 0 1 1 65 80"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      >
+        <animateTransform attributeName="transform" type="rotate" from="0 100 80" to="360 100 80" dur="2.5s" repeatCount="indefinite" />
+      </path>
+      <polygon points="65,80 55,68 76,68" fill="currentColor">
+        <animateTransform attributeName="transform" type="rotate" from="0 100 80" to="360 100 80" dur="2.5s" repeatCount="indefinite" />
+      </polygon>
+      {[0, 1, 2].map((i) => (
+        <rect key={i} x="76" y={70 + i * 10} width="48" height="6" rx="3" fill="currentColor" opacity="0.25">
+          <animate attributeName="opacity" values="0.25;0.6;0.25" dur="1.8s" begin={`${i * 0.3}s`} repeatCount="indefinite" />
+        </rect>
+      ))}
+    </svg>
+  );
+}
+
 function AnimatedVisual({ type }: { type: string }) {
   switch (type) {
     case "code":   return <CodeVisual />;
     case "seo":    return <SEOVisual />;
     case "mobile": return <MobileVisual />;
+    case "update": return <UpdateVisual />;
     default:       return <CodeVisual />;
   }
 }
@@ -138,6 +175,21 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
               {feature.title}
             </h3>
             <p className="text-lg text-[#a0a0a0] leading-relaxed">{feature.description}</p>
+            {"link" in feature && feature.link && (
+              <div className="mt-6">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 px-6 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
+                  asChild
+                >
+                  <a href={feature.link}>
+                    {feature.linkLabel}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
+            )}
           </div>
           <div className="flex justify-center lg:justify-end">
             <div className="w-48 h-40 text-[#f0f0f0]">
@@ -176,9 +228,7 @@ export function NettisivutFeaturesSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Kaikki mitä tarvitset.
-            <br />
-            <span className="text-[#a0a0a0]">Ei turhaa monimutkaisuutta.</span>
+            Sivut jotka kasvavat yrityksesi mukana
           </h2>
         </div>
         <div>

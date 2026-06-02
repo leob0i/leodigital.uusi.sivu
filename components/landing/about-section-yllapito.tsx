@@ -57,11 +57,11 @@ export function AboutSectionYllapito() {
             <div>
               <div className="flex flex-wrap items-center gap-4 mb-2">
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0]">
-                  Kotisivut alkaen <span className="font-black text-[#f0f0f0]">499 €</span>
+                  Kotisivujen aloitusmaksu alk. <span className="font-black text-[#f0f0f0]">99 €</span>
                 </h2>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#b8960c]/60 bg-[#b8960c]/8 backdrop-blur-sm">
-                  <span className="text-xs font-medium text-[#d4a017] tracking-wide">Ylläpitopaketin ostajalle nettisivut</span>
-                  <span className="text-xs font-black text-[#f0c040]">-25%</span>
+                  <span className="text-xs font-medium text-[#d4a017] tracking-wide">Jonka jälkeen ylläpito</span>
+                  <span className="text-xs font-black text-[#f0c040]">49€/kk</span>
                 </div>
               </div>
               <p className="text-base text-[#f0f0f0]/80 font-medium mb-3">

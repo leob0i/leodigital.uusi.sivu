@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Shield, Headphones, Palette } from "lucide-react";
+import { Shield, Headphones, Palette, RefreshCw } from "lucide-react";
 
 const services = [
+  {
+    icon: RefreshCw,
+    title: "Päivitykset ja uudet palvelut",
+    description: "Pienet sisältöpäivitykset, kuvat tai palvelut WhatsApp:in kautta nopeasti.",
+  },
   {
     icon: Palette,
     title: "Suunnittelu ja toteutus",
@@ -63,7 +68,7 @@ export function MaintenanceSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Hoidamme kaiken alusta loppuun ja jatkossakin
+              Hoidan kaiken alusta loppuun ja jatkossakin
             </h2>
             <p
               className={`text-lg lg:text-xl text-[#f0f0f0] max-w-2xl leading-relaxed transition-all duration-700 delay-100 ${
@@ -77,24 +82,24 @@ export function MaintenanceSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Suunnittelemme sivuston, valitsemme sopivan vapaana olevan domainin, huolehdimme hostingista, tietoturvasta, varmuuskopioista ja monesta muustakin puolestasi! Tarkoitus on tehdä nettisivuista mahdollisimman helppo osa yritystoimintaasi.
+              Suunnittelen sivuston, valitsen sopivan vapaana olevan domainin, huolehdin hostingista, tietoturvasta, varmuuskopioista ja monesta muustakin puolestasi! Tarkoitus on tehdä nettisivuista mahdollisimman helppo osa yritystoimintaasi.
             </p>
           </div>
 
           {/* Right: cards stacked */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`flex items-start gap-4 transition-all duration-500 ${
+                className={`flex items-start gap-4 transition-all duration-500 ${index === 0 ? "relative -top-3" : ""} ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <service.icon className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
+                <service.icon className={`${index === 0 ? "w-10 h-10" : "w-5 h-5"} text-blue-500 shrink-0 mt-1`} />
                 <div>
-                  <h3 className="text-lg font-display text-[#f0f0f0] mb-1">{service.title}</h3>
-                  <p className="text-[#a0a0a0] leading-relaxed text-sm">{service.description}</p>
+                  <h3 className={`${index === 0 ? "text-3xl" : "text-lg"} font-display text-[#f0f0f0] mb-1`}>{service.title}</h3>
+                  <p className={`text-[#a0a0a0] leading-relaxed ${index === 0 ? "text-lg" : "text-sm"}`}>{service.description}</p>
                 </div>
               </div>
             ))}

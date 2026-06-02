@@ -84,11 +84,11 @@ export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: 
                   Yhteystiedot
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-8 leading-[0.95]">
-                  Pyydä maksuton suunnitelma
+                  Pyydä maksuton demo
                 </h2>
 
                 <p className="text-xl text-[#a0a0a0] mb-12 leading-relaxed max-w-md">
-                  Maksuton suunnitelma sisältää karkean suunnitelman työstä ja arvioidun hinnan, eikä se sido ostopäätökseen. Voit myös kysyä mitä tahansa, vastaan mahdollisimman pian!
+                  Maksuton demo sisältää karkean suunnitelman työstä, arvioidun hinnan sekä demon, eikä se sido ostopäätökseen. Voit myös kysyä mitä tahansa, vastaan mahdollisimman pian!
                 </p>
 
                 <div className="space-y-4 mb-8">

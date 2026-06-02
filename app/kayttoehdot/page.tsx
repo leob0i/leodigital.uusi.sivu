@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Käyttö- ja sopimusehdot | Leo Digital",
-  description: "Leo Digitalin pakettien käyttö- ja sopimusehdot. Perus, Plus ja Premium + Kirjanpito -pakettien ehdot.",
+  description: "Leo Digitalin pakettien käyttö- ja sopimusehdot. Plus ja Premium + Kirjanpito -pakettien ehdot.",
   alternates: {
     canonical: 'https://www.leodigital.fi/kayttoehdot',
   },
@@ -86,31 +86,19 @@ export default function KayttoehdotPage() {
           </div>
         </div>
 
-        {/* Perus */}
-        <div className="mb-16 border-t border-[#2a2a2a] pt-12">
-          <div className="flex items-baseline gap-4 mb-6">
-            <h2 className="text-2xl font-light text-[#f0f0f0]">Perus-paketti</h2>
-            <span className="font-mono text-sm text-[#a0a0a0]">19 €/kk + ALV</span>
-          </div>
-          <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
-            <p>Perus-paketti on tarkoitettu pienyrityksille ja aloittaville yrityksille. Paketti kattaa domain-rekisteröinnin ja uusinnan, SSL-sertifikaatin, hosting-palvelun sekä automaattiset varmuuskopiot.</p>
-            <p>Paketti ei sisällä sisältöpäivityksiä, SEO parannuksia, eikä muita lisäpalveluja. Lisätyöt laskutetaan (30 €/h + ALV).</p>
-            <p>Tuki koskee ainoastaan palvelun tekniseen toimivuuteen liittyviä kysymyksiä sähköpostitse, vastausaika 0–5 arkipäivää.</p>
-          </div>
-        </div>
-
         {/* Plus */}
         <div className="mb-16 border-t border-[#2a2a2a] pt-12">
           <div className="flex items-baseline gap-4 mb-6">
-            <h2 className="text-2xl font-light text-[#f0f0f0]">Plus-paketti</h2>
-            <span className="font-mono text-sm text-[#a0a0a0]">49 €/kk + ALV</span>
+            <h2 className="text-2xl font-light text-[#f0f0f0]">Ylläpito</h2>
+            <span className="font-mono text-sm text-[#a0a0a0]">49 €/kk, ALV 0%.</span>
           </div>
           <div className="space-y-4 text-[#a0a0a0] font-light leading-relaxed">
             <p>Paketti kattaa domain-rekisteröinnin ja uusinnan, SSL-sertifikaatin, hosting-palvelun sekä automaattiset varmuuskopiot.</p>
-            <p><span className="text-[#f0f0f0]">Kuukausipäivitys:</span> Asiakas voi pyytää yhden sisältöpäivityksen kuukaudessa, esimerkiksi hintamuutoksen, kuvien vaihdon tai muuta muokkausta vaativaa työtä. (Huom. Sisältää noin 1h työtä, ja isommat päivitykset sovitaan erikseen.) Päivityspyynnöt tulee toimittaa kuukauden 20.päivän mennessä. Käyttämättä jäänyt kuukausipäivitys ei siirry seuraavalle kuukaudelle. Lisätyöt laskutetaan (30 €/h + ALV).</p>
+            <p><span className="text-[#f0f0f0]">Kuukausipäivitys:</span> Asiakas voi pyytää yhden sisältöpäivityksen kuukaudessa, esimerkiksi hintamuutoksen, kuvien vaihdon tai muuta muokkausta vaativaa työtä. (Huom. Sisältää noin 2h työtä, ja isommat päivitykset sovitaan erikseen.) Päivityspyynnöt tulee toimittaa kuukauden 20.päivän mennessä. Käyttämättä jäänyt kuukausipäivitys ei siirry seuraavalle kuukaudelle. Lisätyöt laskutetaan (30 €/h + ALV).</p>
             <p><span className="text-[#f0f0f0]">SEO ja näkyvyys:</span> Paketti sisältää perus hakukoneoptimoinnin seurannan ja kehitystyön joka päivityksen yhteydessä.</p>
-             <p><span className="text-[#f0f0f0]">Kuukausiraportti:</span> Paketti sisältää kuukausittaisen raportin, joka kokoaa sivuston näkyvyyden ja kävijätiedot, sekä mahdolliset parannusehdotukset. Raportti toimitetaan sähköpostitse kuukauden lopussa.</p>
+             <p><span className="text-[#f0f0f0]">Kuukausiraportti:</span> Paketti sisältää kuukausittaisen raportin, joka kokoaa sivuston näkyvyyden ja kävijätiedot, sekä mahdolliset parannusehdotukset. Raportti toimitetaan sähköpostitse kuukauden lopussa asiakkaan toiveesta.</p>
             <p><span className="text-[#f0f0f0]">Tuki:</span> Tekninen tuki WhatsAppin ja sähköpostin kautta, vastausaika 24 sisällä.</p>
+            <p><span className="text-[#f0f0f0]">Sopimusaika:</span> Sopimus on voimassa 12kk jonka jälkeen se muuttuu toistaiseksi voimassaolevaksi 1kk irtisanomisajalla. Irtisanominen kirjallisesti sähköpostitse osoitteeseen <span className="text-[#f0f0f0]">leo@leodigital.fi</span>.</p>
           </div>
         </div>
 

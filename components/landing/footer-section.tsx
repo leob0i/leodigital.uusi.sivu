@@ -5,8 +5,6 @@ import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
   Paketit: [
-    { name: "Perus", href: "#paketit" },
-    { name: "Plus", href: "#paketit" },
     { name: "Autokorjaamot ja muu autoala", href: "/autokorjaamonsivut" },
   ],
   Yritys: [

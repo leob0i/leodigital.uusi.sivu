@@ -24,7 +24,6 @@ function useInView(threshold = 0.15) {
 export function AutokorjaamoContent() {
   const [isVisible, setIsVisible] = useState(false);
   const valueInView = useInView(0.1);
-  const clientsInView = useInView(0.1);
   const formInView = useInView(0.1);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -194,7 +193,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
                   Eikö pelkkä sosiaalinen media riitä?
                 </h3>
                 <p className="text-[#a0a0a0] leading-relaxed">
-                  Some tukee, mutta ei korvaa. Nettisivu on yrityksesi oma kanava — et ole riippuvainen algoritmeista tai alustan säännöistä. Se myös löytyy Googlesta, jossa asiakkaat oikeasti hakevat.
+                  Some tukee, mutta ei korvaa. Nettisivu on yrityksesi oma kanava jossa esitellään selkeästi palvelut, hinnat, ajanvaraus jne... Luotatko itse yritykseen joilla ei ole kotisivuja mistä löytää vaikka takuuehdot?
                 </p>
               </div>
             </div>
@@ -313,55 +312,13 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
 
 <AutokorjaamoPricingSection />
 
-      {/* ── Aiempia töitäni ── */}
-      <section className="relative py-8 lg:py-12 bg-[#0d0d0d] border-t border-[#2a2a2a]">
-        <div ref={clientsInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div
-            className={`mb-4 transition-all duration-700 ${
-              clientsInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-2">
-              <span className="w-8 h-px bg-[#f0f0f0]/30" />
-              Aiempia töitäni
-            </span>
-            <h2 className="text-2xl lg:text-3xl font-display text-[#f0f0f0]">
-              Yritykset, jotka luottavat osaamiseeni
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { name: "AD Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
-              { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
-              { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
-              { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
-              { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
-              { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
-            ].map((client, index) => (
-              <a
-                key={client.name}
-                href={client.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-32 h-32 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
-                  clientsInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Yhteydenottolomake ── */}
-      <section id="yhteydenotto" className="relative py-24 lg:py-32 bg-[#0d0d0d] border-t border-[#2a2a2a]">
-        <div ref={formInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/kultanen.vanne.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0d0d0d]/80" />
+        </div>
+        <div ref={formInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
           <div
             className={`mb-16 transition-all duration-700 ${
               formInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"

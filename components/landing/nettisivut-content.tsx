@@ -104,7 +104,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
               </p>
               <div className="inline-flex items-baseline gap-2">
                 <span className="text-sm font-mono text-[#a0a0a0]">alkaen</span>
-                <span className="text-4xl font-display text-[#f0f0f0] leading-none">499€</span>
+                <span className="text-4xl font-display text-[#f0c040] leading-none">49€/kk</span>
               </div>
             </div>
             <div
@@ -197,7 +197,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 Helpotusta yrityksesi arkeen
               </h2>
               <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Meille tärkeintä ei ole tehdä vain hyvännäköisiä verkkosivuja, vaan rakentaa ratkaisu, joka tukee yrityksesi toimintaa myös käytännössä. Sivuston tarkoitus on auttaa liiketoimintaasi, oli tavoitteena sitten saada enemmän yhteydenottoja, helpottaa ajanvarausta tai vähentää manuaalista työtä.
+                Tärkeintä ei ole tehdä vain hyvännäköisiä verkkosivuja, vaan rakentaa ratkaisu, joka tukee yrityksesi toimintaa myös käytännössä. Sivuston tarkoitus on auttaa liiketoimintaasi, oli tavoitteena sitten saada enemmän yhteydenottoja, helpottaa ajanvarausta tai vähentää manuaalista työtä.
               </p>
             </div>
 
@@ -210,8 +210,21 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 Kaikkea ei tarvitse päättää heti
               </h2>
               <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Verkkosivua voidaan kehittää myös julkaisun jälkeen yrityksesi tarpeiden mukaan. Ylläpitopakettien kautta sivustoon voidaan myöhemmin lisätä esimerkiksi ajanvarausjärjestelmä, asiakaspalvelubotti, uusia toimintoja tai muita integraatioita ilman että koko sivusto täytyy rakentaa uudelleen.
+                Verkkosivua voidaan kehittää myös julkaisun jälkeen yrityksesi tarpeiden mukaan. Ylläpitoon kuuluu pienet sisältöpäivitykset, sekä isommatkin muutokset ovat mahdollisia, kuten ajanvarausjärjestelmä, asiakaspalvelubotti, uusia toimintoja tai muita integraatioita ilman että koko sivusto täytyy rakentaa uudelleen.
               </p>
+              <div className="flex justify-end mt-6">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 px-6 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
+                  asChild
+                >
+                  <a href="/yllapito">
+                    Lue lisää ylläpidosta
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -244,15 +257,14 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
             }`}
           >
             {/* Main pricing card */}
-            <div className="lg:col-span-2 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
-              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div className="lg:col-span-3 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
+              <div className="flex flex-col gap-6 mb-8">
+                <h2 className="text-[#f0f0f0] text-3xl lg:text-4xl font-display">
+                  Aloitusmaksu alk 99€ jonka jälkeen 49€/kk.
+                </h2>
                 <h3 className="text-[#f0f0f0] text-2xl font-display">
-                  Mitä aloitushinta sisältää?
+                  Mitä aloitusmaksu sisältää?
                 </h3>
-                <div className="flex items-baseline gap-2 shrink-0">
-                  <span className="font-mono text-sm text-[#a0a0a0]">alkaen</span>
-                  <span className="font-display text-5xl text-[#f0f0f0] leading-none">499€</span>
-                </div>
               </div>
               <div className="space-y-5 mb-10">
                 <div className="flex items-start gap-4">
@@ -282,67 +294,34 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                    <Check className="w-3.5 h-3.5 text-[#c9a84c]" />
                   </div>
-                  <p className="text-[#a0a0a0] leading-relaxed">
+                  <p className="text-[#c9a84c] leading-relaxed">
+                    Ylläpitoon sisältyy pienet sisältöpäivitykset, uudet palvelut, kuvat tai muu sivun jatkokehitys nopeasti WhatsApp:in välityksellä. Domain ja hosting sekä muut tarpeelliset sisältyvät.{" "}
+                    <a
+                      href="/yllapito"
+                      className="inline-block mt-2 px-4 py-1.5 rounded-full border border-[#c9a84c] text-[#c9a84c] text-sm font-medium hover:bg-[#c9a84c] hover:text-[#0a0a0a] transition-colors"
+                    >
+                      Lue lisää ylläpidosta
+                    </a>
+                  </p>
+                </div>
+                <p className="text-[#a0a0a0] leading-relaxed">
                     Laajemmat kokonaisuudet – kuten varausjärjestelmät,
                     maksutoiminnot, integraatiot ja muut räätälöidyt ratkaisut –
                     suunnitellaan ja hinnoitellaan aina erikseen projektin laajuuden
-                    mukaan.
-                  </p>
-                </div>
-              </div>
-              <p className="text-base lg:text-lg font-display text-[#f0f0f0] leading-snug mb-6">
-                Kaikki sivumme tarvitsevat ylläpitoa toimiakseen nopeina ja luotettavina. Siksi suosittelemme ylläpitoa jotta sivustosi pysyy nopeana ja laadukkaana päivästä toiseen.
-              </p>
-              <p className="text-sm text-[#a0a0a0] italic mb-6">
-                Otan mielelläni vastaan isommatkin projektit –{" "}
-                <a
-                  href="/#yhteystiedot"
-                  className="text-[#f0f0f0] underline underline-offset-2 hover:text-[#a0a0a0] transition-colors"
-                >
-                  kysy lisää!
-                </a>
-              </p>
-
-            </div>
-
-            {/* Discount card + CTA */}
-            <div className="flex flex-col gap-4">
-            <div className="relative p-8 border border-[#b8960c]/60 rounded-2xl bg-black/30 overflow-hidden backdrop-blur-sm">
-              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
-              <div className="relative">
-                <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-6">
-                  Ylläpitopaketti
-                </span>
-                <div className="mb-6">
-                  <span className="font-display text-7xl text-[#f0c040] leading-none">
-                    −25%
-                  </span>
-                </div>
-                <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-8">
-                  Huolenpito- tai ylläpitopaketin tilaajat saavat kotisivun
-                  hinnasta 25 % alennuksen.
+                    mukaan.{" "}
+                    <a
+                      href="/#yhteystiedot"
+                      className="text-[#f0f0f0] underline underline-offset-2 hover:text-[#a0a0a0] transition-colors italic"
+                    >
+                      Otan mielelläni vastaan isommatkin projektit – kysy lisää!
+                    </a>
                 </p>
-                <div className="pt-6 border-t border-[#b8960c]/40">
-                  <a
-                    href="/#paketit"
-                    className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
-                  >
-                    Lue lisää ylläpitopaketeista
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
               </div>
+
             </div>
-            <a
-              href="/#yhteystiedot"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#f0f0f0] text-[#0d0d0d] font-medium hover:bg-[#e0e0e0] transition-colors rounded-full group"
-            >
-              Pyydä tarjous
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            </div>
+
           </div>
         </div>
       </section>
