@@ -201,52 +201,43 @@ export function VeneilyalanContent() {
         </section>
       </div>
 
-      {/* ── Ei vain näyttävä nettisivu ── */}
-      <section id="ei-vain-nettisivu" className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
+      {/* ── Jokaisella yrityksellä on eri ongelma ── */}
+      <section id="ei-vain-nettisivu" className="bg-[#111111] py-16 lg:py-20 border-y border-[#2a2a2a]">
         <div ref={valueInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div
-            className={`mb-16 transition-all duration-700 ${
-              valueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl">
-              Tarkoitus ei ole rakentaa vain näyttävää kotisivua
-            </h2>
-          </div>
-
-          <div
-            className={`grid lg:grid-cols-2 gap-16 lg:gap-24 transition-all duration-700 delay-150 ${
+            className={`grid lg:grid-cols-2 gap-12 lg:gap-24 items-end transition-all duration-700 ${
               valueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             <div>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8">
-                Rehellisesti. Mitä nettisivu tekee? Ei mitään muuta kuin näyttää hyvältä, jos se ei ratkaise ongelmaa, tuo uusia yhteydenottoja tai helpota yrityksesi arkea.
+              <h2 className="text-3xl lg:text-4xl font-display tracking-tight text-[#f0f0f0] mb-6">
+                Jokaisella yrityksellä on eri ongelma
+              </h2>
+              <p className="text-base text-[#a0a0a0] leading-relaxed mb-4">
+                Yhdellä yrityksellä ongelma on liian vähäinen näkyvyys. Toisella yhteydenottoja tulee paljon, mutta niiden käsittely vie liikaa aikaa. Kolmas tarvitsee selkeämmän tavan esitellä palvelunsa verkossa.
               </p>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Minun nettisivujen tarkoitus on ratkaista oikea ongelma ja tuottaa rahallista arvoa yrityksellesi. Onko se liian vähän yhteydenottoja, liikaa niitä, vai kuka niihin kerkeää vastata?
+              <p className="text-base text-[#a0a0a0] leading-relaxed">
+                Siksi en rakenna samoja nettisivuja kaikille.
               </p>
             </div>
             <div>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8">
-                Voidaan tehdä oikeesti fiksu asiakaspalvelubotti, joka lukee aina ajantasaista tietoa varastosta tai huoltoajoista. Tai yhdistää sivunne varausjärjestelmään. Tai rakentaa uusi sovellus arjen helpottamiseksi.
+              <p className="text-base text-[#a0a0a0] leading-relaxed mb-4">
+                Tavoitteena ei ole tehdä vain näyttävä sivusto, vaan ratkaista liiketoiminnan oikea ongelma. Joskus ratkaisu on parempi näkyvyys Googlessa. Joskus se on selkeämpi palveluesittely. Joskus taas automatisointi, joka vähentää yrittäjän työmäärää.
               </p>
-              <div className="flex items-end justify-between gap-6 flex-wrap">
-                <p className="text-xl font-display text-[#f0f0f0] leading-snug">
-                  Tarkoitukseni on ratkaista ongelma ja tuottaa arvoa yrityksellesi, ei vain tehdä näyttävä nettisivu.
-                </p>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="shrink-0 rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40 whitespace-nowrap"
-                  asChild
-                >
-                  <a href="/nettisivut">
-                    Lue lisää Leodigitalin nettisivuista
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-              </div>
+              <p className="text-base text-[#a0a0a0] leading-relaxed mb-8">
+                Hyvä nettisivu on investointi, jonka pitäisi maksaa itsensä takaisin uusina asiakkaina ja säästettynä aikana.
+              </p>
+              <Button
+                size="sm"
+                variant="outline"
+                className="rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40 whitespace-nowrap"
+                asChild
+              >
+                <a href="/nettisivut">
+                  Lue lisää Leodigitalin nettisivuista
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
