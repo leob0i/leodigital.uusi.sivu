@@ -9,6 +9,7 @@ const navLinksFi = [
   { name: "Nettisivut", href: "/nettisivut" },
   { name: "Ylläpito", href: "/yllapito" },
   { name: "Autoala", href: "/autokorjaamonsivut" },
+  { name: "Veneily", href: "/veneilyalansivut" },
   { name: "Kuka on Leo?", href: "/leodigital" },
   { name: "Työni", href: "#asiakkaat" },
 ];
