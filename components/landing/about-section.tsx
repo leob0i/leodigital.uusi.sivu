@@ -64,7 +64,10 @@ export function AboutSection() {
                 Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
               </p>
               <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-2xl">
-                Räätälöidyt kotisivut yrityksesi tarpeisiin. Sisältää kaiken tarvitavan ylläpidon ja päivitykset nopeasti WhatsApp:in kautta. 
+                Räätälöidyt kotisivut yrityksesi tarpeisiin. Sisältää kaiken tarvitavan ylläpidon ja päivitykset nopeasti WhatsApp:in kautta.
+              </p>
+              <p className="text-xs text-[#a0a0a0]/70 mt-2">
+                Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
               </p>
             </div>
 

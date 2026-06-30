@@ -103,6 +103,9 @@ export function PricingSection() {
                   </span>
                   <span className="text-[#a0a0a0] text-lg">/kk</span>
                 </div>
+                <p className="text-xs text-[#a0a0a0] mt-2">
+                  Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
+                </p>
               </div>
 
               {/* Features */}

@@ -98,10 +98,13 @@ export function PartnershipHero() {
                 </div>
                 
                 <p className="text-sm text-[#a0a0a0] mb-6">+ ALV 25.5%</p>
-                
+
                 <div className="border-t border-[#2a2a2a] pt-6 mb-6">
                   <p className="text-sm text-[#a0a0a0]">Sisältää:</p>
                   <p className="text-[#f0f0f0] mt-2">Kirjanpito + Digitaalinen näkyvyys + Ylläpito + Maksuominaisuudet</p>
+                  <p className="text-xs text-[#a0a0a0] mt-3">
+                    Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
+                  </p>
                 </div>
 
                 <a

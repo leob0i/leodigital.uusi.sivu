@@ -262,6 +262,9 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 <h2 className="text-[#f0f0f0] text-3xl lg:text-4xl font-display">
                   Aloitusmaksu alk 99€ jonka jälkeen 49€/kk.
                 </h2>
+                <p className="text-sm text-[#a0a0a0]">
+                  Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
+                </p>
                 <h3 className="text-[#f0f0f0] text-2xl font-display">
                   Mitä aloitusmaksu sisältää?
                 </h3>

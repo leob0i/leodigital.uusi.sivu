@@ -97,6 +97,9 @@ export function AutokorjaamoPricingSection() {
                   <span className="font-display text-4xl text-[#f0c040] leading-none">99 €</span>
                   <span className="font-mono text-sm text-[#d4a017] ml-2">+ 49 €/kk</span>
                 </div>
+                <p className="text-xs text-[#d4a017]/70 mb-4">
+                  Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
+                </p>
                 <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
                   Sivun rakennushinta + ylläpitopaketti sisältäen:
                 </p>

@@ -70,6 +70,9 @@ export function AboutSectionYllapito() {
               <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-2xl">
                 Räätälöidyt kotisivut yrityksesi tarpeisiin – SEO, mobiilioptimoitu ja kaikki tarpeelliset toiminnot mukana alusta alkaen. Kertaprojektina tai yhdistettynä ylläpitoon.
               </p>
+              <p className="text-xs text-[#a0a0a0]/70 mt-2">
+                Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
+              </p>
             </div>
 
             <a
