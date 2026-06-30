@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown, Check } from "lucide-react";
 import { NettisivutFeaturesSection } from "@/components/landing/nettisivut-features-section";
@@ -37,10 +38,12 @@ export function NettisivutContent() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/sininen.tausta.webp"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
         </div>
@@ -233,7 +236,7 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
       {/* ── Pricing ── */}
       <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 z-0">
-          <img src="/images/herokuva.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/herokuva.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
         </div>
         <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

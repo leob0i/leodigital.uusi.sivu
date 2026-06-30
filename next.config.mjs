@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
     return [
@@ -16,6 +16,11 @@ const nextConfig = {
       {
         source: '/en/:path*',
         destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/starter',
+        destination: '/yllapito',
         permanent: true,
       },
     ]

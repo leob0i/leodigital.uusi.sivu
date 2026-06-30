@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -63,8 +64,14 @@ export function Navigation() {
         >
           {/* Logo */}
           <a href="/" className="flex items-center gap-0.5 group">
-            <img src="/images/leodigital.logo.webp" alt="Leo Digital logo" className={`transition-all duration-500 object-contain ${isScrolled ? "h-10" : "h-14"}`} />
-            <span className={`font-display tracking-tight transition-all duration-500 text-[#f0f0f0] ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital</span>
+            <Image
+              src="/images/leodigital.logo.webp"
+              alt="Leo Digital Suomi logo"
+              width={56}
+              height={56}
+              className={`transition-all duration-500 object-contain ${isScrolled ? "h-10 w-10" : "h-14 w-14"}`}
+            />
+            <span className={`font-display tracking-tight transition-all duration-500 text-[#f0f0f0] ${isScrolled ? "text-xl" : "text-2xl"}`}>Leo Digital Suomi</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -139,8 +146,8 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(false)}
             className="absolute top-6 left-6 p-2 flex items-center gap-0.5 font-display text-xl text-[#f0f0f0]"
           >
-            <img src="/images/leodigital.logo.webp" alt="Leo Digital logo" className="h-10 object-contain" />
-            Leo Digital
+            <Image src="/images/leodigital.logo.webp" alt="Leo Digital Suomi logo" width={40} height={40} className="h-10 w-10 object-contain" />
+            Leo Digital Suomi
           </a>
           {/* Close Button */}
           <button

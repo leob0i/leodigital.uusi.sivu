@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Kotisivut Yritykselle | Leo Digital'
+export const alt = 'Kotisivut Yritykselle | Leo Digital Suomi'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -46,7 +46,7 @@ export default async function Image() {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ color: '#f0f0f0', fontSize: '36px', fontWeight: 700 }}>Leo Digital</span>
+          <span style={{ color: '#f0f0f0', fontSize: '32px', fontWeight: 700 }}>Leo Digital Suomi</span>
           <span
             style={{
               color: '#0d0d0d',

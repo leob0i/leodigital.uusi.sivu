@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -24,10 +25,12 @@ export function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
       {/* Image background */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/herokuva.webp"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-[#0d0d0d]/70" />
@@ -75,7 +78,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="mb-12">
 
-<h1 className="sr-only">Yrityksellesi nettisivu, ylläpito ja näkyvyys</h1>
+<h1 className="sr-only">Yrityksellesi nettisivu, ylläpito ja näkyvyys – kotisivut suomalaisille yrityksille</h1>
 
           <div 
             className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${

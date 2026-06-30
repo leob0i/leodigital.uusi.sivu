@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { AutokorjaamoPricingSection } from "@/components/landing/autokorjaamo-pricing-section";
@@ -64,10 +65,12 @@ export function AutokorjaamoContent() {
       <div className="relative">
         {/* Shared background image spanning both sections */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
+          <Image
             src="/images/bmw.e30.webp"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
         </div>
 
@@ -249,7 +252,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
                   asChild
                 >
                   <a href="/nettisivut">
-                    Lue lisää Leodigitalin nettisivuista
+                    Lue lisää Leo Digital Suomen nettisivuista
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </Button>
@@ -262,7 +265,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
       {/* ── Mikä erottaa mut joukosta ── */}
       <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/mese.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/mese.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -315,7 +318,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/kultanen.vanne.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/kultanen.vanne.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={formInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

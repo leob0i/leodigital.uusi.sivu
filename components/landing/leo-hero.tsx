@@ -90,15 +90,14 @@ export function LeoHero() {
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-[#0d0d0d]">
       {/* Background image with fade */}
       <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: 'url(/images/taustakuva.webp)',
-            backgroundSize: '100% auto',
-            backgroundPosition: 'top center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+        <div className="absolute inset-0 opacity-30">
+          <Image
+            src="/images/taustakuva.webp"
+            alt=""
+            fill
+            className="object-cover object-top"
+          />
+        </div>
         <div
           className="absolute inset-0"
           style={{
@@ -339,13 +338,11 @@ export function LeoHero() {
         >
           {/* Background image with dark overlay */}
           <div className="absolute inset-0 -mx-6 lg:-mx-8 rounded-2xl overflow-hidden">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'url(/images/mese.webp)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
+            <Image
+              src="/images/mese.webp"
+              alt=""
+              fill
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-[#0d0d0d]/88" />
           </div>
@@ -379,11 +376,12 @@ export function LeoHero() {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
             {clients.map((client, index) => {
               const cardContent = (
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
                     src={client.logo}
                     alt={client.name}
-                    className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                    fill
+                    className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
                   />
                 </div>
               );
@@ -422,13 +420,11 @@ export function LeoHero() {
         >
           <div className="relative border border-[#f0f0f0] overflow-hidden">
             {/* Background image */}
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'url(/images/herokuva.webp)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
+            <Image
+              src="/images/herokuva.webp"
+              alt=""
+              fill
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-[#0d0d0d]/85" />
             <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
@@ -555,7 +551,7 @@ export function LeoHero() {
                       type="submit"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] font-medium rounded-full transition-colors group cursor-pointer"
                     >
-                      Lähetä tarjouspyyntö
+                      Pyydä ilmainen tarjous
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </form>

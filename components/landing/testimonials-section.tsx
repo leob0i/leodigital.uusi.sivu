@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -66,11 +67,12 @@ export function TestimonialsSection() {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
             {clients.map((client, index) => {
               const cardContent = (
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
                     src={client.logo}
                     alt={client.name}
-                    className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                    fill
+                    className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
                   />
                 </div>
               );

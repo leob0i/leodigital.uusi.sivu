@@ -46,7 +46,7 @@ export function IntroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Leo Digital suunnittelee, toteuttaa ja ylläpitää verkkosivut alusta loppuun ilman
+            Leo Digital Suomi suunnittelee, toteuttaa ja ylläpitää verkkosivut alusta loppuun ilman
             turhaa säätöä tai useita eri palveluntarjoajia. Nettisivut, ylläpito, näkyvyys ja
             asiakaspalveluratkaisut hoituvat yhdestä paikasta niin, että voit itse keskittyä
             yrityksesi pyörittämiseen.

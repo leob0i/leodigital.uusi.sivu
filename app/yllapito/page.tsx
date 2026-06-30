@@ -4,8 +4,8 @@ import { YllapitoContent } from "@/components/landing/yllapito-content";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata: Metadata = {
-  title: 'Ylläpitopaketit | Leo Digital – Domain, Hosting & Jatkuva Kehitys',
-  description: 'Täysi ylläpitopalvelu yrityksellesi – domain, hosting, tietoturva, päivitykset ja jatkuva kehitys. Ei stressiä, kaikki hoituu puolestasi samasta paikasta.',
+  title: 'Ylläpitopaketit | Leo Digital Suomi – Domain, Hosting & Jatkuva Kehitys',
+  description: 'Täysi ylläpitopalvelu suomalaiselle yrityksellesi – domain, hosting, tietoturva, päivitykset ja jatkuva kehitys. Ei stressiä, kaikki hoituu puolestasi samasta paikasta.',
   keywords: [
     'verkkosivujen ylläpito',
     'kotisivujen ylläpito',
@@ -16,20 +16,20 @@ export const metadata: Metadata = {
     'nettisivut ylläpito',
     'kotisivut ylläpito edullisesti',
     'jatkuva kehitys',
-    'Leo Digital',
+    'Leo Digital Suomi',
   ],
   openGraph: {
-    title: 'Ylläpitopaketit | Leo Digital – Domain, Hosting & Jatkuva Kehitys',
-    description: 'Täysi ylläpitopalvelu yrityksellesi – domain, hosting, tietoturva, päivitykset ja jatkuva kehitys. Kaikki hoituu puolestasi.',
+    title: 'Ylläpitopaketit | Leo Digital Suomi – Domain, Hosting & Jatkuva Kehitys',
+    description: 'Täysi ylläpitopalvelu suomalaiselle yrityksellesi – domain, hosting, tietoturva, päivitykset ja jatkuva kehitys. Kaikki hoituu puolestasi.',
     url: 'https://www.leodigital.fi/yllapito',
-    siteName: 'Leo Digital',
+    siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ylläpitopaketit | Leo Digital',
-    description: 'Täysi ylläpitopalvelu yrityksellesi – domain, hosting, tietoturva, päivitykset. Kaikki samasta paikasta.',
+    title: 'Ylläpitopaketit | Leo Digital Suomi',
+    description: 'Täysi ylläpitopalvelu suomalaiselle yrityksellesi – domain, hosting, tietoturva, päivitykset. Kaikki samasta paikasta.',
   },
   robots: {
     index: true,
@@ -49,7 +49,8 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     '@id': 'https://www.leodigital.fi/#business',
-    name: 'Leo Digital',
+    name: 'Leo Digital Suomi',
+    address: { '@type': 'PostalAddress', addressCountry: 'FI' },
   },
   url: 'https://www.leodigital.fi/yllapito',
   areaServed: { '@type': 'Country', name: 'Finland' },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 
 function useInView(threshold = 0.15) {
@@ -25,7 +26,7 @@ export function AutokorjaamoPricingSection() {
   return (
     <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
       <div className="absolute inset-0 z-0">
-        <img src="/images/bmwt.webp" alt="" className="w-full h-full object-cover" />
+        <Image src="/images/bmwt.webp" alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-[#0d0d0d]/80" />
       </div>
       <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

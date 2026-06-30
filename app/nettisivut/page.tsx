@@ -4,8 +4,8 @@ import { NettisivutContent } from "@/components/landing/nettisivut-content";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata: Metadata = {
-  title: 'Kotisivut Yritykselle | Leo Digital – Räätälöidyt Verkkosivut',
-  description: 'Rakennamme yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis – ei teemoja, ei kompromisseja, juuri sinulle tehty.',
+  title: 'Kotisivut Yritykselle | Leo Digital Suomi – Räätälöidyt Verkkosivut',
+  description: 'Rakennamme suomalaiselle yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis – ei teemoja, ei kompromisseja, juuri sinulle tehty.',
   keywords: [
     'kotisivut yritykselle',
     'nettisivut yritykselle',
@@ -16,20 +16,20 @@ export const metadata: Metadata = {
     'nopeat verkkosivut',
     'kotisivut edullisesti',
     'kotisivut Suomi',
-    'Leo Digital',
+    'Leo Digital Suomi',
   ],
   openGraph: {
-    title: 'Kotisivut Yritykselle | Leo Digital – Räätälöidyt Verkkosivut',
-    description: 'Rakennamme yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis.',
+    title: 'Kotisivut Yritykselle | Leo Digital Suomi – Räätälöidyt Verkkosivut',
+    description: 'Rakennamme suomalaiselle yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis.',
     url: 'https://www.leodigital.fi/nettisivut',
-    siteName: 'Leo Digital',
+    siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kotisivut Yritykselle | Leo Digital',
-    description: 'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneystävällinen.',
+    title: 'Kotisivut Yritykselle | Leo Digital Suomi',
+    description: 'Räätälöidyt kotisivut suomalaiselle yrityksellesi alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneystävällinen.',
   },
   robots: {
     index: true,
@@ -49,7 +49,8 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     '@id': 'https://www.leodigital.fi/#business',
-    name: 'Leo Digital',
+    name: 'Leo Digital Suomi',
+    address: { '@type': 'PostalAddress', addressCountry: 'FI' },
   },
   url: 'https://www.leodigital.fi/nettisivut',
   areaServed: { '@type': 'Country', name: 'Finland' },

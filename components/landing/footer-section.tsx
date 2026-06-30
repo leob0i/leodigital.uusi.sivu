@@ -28,7 +28,7 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="max-w-xs">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display text-[#f0f0f0]">Leo Digital</span>
+                <span className="text-2xl font-display text-[#f0f0f0]">Leo Digital Suomi</span>
               </a>
 
               <p className="text-[#a0a0a0] leading-relaxed max-w-xs">
@@ -86,7 +86,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-[#2a2a2a] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[#a0a0a0]">
-            2026 Leo Digital. Kaikki oikeudet pidätetään.
+            2026 Leo Digital Suomi. Kaikki oikeudet pidätetään.
           </p>
 
           <div className="flex items-center gap-6 text-sm text-[#a0a0a0]">

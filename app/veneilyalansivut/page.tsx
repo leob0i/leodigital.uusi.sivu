@@ -4,8 +4,8 @@ import { VeneilyalanContent } from "@/components/landing/veneilyalan-content";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata: Metadata = {
-  title: 'Veneilyalan Nettisivut | Leo Digital – Enemmän Asiakkaita',
-  description: 'Nettisivut venehuollolle, venekaupalle ja kaikille veneilyalan yrityksille. Enemmän asiakkaita, vähemmän turhia puheluita. Pyydä ilmainen demo.',
+  title: 'Veneilyalan Nettisivut | Leo Digital Suomi – Enemmän Asiakkaita',
+  description: 'Nettisivut venehuollolle, venekaupalle ja kaikille suomalaisille veneilyalan yrityksille. Enemmän asiakkaita, vähemmän turhia puheluita. Pyydä ilmainen demo.',
   keywords: [
     'veneilyalan nettisivut',
     'venehuollon nettisivut',
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
     'veneilyalan markkinointi',
     'venehuolto hakukoneoptimointi',
     'kotisivut veneilyyritykselle',
-    'Leo Digital',
+    'Leo Digital Suomi',
   ],
   authors: [{ name: 'Leo Apell' }],
-  creator: 'Leo Digital',
+  creator: 'Leo Digital Suomi',
   openGraph: {
-    title: 'Veneilyalan Nettisivut | Leo Digital – Enemmän Asiakkaita',
-    description: 'Nettisivut venehuollolle, venekaupalle ja kaikille veneilyalan yrityksille. Enemmän asiakkaita, vähemmän turhia puheluita.',
+    title: 'Veneilyalan Nettisivut | Leo Digital Suomi – Enemmän Asiakkaita',
+    description: 'Nettisivut venehuollolle, venekaupalle ja kaikille suomalaisille veneilyalan yrityksille. Enemmän asiakkaita, vähemmän turhia puheluita.',
     url: 'https://www.leodigital.fi/veneilyalansivut',
-    siteName: 'Leo Digital',
+    siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
     images: [
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
         url: 'https://www.leodigital.fi/images/veneily.webp',
         width: 1200,
         height: 630,
-        alt: 'Veneilyalan nettisivut – Leo Digital',
+        alt: 'Veneilyalan nettisivut – Leo Digital Suomi',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Veneilyalan Nettisivut | Leo Digital',
+    title: 'Veneilyalan Nettisivut | Leo Digital Suomi',
     description: 'Nettisivut venehuollolle, venekaupalle ja muille veneilyalan yrityksille – ratkaistaan oikea ongelma, ei vain näyttävä sivu.',
     images: ['https://www.leodigital.fi/images/veneily.webp'],
   },
@@ -70,10 +70,11 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     '@id': 'https://www.leodigital.fi/#business',
-    name: 'Leo Digital',
+    name: 'Leo Digital Suomi',
     url: 'https://www.leodigital.fi',
     email: 'leo@leodigital.fi',
     telephone: '+358452031377',
+    address: { '@type': 'PostalAddress', addressCountry: 'FI' },
     areaServed: { '@type': 'Country', name: 'Finland' },
   },
   url: 'https://www.leodigital.fi/veneilyalansivut',
@@ -99,12 +100,47 @@ const jsonLd = {
   },
 };
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Tarvitseeko veneilyyritys oikeasti nettisivut?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yli 90 % suomalaisista etsii palveluja Googlesta ennen ostopäätöstä. Jos venehuolto tai venekauppa ei löydy netistä tai sivu näyttää vanhentuneelta, asiakas siirtyy kilpailijalle. Niin yksinkertaista se on.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Mitä hyvä nettisivu tekee veneilyyritykselle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Se tuo yhteydenottoja myös öisin ja viikonloppuisin, esittelee palvelut ja varaston selkeästi, vastaa yleisimpiin kysymyksiin automaattisesti – ja vähentää turhia puheluita.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kenelle nämä sivut sopivat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Venehuolloille, venekaupalle, venetarvikemyymälöille, venetelakalle, venevuokraamoille ja kaikille muille veneilyalan yrityksille, jotka haluavat löytyä verkosta ammattimaisesti.',
+      },
+    },
+  ],
+};
+
 export default function VeneilyalansivutPage() {
   return (
     <main className="bg-[#0d0d0d] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navigation />
       <VeneilyalanContent />

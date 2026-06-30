@@ -207,7 +207,7 @@ export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: 
                     size="lg"
                     className="w-full sm:w-auto bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group cursor-pointer"
                   >
-                    Lähetä tarjouspyyntö
+                    Pyydä ilmainen tarjous
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </form>

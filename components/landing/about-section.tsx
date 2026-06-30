@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export function AboutSection() {
@@ -27,10 +28,11 @@ export function AboutSection() {
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/taustakuva.webp"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0d0d0d]/70" />
       </div>

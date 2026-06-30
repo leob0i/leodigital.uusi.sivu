@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { CtaSection } from "@/components/landing/cta-section";
@@ -22,10 +23,12 @@ export function YllapitoContent() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0d0d0d]">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/taustakuva.webp"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
         </div>

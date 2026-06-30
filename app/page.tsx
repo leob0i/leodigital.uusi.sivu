@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Navigation } from "@/components/landing/navigation";
 
 export const metadata: Metadata = {
-  title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille – Kaikki Samasta',
-  description: 'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta. Sinä keskityt bisnekseen, minä hoidan digin.',
+  title: 'Leo Digital Suomi | Kotisivut & Ylläpito Yrityksille – Kaikki Samasta',
+  description: 'Räätälöidyt kotisivut suomalaisille yrityksille alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta. Sinä keskityt bisnekseen, minä hoidan digin.',
   keywords: [
     'kotisivut yritykselle',
     'nettisivut yritykselle',
@@ -14,20 +14,20 @@ export const metadata: Metadata = {
     'generative engine optimization',
     'AI SEO',
     'kotisivut Suomi',
-    'Leo Digital',
+    'Leo Digital Suomi',
   ],
   openGraph: {
-    title: 'Leo Digital | Kotisivut & Ylläpito – Kaikki Hoituu Puolestasi',
-    description: 'Räätälöidyt kotisivut, ylläpito ja näkyvyys Googlessa sekä tekoälyhauissa. Kaikki samasta paikasta helposti ja vaivattomasti.',
+    title: 'Leo Digital Suomi | Kotisivut & Ylläpito – Kaikki Hoituu Puolestasi',
+    description: 'Räätälöidyt kotisivut, ylläpito ja näkyvyys Googlessa sekä tekoälyhauissa suomalaisille yrityksille. Kaikki samasta paikasta helposti ja vaivattomasti.',
     url: 'https://www.leodigital.fi',
-    siteName: 'Leo Digital',
+    siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille',
-    description: 'Räätälöidyt kotisivut, ylläpito ja hakukoneoptimointi. Kaikki hoituu sinulle – ei säätöä.',
+    title: 'Leo Digital Suomi | Kotisivut & Ylläpito Yrityksille',
+    description: 'Räätälöidyt kotisivut, ylläpito ja hakukoneoptimointi suomalaisille yrityksille. Kaikki hoituu sinulle – ei säätöä.',
   },
   robots: {
     index: true,
@@ -53,11 +53,12 @@ const jsonLd = {
     {
       '@type': 'LocalBusiness',
       '@id': 'https://www.leodigital.fi/#business',
-      name: 'Leo Digital',
+      name: 'Leo Digital Suomi',
       url: 'https://www.leodigital.fi',
       description:
-        'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta.',
+        'Räätälöidyt kotisivut suomalaisille yrityksille alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta.',
       founder: { '@type': 'Person', name: 'Leo Apell' },
+      address: { '@type': 'PostalAddress', addressCountry: 'FI' },
       areaServed: { '@type': 'Country', name: 'Finland' },
       priceRange: '€€',
       hasOfferCatalog: {
@@ -92,7 +93,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': 'https://www.leodigital.fi/#website',
       url: 'https://www.leodigital.fi',
-      name: 'Leo Digital',
+      name: 'Leo Digital Suomi',
       inLanguage: 'fi',
       publisher: { '@id': 'https://www.leodigital.fi/#business' },
     },

@@ -13,10 +13,10 @@ export function LeoTeaserSection() {
           {/* Left: text content */}
           <div className="space-y-6">
             <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0]">
-              Leo Digital
+              Leo Digital Suomi
             </h2>
             <p className="text-xl lg:text-2xl font-display tracking-tight text-[#f0f0f0]">
-              Hei, olen Leo Apell, Leo Digitalin takana,
+              Hei, olen Leo Apell, Leo Digital Suomen takana,
             </p>
 
             <p className="text-lg text-[#a0a0a0] leading-relaxed">

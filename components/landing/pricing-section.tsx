@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 
 const plans = [
@@ -46,11 +47,11 @@ export function PricingSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         {/* Placeholder background image - replace src with actual image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/tumma.tausta.webp')",
-          }}
+        <Image
+          src="/images/tumma.tausta.webp"
+          alt=""
+          fill
+          className="object-cover"
         />
         {/* Dark overlay - 40% opacity */}
         <div className="absolute inset-0 bg-[#0a0a0a]/95" />

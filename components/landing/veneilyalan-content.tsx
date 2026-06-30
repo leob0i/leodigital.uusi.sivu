@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown, Check } from "lucide-react";
 
@@ -64,10 +65,12 @@ export function VeneilyalanContent() {
       <div className="relative">
         {/* Shared background image spanning both sections */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
+          <Image
             src="/images/veneily.webp"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
         </div>
 
@@ -234,7 +237,7 @@ export function VeneilyalanContent() {
                 asChild
               >
                 <a href="/nettisivut">
-                  Lue lisää Leodigitalin nettisivuista
+                  Lue lisää Leo Digital Suomen nettisivuista
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
               </Button>
@@ -246,7 +249,7 @@ export function VeneilyalanContent() {
       {/* ── Mitä voidaan rakentaa veneilymaalalle ── */}
       <section className="relative py-24 lg:py-32 border-b border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/vene.ylhaalta.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/vene.ylhaalta.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -299,7 +302,7 @@ export function VeneilyalanContent() {
       {/* ── Hinnoittelu ── */}
       <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 z-0">
-          <img src="/images/sininen.tausta.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/sininen.tausta.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -418,7 +421,7 @@ export function VeneilyalanContent() {
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/taustakuva.webp" alt="" className="w-full h-full object-cover" />
+          <Image src="/images/taustakuva.webp" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={formInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

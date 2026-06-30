@@ -22,8 +22,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.leodigital.fi'),
-  title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille – Kaikki Samasta',
-  description: 'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta. Sinä keskityt bisnekseen, minä hoidan digin.',
+  title: 'Leo Digital Suomi | Kotisivut & Ylläpito Yrityksille – Kaikki Samasta',
+  description: 'Räätälöidyt kotisivut suomalaisille yrityksille alusta alkaen. Verkkosivut, ylläpito, hakukoneoptimointi ja tekoälyhakuihin optimointi samasta paikasta. Sinä keskityt bisnekseen, minä hoidan digin.',
   keywords: [
     'kotisivut edullisesti',
     'GEO optimointi',
@@ -35,23 +35,23 @@ export const metadata: Metadata = {
     'AI SEO',
     'kotisivut alkaville yrityksille',
     'verkkosivut alusta alkaen',
-    'Leo Digital',
+    'Leo Digital Suomi',
     'kotisivut Suomi',
   ],
   authors: [{ name: 'Leo Apell' }],
-  creator: 'Leo Digital',
+  creator: 'Leo Digital Suomi',
   openGraph: {
-    title: 'Leo Digital | Kotisivut & Ylläpito – Kaikki Hoituu Puolestasi',
-    description: 'Räätälöidyt kotisivut, ylläpito ja näkyvyys Googlessa sekä tekoälyhauissa. Kaikki samasta paikasta helposti ja vaivattomasti.',
+    title: 'Leo Digital Suomi | Kotisivut & Ylläpito – Kaikki Hoituu Puolestasi',
+    description: 'Räätälöidyt kotisivut, ylläpito ja näkyvyys Googlessa sekä tekoälyhauissa suomalaisille yrityksille. Kaikki samasta paikasta helposti ja vaivattomasti.',
     url: 'https://www.leodigital.fi',
-    siteName: 'Leo Digital',
+    siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leo Digital | Kotisivut & Ylläpito Yrityksille',
-    description: 'Räätälöidyt kotisivut, ylläpito ja hakukoneoptimointi. Kaikki hoituu sinulle – ei säätöä.',
+    title: 'Leo Digital Suomi | Kotisivut & Ylläpito Yrityksille',
+    description: 'Räätälöidyt kotisivut, ylläpito ja hakukoneoptimointi suomalaisille yrityksille. Kaikki hoituu sinulle – ei säätöä.',
   },
   robots: {
     index: true,

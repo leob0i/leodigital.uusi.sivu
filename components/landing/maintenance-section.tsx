@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Shield, Headphones, Palette, RefreshCw } from "lucide-react";
 
 const services = [
@@ -50,10 +51,11 @@ export function MaintenanceSection() {
       className="relative pt-12 lg:pt-16 pb-12 lg:pb-14 border-t border-[#2a2a2a] overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/punanen.tausta.webp"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0d0d0d]/80" />
       </div>
