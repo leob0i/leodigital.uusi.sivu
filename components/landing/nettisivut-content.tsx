@@ -3,9 +3,11 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowDown, Check } from "lucide-react";
-import { NettisivutFeaturesSection } from "@/components/landing/nettisivut-features-section";
+import { ArrowRight, Check } from "lucide-react";
+import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CtaSection } from "@/components/landing/cta-section";
+import { NettisivutFeaturesSection } from "@/components/landing/nettisivut-features-section";
+import { NettisivutStatsMarquee } from "@/components/landing/nettisivut-stats-marquee";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,11 +25,87 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
+const sisaltyy = [
+  "Räätälöity Next.js-toteutus — ei WordPress, ei templaatteja",
+  "Hakukoneoptimointi (SEO) alusta alkaen — oikeat avainsanat, tekninen rakenne",
+  "Tekoälyhakuoptimointi (GEO) — löydyt ChatGPT:stä, Perplexitystä ja Google AI:sta",
+  "Mobiilioptimoidut ja nopeat sivut kaikilla laitteilla",
+  "Enintään 6 sivua (etusivu, palvelut, yhteystiedot + muut tarpeelliset)",
+  "Domain & SSL-sertifikaatti hoidettu",
+  "Hosting & varmuuskopiot mukana",
+  "Tietoturva ja tekninen ylläpito — ei sinun huolesi",
+  "Sisältöpäivitykset WhatsAppin kautta — uudet kuvat, palvelut, numerot",
+  "Jatkuva kehitys — ajanvaraus, botti tai muita toimintoja lisättävissä myöhemmin",
+  "Yrityssähköposti +5 €/kk per postilaatikko (esim. info@yrityksesi.fi)",
+];
+
+const miksiToimii = [
+  {
+    title: "Löydyt Googlesta ja tekoälyhauista",
+    text: "Sivut rakennetaan teknisesti oikein alusta alkaen. Oikea rakenne, oikeat avainsanat, nopea lataus — niin Google kuin ChatGPT suosittelee sinua.",
+  },
+  {
+    title: "Kaikki hoituu — ei säätöä",
+    text: "Domain, hosting, tietoturva, päivitykset. Ei erillisiä laskuja eri palveluntarjoajilta. Yksi viesti WhatsAppiin ja asia hoituu.",
+  },
+  {
+    title: "Sivut kasvavat yrityksesi mukana",
+    text: "Julkaisu on vasta alku. Voidaan lisätä ajanvaraus, chatbotti, uusia sivuja tai integraatioita — ilman että koko sivu rakennetaan uudelleen.",
+  },
+];
+
+const prosessi = [
+  {
+    number: "01",
+    title: "Ilmainen kartoitus",
+    description: "Kerrot yrityksestäsi ja tavoitteistasi. Saat selkeän suunnitelman ja hinnan. Ei sido mihinkään.",
+  },
+  {
+    number: "02",
+    title: "Toteutus alkaa",
+    description: "Rakennan sivut sovitun suunnitelman mukaan. Saat testilinkin kommentoitavaksi ennen julkaisua.",
+  },
+  {
+    number: "03",
+    title: "Julkaisu ja jatko",
+    description: "Sivut julkaistaan ja ylläpito alkaa. Päivitykset hoituvat nopeasti WhatsAppin kautta — myös viikonloppuisin.",
+  },
+];
+
+const faq = [
+  {
+    q: "Mitä kotisivut maksavat yritykselle?",
+    a: "Aloitusmaksu on 99 € ja sen jälkeen 49 €/kk. Hinta sisältää räätälöidyt sivut, ylläpidon, domainin, hostingin ja tietoturvan. Yrityssähköposti on +5 €/kk per postilaatikko.",
+  },
+  {
+    q: "Onko sopimus määräaikainen?",
+    a: "Sopimus on 12kk määräaikainen, jonka jälkeen se muuttuu toistaiseksi voimassaolevaksi 1kk irtisanomisajalla.",
+  },
+  {
+    q: "Kuinka nopeasti sivut valmistuvat?",
+    a: "Yksinkertaiset sivut valmistuvat tyypillisesti 1–2 viikossa alkukartoituksesta. Laajemmat projektit sovitaan erikseen.",
+  },
+  {
+    q: "Tarvitseeko minun osata mitään teknistä?",
+    a: "Ei. Sinun tehtäväsi on kertoa mitä haluat ja hyväksyä lopputulos. Minä hoidan kaiken teknisen.",
+  },
+  {
+    q: "Voiko sivuja kehittää myöhemmin?",
+    a: "Kyllä. Ylläpitoon sisältyvät pienet päivitykset, ja isommat lisäykset kuten ajanvaraus tai chatbotti voidaan toteuttaa erikseen sovittavalla hinnalla.",
+  },
+  {
+    q: "Mitä minun pitää tehdä?",
+    a: "Se riittää että kerrot perustiedot yrityksestäsi ja palveluistasi. Hoidan suunnittelun, toteutuksen, domainit yms puolestasi. Tottakai pääset mukaan suunnittelemaan, mutta ideana on tehdä mahdollisimman helppo ja vaivaton kiireisille yrittäjille.",
+  },
+];
 
 export function NettisivutContent() {
   const [isVisible, setIsVisible] = useState(false);
-  const uniqueInView = useInView(0.1);
-  const pricingInView = useInView(0.1);
+  const mitaInView = useInView(0.1);
+  const whyInView = useInView(0.1);
+  const processInView = useInView(0.1);
+  const faqInView = useInView(0.1);
+
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
@@ -75,23 +153,23 @@ export function NettisivutContent() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0]">
               <span className="w-8 h-px bg-[#f0f0f0]/30" />
-             Nettisivut yritykselle • Google & tekoälyhaut huomioiden
+              Kotisivut yritykselle · Google &amp; tekoälyhaut · Kaikki hoituu
             </span>
           </div>
 
           {/* Headline */}
           <div className="mb-12">
-            <div
+            <h1
               className={`text-[clamp(2.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="block">Enemmän kuin</span>
-              <span className="block relative">
-                pelkkä nettisivu
-                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
+              <span className="block">Kotisivut yrityksellesi —</span>
+              <span className="block relative text-[#f0c040]">
+                49 €/kk
+                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0c040]/10" />
               </span>
-            </div>
+            </h1>
           </div>
 
           {/* Description + CTAs */}
@@ -101,14 +179,9 @@ export function NettisivutContent() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <p className="text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl mb-6">
-                Rakennamme sivuja, jotka on suunniteltu löytymään, vakuuttamaan ja muuttamaan kävijät asiakkaiksi.
-Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
+              <p className="text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl">
+                Räätälöidyt nettisivut, ylläpito, domain, hosting ja näkyvyys Googlessa — kaikki samassa paketissa. Sinä keskityt bisnekseen, minä hoidan digin.
               </p>
-              <div className="inline-flex items-baseline gap-2">
-                <span className="text-sm font-mono text-[#a0a0a0]">alkaen</span>
-                <span className="text-4xl font-display text-[#f0c040] leading-none">49€/kk</span>
-              </div>
             </div>
             <div
               className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
@@ -120,8 +193,8 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 className="bg-[#f0f0f0] hover:bg-[#e0e0e0] text-[#0d0d0d] px-8 h-14 text-base rounded-full group"
                 asChild
               >
-                <a href="/#yhteystiedot">
-                  Pyydä tarjous
+                <a href="#yhteystiedot">
+                  Pyydä ilmainen tarjous
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
@@ -131,20 +204,13 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
                 asChild
               >
-                <a href="#hinnoittelu">Hinnoittelu</a>
+                <a href="#mita-sisaltyy">Katso mitä sisältyy</a>
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div
-          className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 delay-700 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <ArrowDown className="w-5 h-5 text-[#a0a0a0] animate-bounce" />
-        </div>
+        <NettisivutStatsMarquee isVisible={isVisible} />
       </section>
 
       {/* ── Why ── */}
@@ -153,11 +219,13 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
           <div className="grid lg:grid-cols-3 gap-12 text-center">
             <div>
               <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">
-                Mitä nettisivut maksavat vuonna 2026?
+                Mitä nettisivut ja ylläpito maksavat vuonna 2026?
               </h3>
               <p className="text-[#a0a0a0] leading-relaxed">
                 Itse tehtynä: muutamia kymppejä<br />
-                Ammattilaisella: 500€ – 10.000€
+                Ammattilaisella: 500€ – 10.000€<br />
+                Ylläpito itse hoidettuna: aikaa, päänvaivaa ja teknistä osaamista<br />
+                Virastoilla: 50 € – 200 €/kk
               </p>
             </div>
             <div>
@@ -165,16 +233,15 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
                 Internet on täynnä turhia nettisivuja
               </h3>
               <p className="text-[#a0a0a0] leading-relaxed">
-                Nykyään kuka tahansa voi tehdä hienot sivut, mutta ne ovat hitaita, näkymättömiä hakutuloksissa, ei myy eikä erotu joukosta.
+                Nykyään kuka tahansa voi tehdä hienot sivut, mutta ne ovat hitaita, näkymättömiä hakutuloksissa, ei myy eikä erotu joukosta. Leodigitalin sivujen tarkoitus on tuottaa tulosta ja helpottaa liiketoimintaasi.
               </p>
             </div>
             <div>
               <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">
-                Me emme rakenna &ldquo;nettisivuja&rdquo;
+                Eikö pelkkä sosiaalinen media riitä?
               </h3>
               <p className="text-[#a0a0a0] leading-relaxed">
-                Meidän sivumme eivät ole vain näyttäviä, niiden tarkoitus on
-                tuoda sinulle asiakkaita, helpottaa liiketoimintaasi ja kasvattaa mainetta.
+                Some tukee, mutta ei korvaa. Nettisivu on yrityksesi oma kanava jossa esitellään selkeästi palvelut, hinnat, ajanvaraus jne... Luotatko itse yritykseen joilla ei ole kotisivuja mistä löytää vaikka takuuehdot?
               </p>
             </div>
           </div>
@@ -183,156 +250,144 @@ Ei pelkkää designia, vaan toimiva asiakashankinnan työkalu.
 
       <NettisivutFeaturesSection />
 
-      {/* ── Unique Projects ── */}
-      <section className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
-        <div ref={uniqueInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div
-              className={`transition-all duration-700 ${
-                uniqueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
-                <span className="w-8 h-px bg-[#f0f0f0]/30" />
-                Jokainen projekti on yksilöllinen
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8">
-                Helpotusta yrityksesi arkeen
-              </h2>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Tärkeintä ei ole tehdä vain hyvännäköisiä verkkosivuja, vaan rakentaa ratkaisu, joka tukee yrityksesi toimintaa myös käytännössä. Sivuston tarkoitus on auttaa liiketoimintaasi, oli tavoitteena sitten saada enemmän yhteydenottoja, helpottaa ajanvarausta tai vähentää manuaalista työtä.
-              </p>
-            </div>
+      {/* ── Mitä saat ── */}
+      <section id="mita-sisaltyy" className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
+        <div ref={mitaInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <h2
+            className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-16 max-w-2xl transition-all duration-700 ${
+              mitaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            Kaikki mitä tarvitset — yhdestä paikasta
+          </h2>
 
-            <div
-              className={`transition-all duration-700 delay-150 ${
-                uniqueInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-8">
-                Kaikkea ei tarvitse päättää heti
-              </h2>
-              <p className="text-lg text-[#a0a0a0] leading-relaxed">
-                Verkkosivua voidaan kehittää myös julkaisun jälkeen yrityksesi tarpeiden mukaan. Ylläpitoon kuuluu pienet sisältöpäivitykset, sekä isommatkin muutokset ovat mahdollisia, kuten ajanvarausjärjestelmä, asiakaspalvelubotti, uusia toimintoja tai muita integraatioita ilman että koko sivusto täytyy rakentaa uudelleen.
-              </p>
-              <div className="flex justify-end mt-6">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 px-6 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
-                  asChild
-                >
-                  <a href="/yllapito">
-                    Lue lisää ylläpidosta
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
+          <div
+            className={`grid lg:grid-cols-2 gap-x-12 gap-y-5 transition-all duration-700 delay-100 ${
+              mitaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            {sisaltyy.map((text) => (
+              <div key={text} className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
+                </div>
+                <p className="text-[#a0a0a0] leading-relaxed">{text}</p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-sm text-[#a0a0a0] max-w-2xl">
+              Laajemmat kokonaisuudet kuten varausjärjestelmät, maksuominaisuudet ja integraatiot hinnoitellaan erikseen projektin laajuuden mukaan.
+            </p>
+            <a
+              href="/kayttoehdot"
+              className="text-sm text-[#f0f0f0] underline underline-offset-2 hover:text-[#a0a0a0] transition-colors shrink-0"
+            >
+              Lue lisää käyttöehdoista
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ── Pricing ── */}
-      <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
+      {/* ── Miksi tämä toimii ── */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/herokuva.webp" alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-[#0d0d0d]/75" />
+          <Image src="/images/tumma.tausta.webp" alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-[#0a0a0a]/90" />
         </div>
-        <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div
-            className={`mb-16 transition-all duration-700 ${
-              pricingInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        <div ref={whyInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+          <h2
+            className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-16 max-w-3xl transition-all duration-700 ${
+              whyInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
-              <span className="w-8 h-px bg-[#f0f0f0]/30" />
-              Hinnoittelu
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
-              Selkeä ja läpinäkyvä hinnoittelu
-            </h2>
-          </div>
-
+            Verkkosivut jotka tuovat asiakkaita — ei vain näytä hyvältä
+          </h2>
           <div
             className={`grid lg:grid-cols-3 gap-6 transition-all duration-700 delay-100 ${
-              pricingInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              whyInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Main pricing card */}
-            <div className="lg:col-span-3 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111]">
-              <div className="flex flex-col gap-6 mb-8">
-                <h2 className="text-[#f0f0f0] text-3xl lg:text-4xl font-display">
-                  Aloitusmaksu alk 99€ jonka jälkeen 49€/kk.
-                </h2>
-                <p className="text-sm text-[#a0a0a0]">
-                  Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
-                </p>
-                <h3 className="text-[#f0f0f0] text-2xl font-display">
-                  Mitä aloitusmaksu sisältää?
-                </h3>
+            {miksiToimii.map((item) => (
+              <div key={item.title} className="p-8 border border-[#2a2a2a] bg-[#111111]/60 backdrop-blur-sm">
+                <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-4">{item.title}</h3>
+                <p className="text-[#a0a0a0] leading-relaxed">{item.text}</p>
               </div>
-              <div className="space-y-5 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                  </div>
-                  <p className="text-[#a0a0a0] leading-relaxed">
-                   Räätälöity Next.js + Tailwind kokonaisuus, ei wordpressiä tai muita valmispohjia. 
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                  </div>
-                  <p className="text-[#a0a0a0] leading-relaxed">
-                    Hakukone ja tekoälyhaku huomioitu alusta alkaen
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
-                  </div>
-                  <p className="text-[#a0a0a0] leading-relaxed">
-                    Aloitushinta sisältää enintään 6 sivua sekä pakolliset
-                    tietosuoja- ja käyttöehtosivut.
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#c9a84c]" />
-                  </div>
-                  <p className="text-[#c9a84c] leading-relaxed">
-                    Ylläpitoon sisältyy pienet sisältöpäivitykset, uudet palvelut, kuvat tai muu sivun jatkokehitys nopeasti WhatsApp:in välityksellä. Domain ja hosting sekä muut tarpeelliset sisältyvät.{" "}
-                    <a
-                      href="/yllapito"
-                      className="inline-block mt-2 px-4 py-1.5 rounded-full border border-[#c9a84c] text-[#c9a84c] text-sm font-medium hover:bg-[#c9a84c] hover:text-[#0a0a0a] transition-colors"
-                    >
-                      Lue lisää ylläpidosta
-                    </a>
-                  </p>
-                </div>
-                <p className="text-[#a0a0a0] leading-relaxed">
-                    Laajemmat kokonaisuudet – kuten varausjärjestelmät,
-                    maksutoiminnot, integraatiot ja muut räätälöidyt ratkaisut –
-                    suunnitellaan ja hinnoitellaan aina erikseen projektin laajuuden
-                    mukaan.{" "}
-                    <a
-                      href="/#yhteystiedot"
-                      className="text-[#f0f0f0] underline underline-offset-2 hover:text-[#a0a0a0] transition-colors italic"
-                    >
-                      Otan mielelläni vastaan isommatkin projektit – kysy lisää!
-                    </a>
-                </p>
-              </div>
-
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      <CtaSection backgroundImage="/images/tumma.tausta.webp" />
+      {/* ── Prosessi ── */}
+      <section className="relative py-20 lg:py-28 bg-[#0a0a0a] border-t border-[#2a2a2a]">
+        <div ref={processInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <h2
+            className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-12 transition-all duration-700 ${
+              processInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            Näin pääset alkuun
+          </h2>
+
+          <div className="flex flex-col gap-0">
+            {prosessi.map((step, index) => (
+              <div
+                key={step.number}
+                className={`flex items-start gap-8 py-10 border-b border-[#2a2a2a] transition-all duration-700 ${
+                  processInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 120}ms` }}
+              >
+                <span className="text-4xl lg:text-5xl font-display font-bold text-blue-500 shrink-0 leading-none mt-1">
+                  {step.number}
+                </span>
+                <div>
+                  <h3 className="text-xl lg:text-2xl font-display text-[#f0f0f0] mb-3">{step.title}</h3>
+                  <p className="text-lg text-[#a0a0a0] leading-relaxed max-w-3xl">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Asiakkaat ── */}
+      <TestimonialsSection />
+
+      {/* ── FAQ ── */}
+      <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
+        <div ref={faqInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <h2
+            className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-16 transition-all duration-700 ${
+              faqInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            Usein kysyttyä
+          </h2>
+
+          <div
+            className={`grid lg:grid-cols-2 gap-8 transition-all duration-700 delay-100 ${
+              faqInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            {faq.map((item) => (
+              <div key={item.q} className="p-8 border border-[#2a2a2a] bg-[#111111]">
+                <h3 className="text-lg lg:text-xl font-display text-[#f0f0f0] mb-3">{item.q}</h3>
+                <p className="text-[#a0a0a0] leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Lomake ── */}
+      <CtaSection
+        backgroundImage="/images/punanen.tausta.webp"
+        title="Pyydä maksuton demo"
+        description="Saat selkeän demon ja suunnitelman ilman sitoutumista!"
+        messagePlaceholder="Kerro yrityksestäsi muutamalla sanalla, mitä teette? Palvelut? Tuleeko sivulle maksuominaisuudet? Mitään muita toiveita?"
+      />
     </>
   );
 }

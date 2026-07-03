@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 const features = [
   {
@@ -22,19 +21,10 @@ const features = [
   },
   {
     number: "03",
-    title: "Mobiilioptimoidut Sivut",
+    title: "Päivitykset WhatsAppin kautta",
     description:
-      "Sivut toimivat moitteettomasti kaikilla laitteilla. Responsiivinen suunnittelu varmistaa, että asiakkaasi löytävät sinut puhelimella, tabletilla ja tietokoneella.",
-    visual: "mobile",
-  },
-  {
-    number: "04",
-    title: "Jatkuva ylläpito",
-    description:
-      "Sivun päivitykset helposti ja nopeasti WhatsApp:in välityksellä, kuten uudet kuvat, palvelu tai puhelinnumeron vaihdos. Huolehdin myös domainista, hostingista, varmuuskopioista ja muusta digistä puolestasi.",
-    visual: "update",
-    link: "/yllapito",
-    linkLabel: "Lue lisää ylläpidosta",
+      "Lähetä kuva, ajankohtainen tarjous tai uusi palvelu suoraan WhatsApp:viestillä.",
+    visual: "whatsapp",
   },
 ];
 
@@ -96,55 +86,22 @@ function SEOVisual() {
   );
 }
 
-function MobileVisual() {
+function WhatsAppVisual() {
   return (
-    <svg viewBox="0 0 200 160" className="w-full h-full">
-      <rect x="70" y="20" width="60" height="120" rx="8" fill="none" stroke="currentColor" strokeWidth="2" />
-      <rect x="75" y="35" width="50" height="90" rx="2" fill="currentColor" opacity="0.1">
-        <animate attributeName="opacity" values="0.1;0.2;0.1" dur="2s" repeatCount="indefinite" />
-      </rect>
-      {[0, 1, 2, 3].map((i) => (
-        <rect key={i} x="80" y={45 + i * 18} width="40" height="8" rx="2" fill="currentColor" opacity="0.3">
-          <animate attributeName="width" values="20;40;20" dur="2s" begin={`${i * 0.2}s`} repeatCount="indefinite" />
-        </rect>
-      ))}
-      <circle cx="100" cy="130" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function UpdateVisual() {
-  return (
-    <svg viewBox="0 0 200 160" className="w-full h-full">
-      <circle cx="100" cy="80" r="40" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.2" />
-      <path
-        d="M 100 45 A 35 35 0 1 1 65 80"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      >
-        <animateTransform attributeName="transform" type="rotate" from="0 100 80" to="360 100 80" dur="2.5s" repeatCount="indefinite" />
-      </path>
-      <polygon points="65,80 55,68 76,68" fill="currentColor">
-        <animateTransform attributeName="transform" type="rotate" from="0 100 80" to="360 100 80" dur="2.5s" repeatCount="indefinite" />
-      </polygon>
-      {[0, 1, 2].map((i) => (
-        <rect key={i} x="76" y={70 + i * 10} width="48" height="6" rx="3" fill="currentColor" opacity="0.25">
-          <animate attributeName="opacity" values="0.25;0.6;0.25" dur="1.8s" begin={`${i * 0.3}s`} repeatCount="indefinite" />
-        </rect>
-      ))}
-    </svg>
+    <div className="relative flex items-center justify-center w-full h-full">
+      <span className="absolute w-20 h-20 rounded-full bg-[#25D366]/20 animate-ping" />
+      <span className="absolute w-28 h-28 rounded-full bg-[#25D366]/10" />
+      <MessageCircle className="relative w-16 h-16 text-[#25D366] animate-bounce" />
+    </div>
   );
 }
 
 function AnimatedVisual({ type }: { type: string }) {
   switch (type) {
-    case "code":   return <CodeVisual />;
-    case "seo":    return <SEOVisual />;
-    case "mobile": return <MobileVisual />;
-    case "update": return <UpdateVisual />;
-    default:       return <CodeVisual />;
+    case "code":     return <CodeVisual />;
+    case "seo":      return <SEOVisual />;
+    case "whatsapp": return <WhatsAppVisual />;
+    default:         return <CodeVisual />;
   }
 }
 
@@ -176,21 +133,6 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
               {feature.title}
             </h3>
             <p className="text-lg text-[#a0a0a0] leading-relaxed">{feature.description}</p>
-            {"link" in feature && feature.link && (
-              <div className="mt-6">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 px-6 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
-                  asChild
-                >
-                  <a href={feature.link}>
-                    {feature.linkLabel}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-              </div>
-            )}
           </div>
           <div className="flex justify-center lg:justify-end">
             <div className="w-48 h-40 text-[#f0f0f0]">
@@ -223,6 +165,26 @@ export function NettisivutFeaturesSection() {
         <div className="absolute inset-0 bg-[#0a0a0a]/92" />
       </div>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="mb-16 lg:mb-24 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div>
+            <span className="text-3xl lg:text-4xl font-display text-[#f0f0f0]">Aloitusmaksu 99 €</span>
+            <p className="text-xl lg:text-2xl text-[#a0a0a0] mt-2">
+              Jonka jälkeen <span className="text-[#f0c040] font-display">49 €/kk</span> — sisältää kaiken
+            </p>
+            <p className="text-[#a0a0a0] mt-2">
+              + 5 €/kk per yrityssähköposti (esim. info@yrityksesi.fi)
+            </p>
+          </div>
+          <a
+            href="https://wa.me/358452031377"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium rounded-full transition-colors"
+          >
+            Pyydä tarjous WhatsAppissa
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
         <div className="mb-16 lg:mb-24">
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] transition-all duration-700 ${

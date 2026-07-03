@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinksFi = [
-  { name: "Nettisivut", href: "/nettisivut" },
-  { name: "Ylläpito", href: "/yllapito" },
+  { name: "Nettisivut + ylläpito", href: "/nettisivut" },
   { name: "Autoala", href: "/autokorjaamonsivut" },
   { name: "Veneily", href: "/veneilyalansivut" },
   { name: "Kuka on Leo?", href: "/leodigital" },

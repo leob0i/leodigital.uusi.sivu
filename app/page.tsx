@@ -79,7 +79,7 @@ const jsonLd = {
             description: 'Domain, hosting, SSL-sertifikaatti, sisältöpäivitys, SEO kehitys ja seuranta, WhatsApp-tuki ja kuukausiraportti.',
             price: '49',
             priceCurrency: 'EUR',
-            url: 'https://www.leodigital.fi/yllapito',
+            url: 'https://www.leodigital.fi/nettisivut',
           },
         ],
       },

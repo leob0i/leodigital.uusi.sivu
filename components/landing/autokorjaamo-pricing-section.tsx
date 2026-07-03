@@ -114,7 +114,7 @@ export function AutokorjaamoPricingSection() {
                 </ul>
                 <div className="pt-6 border-t border-[#b8960c]/40">
                   <a
-                    href="/yllapito"
+                    href="/nettisivut"
                     className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
                   >
                     Lue lisää ylläpitopaketeista

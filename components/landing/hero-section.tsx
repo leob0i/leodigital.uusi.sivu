@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { StatsMarquee } from "@/components/landing/stats-marquee";
 
 const words = ["Nettisivu", "Ylläpito", "Näkyvyys"];
 
@@ -143,8 +144,8 @@ Hoidan näkyvyyden, päivitykset ja kehityksen, jotta sinun ei tarvitse huolehti
               className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
               asChild
             >
-              <a href="/yllapito">
-                Ylläpito
+              <a href="https://wa.me/358452031377" target="_blank" rel="noopener noreferrer">
+                WhatsApp
               </a>
             </Button>
           </div>
@@ -152,34 +153,8 @@ Hoidan näkyvyyden, päivitykset ja kehityksen, jotta sinun ei tarvitse huolehti
         
       </div>
       
-      {/* Stats marquee */}
-      <div 
-        className={`absolute bottom-10 lg:bottom-18 left-0 right-0 transition-all duration-700 delay-500 z-10 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="flex gap-16 marquee whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex gap-16">
-              {[
-                { value: "100%", label: "räätälöity koodi", company: "yrityksesi näköiseksi" },
-                { value: "24/7", label: "tuki saatavilla", company: "WhatsApp" },
-                { value: "SEO", label: "alusta alkaen", company: "Hakukoneoptimointi" },
-                { value: "Nopea", label: "latausaika", company: "Optimoitu" },
-              ].map((stat) => (
-                <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
-                  <span className="text-4xl lg:text-5xl font-display text-[#f0f0f0]">{stat.value}</span>
-                  <span className="text-sm text-[#a0a0a0]">
-                    {stat.label}
-                    <span className="block font-mono text-xs mt-1">{stat.company}</span>
-                  </span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      
+      <StatsMarquee isVisible={isVisible} />
+
     </section>
   );
 }

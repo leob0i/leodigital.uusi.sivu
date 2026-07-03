@@ -19,8 +19,18 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/yllapito',
+        destination: '/nettisivut',
+        permanent: true,
+      },
+      {
+        source: '/yllapito/:path*',
+        destination: '/nettisivut',
+        permanent: true,
+      },
+      {
         source: '/starter',
-        destination: '/yllapito',
+        destination: '/nettisivut',
         permanent: true,
       },
     ]

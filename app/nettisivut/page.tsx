@@ -4,39 +4,29 @@ import { NettisivutContent } from "@/components/landing/nettisivut-content";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata: Metadata = {
-  title: 'Kotisivut Yritykselle | Leo Digital Suomi – Räätälöidyt Verkkosivut',
-  description: 'Rakennamme suomalaiselle yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis – ei teemoja, ei kompromisseja, juuri sinulle tehty.',
+  title: "Kotisivut Yritykselle | 99 € + 49 €/kk – Leo Digital Suomi",
+  description:
+    "Räätälöidyt kotisivut suomalaiselle yritykselle — ylläpito, domain, hosting ja SEO samassa paketissa. Aloitusmaksu 99 €, sen jälkeen 49 €/kk. Pyydä ilmainen tarjous.",
   keywords: [
-    'kotisivut yritykselle',
-    'nettisivut yritykselle',
-    'verkkosivut yritykselle',
-    'räätälöidyt kotisivut',
-    'kotisivut alusta alkaen',
-    'mobiiliystävälliset kotisivut',
-    'nopeat verkkosivut',
-    'kotisivut edullisesti',
-    'kotisivut Suomi',
-    'Leo Digital Suomi',
+    "kotisivut yritykselle",
+    "nettisivut yritykselle hinta",
+    "kotisivut hinta 2026",
+    "verkkosivut ylläpito",
+    "kotisivut 49 euroa kuukaudessa",
+    "räätälöidyt kotisivut",
+    "kotisivut SEO",
+    "kotisivut suomalaiselle yritykselle",
+    "nettisivut pk-yritys",
+    "Leo Digital Suomi",
   ],
+  alternates: { canonical: "https://www.leodigital.fi/nettisivut" },
   openGraph: {
-    title: 'Kotisivut Yritykselle | Leo Digital Suomi – Räätälöidyt Verkkosivut',
-    description: 'Rakennamme suomalaiselle yrityksellesi yksilölliset kotisivut alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis.',
-    url: 'https://www.leodigital.fi/nettisivut',
-    siteName: 'Leo Digital Suomi',
-    locale: 'fi_FI',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Kotisivut Yritykselle | Leo Digital Suomi',
-    description: 'Räätälöidyt kotisivut suomalaiselle yrityksellesi alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneystävällinen.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: 'https://www.leodigital.fi/nettisivut',
+    title: "Kotisivut Yritykselle | 99 € + 49 €/kk – Leo Digital Suomi",
+    description:
+      "Räätälöidyt kotisivut, ylläpito, domain ja hosting samassa paketissa. Aloitusmaksu 99 €, sen jälkeen 49 €/kk. Ei piilomaksuja.",
+    url: "https://www.leodigital.fi/nettisivut",
+    locale: "fi_FI",
+    type: "website",
   },
 };
 
@@ -44,26 +34,79 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Kotisivut yritykselle',
-  description:
-    'Räätälöidyt kotisivut yrityksellesi alusta alkaen. Nopea, mobiiliystävällinen ja hakukoneoptimointiin valmis – ei teemoja, ei kompromisseja.',
   provider: {
-    '@type': 'LocalBusiness',
-    '@id': 'https://www.leodigital.fi/#business',
+    '@type': 'Organization',
     name: 'Leo Digital Suomi',
-    address: { '@type': 'PostalAddress', addressCountry: 'FI' },
+    url: 'https://www.leodigital.fi',
   },
-  url: 'https://www.leodigital.fi/nettisivut',
-  areaServed: { '@type': 'Country', name: 'Finland' },
-  serviceType: 'Verkkosivujen rakentaminen',
+  description:
+    'Räätälöidyt kotisivut suomalaiselle yritykselle — ylläpito, domain, hosting ja hakukoneoptimointi samassa paketissa.',
   offers: {
     '@type': 'Offer',
-    name: 'Kotisivut – kertaostos',
-    description:
-      'Aloitushinta sisältää enintään 6 sivua sekä pakolliset tietosuoja- ja käyttöehtosivut. Maksu voidaan jakaa kahteen erään.',
-    price: '499',
     priceCurrency: 'EUR',
-    eligibleRegion: { '@type': 'Country', name: 'Finland' },
+    price: '99',
+    description: 'Aloitusmaksu 99 €, jonka jälkeen 49 €/kk ylläpito',
+    url: 'https://www.leodigital.fi/nettisivut',
   },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Finland',
+  },
+}
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Mitä kotisivut maksavat yritykselle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Aloitusmaksu on 99 € ja sen jälkeen 49 €/kk. Hinta sisältää räätälöidyt sivut, ylläpidon, domainin, hostingin ja tietoturvan. Yrityssähköposti on +5 €/kk per postilaatikko.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Onko sopimus määräaikainen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sopimus on 12kk määräaikainen, jonka jälkeen se muuttuu toistaiseksi voimassaolevaksi 1kk irtisanomisajalla.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kuinka nopeasti sivut valmistuvat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yksinkertaiset sivut valmistuvat tyypillisesti 1–2 viikossa alkukartoituksesta. Laajemmat projektit sovitaan erikseen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Tarvitseeko minun osata mitään teknistä?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ei. Sinun tehtäväsi on kertoa mitä haluat ja hyväksyä lopputulos. Minä hoidan kaiken teknisen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Voiko sivuja kehittää myöhemmin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Kyllä. Ylläpitoon sisältyvät pienet päivitykset, ja isommat lisäykset kuten ajanvaraus tai chatbotti voidaan toteuttaa erikseen sovittavalla hinnalla.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Mitä minun pitää tehdä?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Se riittää että kerrot perustiedot yrityksestäsi ja palveluistasi. Hoidan suunnittelun, toteutuksen, domainit yms puolestasi. Tottakai pääset mukaan suunnittelemaan, mutta ideana on tehdä mahdollisimman helppo ja vaivaton kiireisille yrittäjille.',
+      },
+    },
+  ],
 }
 
 export default function NettisivutPage() {
@@ -72,6 +115,10 @@ export default function NettisivutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navigation />
       <NettisivutContent />

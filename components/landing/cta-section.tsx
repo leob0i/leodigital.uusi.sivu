@@ -5,7 +5,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
-export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: { backgroundImage?: string }) {
+export function CtaSection({
+  backgroundImage = "/images/punanen.tausta.webp",
+  title = "Pyydä maksuton demo",
+  description = "Maksuton demo sisältää karkean suunnitelman työstä, arvioidun hinnan sekä demon, eikä se sido ostopäätökseen. Voit myös kysyä mitä tahansa, vastaan mahdollisimman pian!",
+  messagePlaceholder = "Kerro mitä tarvitset...",
+}: { backgroundImage?: string; title?: string; description?: string; messagePlaceholder?: string }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -84,11 +89,11 @@ export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: 
                   Yhteystiedot
                 </span>
                 <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] mb-8 leading-[0.95]">
-                  Pyydä maksuton demo
+                  {title}
                 </h2>
 
                 <p className="text-xl text-[#a0a0a0] mb-12 leading-relaxed max-w-md">
-                  Maksuton demo sisältää karkean suunnitelman työstä, arvioidun hinnan sekä demon, eikä se sido ostopäätökseen. Voit myös kysyä mitä tahansa, vastaan mahdollisimman pian!
+                  {description}
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -194,7 +199,7 @@ export function CtaSection({ backgroundImage = "/images/punanen.tausta.webp" }: 
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 bg-[#161616] border border-[#2a2a2a] focus:border-[#f0f0f0] text-[#f0f0f0] placeholder-[#606060] outline-none transition-colors resize-none"
-                      placeholder="Kerro mitä tarvitset..."
+                      placeholder={messagePlaceholder}
                     />
                   </div>
 
