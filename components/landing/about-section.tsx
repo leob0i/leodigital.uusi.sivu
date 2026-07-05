@@ -62,11 +62,13 @@ export function AboutSection() {
                   Kotisivut alkaen <span className="font-black text-[#f0c040]">49€/kk</span>
                 </h2>
               </div>
-              <p className="text-base text-[#f0f0f0]/80 font-medium mb-3">
+              <p className="text-xl text-[#f0f0f0]/80 font-medium mb-3">
                 Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
               </p>
-              <p className="text-sm text-[#a0a0a0] leading-relaxed max-w-2xl">
-                Räätälöidyt kotisivut yrityksesi tarpeisiin. Sisältää kaiken tarvitavan ylläpidon ja päivitykset nopeasti WhatsApp:in kautta.
+              <p className="text-base text-[#a0a0a0] leading-relaxed max-w-2xl">
+                Räätälöidyt kotisivut, jotka löytyvät Googlesta ja tekoälyhauista. Hinta sisältää kaiken: ylläpidon, domainin, hostingin ja tietoturvan — ei piilomaksuja eikä yllätyslaskuja.
+                <br />
+                Päivitykset hoituvat yhdellä WhatsApp-viestillä, vaikka viikonloppuna.
               </p>
               <p className="text-xs text-[#a0a0a0]/70 mt-2">
                 Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi

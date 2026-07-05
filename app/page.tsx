@@ -39,11 +39,11 @@ export const metadata: Metadata = {
 }
 import { HeroSection } from "@/components/landing/hero-section";
 import { IntroSection } from "@/components/landing/intro-section";
-import { HowItWorksSection } from "@/components/landing/how-it-works-section";
 import { AboutSection } from "@/components/landing/about-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { LeoTeaserSection } from "@/components/landing/leo-teaser-section";
+import { FaqSection } from "@/components/landing/faq-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
@@ -111,9 +111,9 @@ export default function Home() {
       <HeroSection />
       <IntroSection />
       <AboutSection />
-      <HowItWorksSection />
       <LeoTeaserSection />
       <TestimonialsSection />
+      <FaqSection />
       <CtaSection />
       <FooterSection />
     </main>
