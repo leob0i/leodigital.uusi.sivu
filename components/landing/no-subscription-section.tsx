@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export function NoSubscriptionSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,10 +26,11 @@ export function NoSubscriptionSection() {
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/herokuva.webp"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0a0a0a]/80" />
       </div>

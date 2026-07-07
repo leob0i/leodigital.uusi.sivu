@@ -58,7 +58,7 @@ const prosessi = [
   {
     number: "01",
     title: "Ilmainen kartoitus",
-    description: "Kerrot yrityksestäsi ja tavoitteistasi. Saat selkeän suunnitelman ja hinnan. Ei sido mihinkään.",
+    description: "Kerrot yrityksestäsi ja tavoitteistasi. Saat demon sekä selkeän suunnitelman. Ei sido mihinkään vielä.",
   },
   {
     number: "02",
@@ -352,9 +352,6 @@ export function NettisivutContent() {
         </div>
       </section>
 
-      {/* ── Asiakkaat ── */}
-      <TestimonialsSection />
-
       {/* ── FAQ ── */}
       <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
         <div ref={faqInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -380,6 +377,9 @@ export function NettisivutContent() {
           </div>
         </div>
       </section>
+
+      {/* ── Asiakkaat ── */}
+      <TestimonialsSection />
 
       {/* ── Lomake ── */}
       <CtaSection

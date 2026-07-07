@@ -315,6 +315,48 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
 
 <AutokorjaamoPricingSection />
 
+      {/* ── Esimerkki: WheelTec ── */}
+      <section className="bg-[#111111] py-16 lg:py-20 border-y border-[#2a2a2a]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-3">
+                <span className="w-8 h-px bg-[#f0f0f0]/30" />
+                Referenssit
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-display tracking-tight text-[#f0f0f0] mb-4">
+                Miltä autoalansivut voivat näyttää?
+              </h2>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-3">
+                Autoala on kattava, ja siksi toteutan erilaisia sivuja laidasta laitaan ja juuri sinun näköiseksesi.
+                Oli kyseessä korjaamo, pesula tai vaikka hitsauspaja!
+              </p>
+              <p className="text-lg text-[#a0a0a0] leading-relaxed">
+                Tässä on hyvä esimerkki kuinka WheelTec:in sivut on toteutettu näyttäväksi, mutta myös toimivaksi ja selkeäksi.
+              </p>
+            </div>
+            <a
+              href="https://www.wheeltec.fi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 flex flex-col items-center justify-center gap-2 transition-opacity hover:opacity-80"
+              aria-label="Siirry WheelTecin sivuille"
+            >
+              <Image
+                src="/images/wt.jpg"
+                alt="WheelTec"
+                width={280}
+                height={280}
+                className="w-40 h-40 lg:w-56 lg:h-56 object-contain"
+              />
+              <span className="text-sm text-[#a0a0a0] underline underline-offset-2">
+                wheeltec.fi
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">

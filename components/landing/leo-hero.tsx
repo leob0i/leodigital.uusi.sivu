@@ -12,6 +12,7 @@ interface Particle {
 }
 
 const clients = [
+  { name: "Wheeltec", logo: "/images/wheeltec.logo.webp", url: "https://www.wheeltec.fi/" },
   { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
   { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
   { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
