@@ -97,6 +97,14 @@ const faq = [
     q: "Mitä minun pitää tehdä?",
     a: "Se riittää että kerrot perustiedot yrityksestäsi ja palveluistasi. Hoidan suunnittelun, toteutuksen, domainit yms puolestasi. Tottakai pääset mukaan suunnittelemaan, mutta ideana on tehdä mahdollisimman helppo ja vaivaton kiireisille yrittäjille.",
   },
+  {
+    q: "Mitä ylläpitoon oikeasti kuuluu — ja missä menee raja?",
+    a: "Ylläpitoon kuuluu sivun valmistuttua pienet päivitykset kerran kuussa, kuten uusi kuva, yhteystietojen päivitys tai vaikka uusi palvelu. Sisältäen noin 2h työtä ja ylimenevä laskutetaan 30 €/h.",
+  },
+  {
+    q: "Kuka omistaa sivut ja domainin — ja mitä tapahtuu jos irtisanon?",
+    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
+  },
 ];
 
 export function NettisivutContent() {
@@ -194,7 +202,7 @@ export function NettisivutContent() {
                 asChild
               >
                 <a href="#yhteystiedot">
-                  Pyydä ilmainen tarjous
+                  Pyydä ilmainen demo
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
@@ -222,10 +230,11 @@ export function NettisivutContent() {
                 Mitä nettisivut ja ylläpito maksavat vuonna 2026?
               </h3>
               <p className="text-[#a0a0a0] leading-relaxed">
-                Itse tehtynä: muutamia kymppejä<br />
-                Ammattilaisella: 500€ – 10.000€<br />
-                Ylläpito itse hoidettuna: aikaa, päänvaivaa ja teknistä osaamista<br />
-                Virastoilla: 50 € – 200 €/kk
+                
+                Sivuston teettäminen ammattilaisella: 500€ – 10.000€<br />
+                
+                Ylläpito isoilla digitoimistoilla: 50 € – 300 €/kk<br />
+                Leo Digitalilla alk 99€ jonka jälkeen alk 49€/kk sisälten kaiken
               </p>
             </div>
             <div>

@@ -4,8 +4,9 @@ import { Mail, Building2 } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
-  Paketit: [
+  "Kotisivut eri aloille": [
     { name: "Autokorjaamot ja muu autoala", href: "/autokorjaamonsivut" },
+    { name: "Veneily ja muut meriliikenne alat", href: "/veneilyalansivut" },
   ],
   Yritys: [
     { name: "Tietoa meistä", href: "/leodigital" },

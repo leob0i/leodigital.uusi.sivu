@@ -43,6 +43,14 @@ const faq = [
     q: "Mitä minun pitää tehdä?",
     a: "Se riittää että kerrot perustiedot yrityksestäsi ja palveluistasi. Hoidan suunnittelun, toteutuksen, domainit yms puolestasi. Tottakai pääset mukaan suunnittelemaan, mutta ideana on tehdä mahdollisimman helppo ja vaivaton kiireisille yrittäjille.",
   },
+  {
+    q: "Mitä ylläpitoon oikeasti kuuluu — ja missä menee raja?",
+    a: "Ylläpitoon kuuluu sivun valmistuttua pienet päivitykset kerran kuussa, kuten uusi kuva, yhteystietojen päivitys tai vaikka uusi palvelu. Sisältäen noin 2h työtä ja ylimenevä laskutetaan 30 €/h.",
+  },
+  {
+    q: "Kuka omistaa sivut ja domainin — ja mitä tapahtuu jos irtisanon?",
+    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
+  },
 ];
 
 export function FaqSection() {
