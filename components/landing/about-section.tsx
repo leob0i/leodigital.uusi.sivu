@@ -70,9 +70,6 @@ export function AboutSection() {
                 <br />
                 Päivitykset hoituvat yhdellä WhatsApp-viestillä, vaikka viikonloppuna.
               </p>
-              <p className="text-xs text-[#a0a0a0]/70 mt-2">
-                Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
-              </p>
             </div>
 
             <a

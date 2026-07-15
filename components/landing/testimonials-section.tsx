@@ -21,8 +21,18 @@ const testimonials = [
 
 // Featured client showcases (left side)
 const featuredClients = [
-  { name: "Wheeltec", image: "/images/wheeltec.etusivu.jpeg", url: "https://www.wheeltec.fi/" },
-  { name: "Repola", image: "/images/repola.etusivu.jpeg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
+  {
+    name: "Wheeltec",
+    image: "/images/wheeltec.etusivu.jpeg",
+    url: "https://www.wheeltec.fi/",
+    tagline: "Yli 6 vuoden kokemus autoalalta tarkoittaa että tyyli välillä ratkaisee. Mutta myös sivu pysyy todella nopeana joka ruudulla.",
+  },
+  {
+    name: "Repola",
+    image: "/images/repola.etusivu.jpeg",
+    url: "https://www.kirjanpitopalvelutrepola.fi/",
+    tagline: "Nettisivut, jotka tuovat taloushallinnon palveluille enemmän näkyvyyttä ja asiakkaita.",
+  },
 ];
 
 // Client logos (right side)
@@ -93,6 +103,11 @@ export function TestimonialsSection() {
                   <div className="absolute top-2 left-2 text-sm font-display text-[#f0f0f0]">
                     {client.name}
                   </div>
+                  {client.tagline && (
+                    <p className="absolute bottom-11 left-2 right-2 text-base sm:text-lg font-medium text-[#f0f0f0] leading-snug">
+                      {client.tagline}
+                    </p>
+                  )}
                   <div className="absolute bottom-2 left-2 inline-flex items-center gap-1 text-xs font-mono text-[#f0f0f0]">
                     Katso sivu
                     <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

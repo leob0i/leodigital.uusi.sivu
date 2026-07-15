@@ -316,8 +316,17 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
 <AutokorjaamoPricingSection />
 
       {/* ── Esimerkki: WheelTec ── */}
-      <section className="bg-[#111111] py-16 lg:py-20 border-y border-[#2a2a2a]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="relative bg-[#111111] py-16 lg:py-20 border-y border-[#2a2a2a] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/wheeltec.etusivu.jpeg"
+            alt=""
+            fill
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-[#0d0d0d]/80" />
+        </div>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center">
             <div className="max-w-xl">
               <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-3">
