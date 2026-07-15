@@ -85,6 +85,45 @@ export function AboutSection() {
           </div>
         </div>
 
+        {/* Verkkokauppa Glass Box */}
+        <div
+          className={`relative p-6 lg:p-8 rounded-3xl border border-[#2a2a2a]/60 bg-[#1a1a1a]/40 backdrop-blur-xl shadow-2xl transition-all duration-1000 delay-150 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Inner glow effect */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f0f0f0]/5 via-transparent to-[#f0f0f0]/3 pointer-events-none" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0] mb-2">
+                Täysin räätälöidyt verkkokaupat
+              </h2>
+              <p className="text-xl text-[#f0f0f0]/80 font-medium leading-relaxed max-w-2xl">
+                Alkaen <span className="font-black text-[#f0c040]">64€/kk</span> — Sisältäen tuotehallinnan ja ylläpidon.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Sähköposti Glass Box */}
+        <div
+          className={`relative p-6 lg:p-8 rounded-3xl border border-[#2a2a2a]/60 bg-[#1a1a1a]/40 backdrop-blur-xl shadow-2xl transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Inner glow effect */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f0f0f0]/5 via-transparent to-[#f0f0f0]/3 pointer-events-none" />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <p className="text-xl text-[#f0f0f0]/80 font-medium leading-relaxed max-w-2xl">
+              Sähköposti <span className="font-black text-[#f0c040]">+5€/kk</span> per sähköpostilaatikko esim. info@yrityksesi.fi
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );

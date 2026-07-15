@@ -168,6 +168,42 @@
     }
   }
 
+  .balloon-float {
+    animation: balloon-float 4.5s ease-in-out infinite;
+  }
+
+  @keyframes balloon-float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+
+  .balloon-shimmer {
+    background: linear-gradient(100deg, #a8790a 0%, #f0c040 25%, #fff8e0 50%, #f0c040 75%, #a8790a 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: balloon-shimmer 3s linear infinite;
+    filter: drop-shadow(0 0 18px rgba(240, 192, 64, 0.45));
+  }
+
+  @keyframes balloon-shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 250% center; }
+  }
+
+  .sparkle {
+    position: absolute;
+    color: #f0c040;
+    animation: sparkle-twinkle 2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.1) rotate(180deg); }
+  }
+
   .noise-overlay {
     position: relative;
   }

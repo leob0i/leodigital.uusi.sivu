@@ -30,7 +30,7 @@ const sisaltyy = [
   "Hakukoneoptimointi (SEO) alusta alkaen — oikeat avainsanat, tekninen rakenne",
   "Tekoälyhakuoptimointi (GEO) — löydyt ChatGPT:stä, Perplexitystä ja Google AI:sta",
   "Mobiilioptimoidut ja nopeat sivut kaikilla laitteilla",
-  "Enintään 6 sivua (etusivu, palvelut, yhteystiedot + muut tarpeelliset)",
+  "Aloitushinta 99€ sisältää 6 sivua (etusivu, palvelut, yhteystiedot + muut tarpeelliset).",
   "Domain & SSL-sertifikaatti hoidettu",
   "Hosting & varmuuskopiot mukana",
   "Tietoturva ja tekninen ylläpito — ei sinun huolesi",
@@ -262,13 +262,31 @@ export function NettisivutContent() {
       {/* ── Mitä saat ── */}
       <section id="mita-sisaltyy" className="bg-[#111111] py-24 lg:py-32 border-y border-[#2a2a2a]">
         <div ref={mitaInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2
-            className={`text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] mb-16 max-w-2xl transition-all duration-700 ${
+          <div
+            className={`flex flex-wrap items-end justify-between gap-6 mb-16 transition-all duration-700 ${
               mitaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Kaikki mitä tarvitset — yhdestä paikasta
-          </h2>
+            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
+              Kaikki mitä tarvitset — yhdestä paikasta
+            </h2>
+            <div className="flex flex-col items-end shrink-0">
+              <div className="flex items-baseline gap-2 scale-125 lg:scale-150 origin-right">
+                <div className="relative balloon-float">
+                  <span className="sparkle text-lg -top-3 -left-5" style={{ animationDelay: "0s" }}>✦</span>
+                  <span className="sparkle text-sm top-1 -right-4" style={{ animationDelay: "0.6s" }}>✦</span>
+                  <span className="sparkle text-base -bottom-4 left-1/3" style={{ animationDelay: "1.2s" }}>✦</span>
+                  <span className="text-6xl lg:text-7xl font-display font-bold balloon-shimmer">49€</span>
+                </div>
+                <span className="text-2xl lg:text-3xl font-display text-[#f0f0f0]">/kk</span>
+              </div>
+              <span className="text-sm text-[#a0a0a0] mt-2 text-right">
+                Aloitus 99€
+                <br />
+                jonka jälkeen 12kk sopimus
+              </span>
+            </div>
+          </div>
 
           <div
             className={`grid lg:grid-cols-2 gap-x-12 gap-y-5 transition-all duration-700 delay-100 ${
@@ -280,14 +298,20 @@ export function NettisivutContent() {
                 <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 text-[#f0f0f0]" />
                 </div>
-                <p className="text-[#a0a0a0] leading-relaxed">{text}</p>
+                <p
+                  className={`leading-relaxed ${
+                    text.startsWith("Yrityssähköposti") ? "text-white" : "text-[#a0a0a0]"
+                  }`}
+                >
+                  {text}
+                </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <p className="text-sm text-[#a0a0a0] max-w-2xl">
-              Laajemmat kokonaisuudet kuten varausjärjestelmät, maksuominaisuudet ja integraatiot hinnoitellaan erikseen projektin laajuuden mukaan.
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-sm text-[#a0a0a0]">
+              Sisältää noin 2h työtä / kuukausi, sisältäen kaiken edellämainitun. Isommat muutostoiveet 30€/h.
             </p>
             <a
               href="/kayttoehdot"
@@ -295,6 +319,23 @@ export function NettisivutContent() {
             >
               Lue lisää käyttöehdoista
             </a>
+          </div>
+
+          <div
+            className={`mt-8 p-8 border border-[#2a2a2a] bg-[#0d0d0d] transition-all duration-700 delay-150 ${
+              mitaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="flex flex-wrap items-baseline gap-3 mb-4">
+              <h3 className="text-3xl lg:text-4xl font-display text-[#f0f0f0]">Maksut ja verkkokauppa</h3>
+              <span className="text-xl font-display text-[#f0c040]">+15–99 €/kk lisää</span>
+            </div>
+            <p className="text-lg lg:text-xl font-bold text-[#f0c040] leading-relaxed mb-4">
+              Sisältäen täysin räätälöidyn verkkokaupan ja tuotehallinnan.
+            </p>
+            <p className="text-[#a0a0a0] leading-relaxed">
+              <span className="text-[#f0f0f0] font-medium">Entä maksujen välitys?</span> Kun asiakkaasi maksaa verkkokaupassa, rahaliikenne kulkee maksunvälittäjän kautta (esim. Stripe tai Visma Pay). He veloittavat jokaisesta myynnistä pienen palkkion — yleensä muutama prosentti + kiinteä sentti per tapahtuma, joillakin lisäksi kuukausimaksu. Tämä on alan vakiokäytäntö kaikilla verkkokaupoilla, ja maksat sen suoraan palveluntarjoajalle. Me emme ota siitä osuutta. Autamme sinut valitsemaan sopivimman vaihtoehdon ja kerromme etukäteen mitä se maksaa.
+            </p>
           </div>
         </div>
       </section>
