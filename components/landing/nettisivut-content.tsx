@@ -270,15 +270,12 @@ export function NettisivutContent() {
             <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-2xl">
               Kaikki mitä tarvitset — yhdestä paikasta
             </h2>
-            <div className="flex flex-col items-end shrink-0">
-              <div className="flex items-baseline gap-2 scale-125 lg:scale-150 origin-right">
+            <div className="flex flex-col items-end shrink-0 w-full sm:w-auto mt-2 sm:mt-0">
+              <div className="flex items-baseline gap-2 lg:scale-150 origin-right">
                 <div className="relative balloon-float">
-                  <span className="sparkle text-lg -top-3 -left-5" style={{ animationDelay: "0s" }}>✦</span>
-                  <span className="sparkle text-sm top-1 -right-4" style={{ animationDelay: "0.6s" }}>✦</span>
-                  <span className="sparkle text-base -bottom-4 left-1/3" style={{ animationDelay: "1.2s" }}>✦</span>
-                  <span className="text-6xl lg:text-7xl font-display font-bold balloon-shimmer">49€</span>
+                  <span className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold balloon-shimmer">49€</span>
                 </div>
-                <span className="text-2xl lg:text-3xl font-display text-[#f0f0f0]">/kk</span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-display text-[#f0f0f0]">/kk</span>
               </div>
               <span className="text-sm text-[#a0a0a0] mt-2 text-right">
                 Aloitus 99€
