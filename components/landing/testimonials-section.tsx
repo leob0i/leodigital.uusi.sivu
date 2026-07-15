@@ -19,15 +19,20 @@ const testimonials = [
   },
 ];
 
-// Client logos
+// Featured client showcases (left side)
+const featuredClients = [
+  { name: "Wheeltec", image: "/images/wheeltec.etusivu.jpeg", url: "https://www.wheeltec.fi/" },
+  { name: "Repola", image: "/images/repola.etusivu.jpeg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
+];
+
+// Client logos (right side)
 const clients = [
-  { name: "Wheeltec", logo: "/images/wt.jpg", url: "https://www.wheeltec.fi/" },
   { name: "Rautaranta", logo: "/images/rautaranta.logo.png", url: "https://www.rautaranta.fi/" },
   { name: "WrapPoint", logo: "/images/wrappoint.logo.png", url: "https://www.wrappoint.fi/" },
-  { name: "Repola", logo: "/images/repola.logo.jpg", url: "https://www.kirjanpitopalvelutrepola.fi/" },
   { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
   { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
   { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
+  { name: "Kirjanpito ja Digitoimisto", logo: "/images/apellxrepola.logo.png", url: "https://kirjanpitojadigitoimisto.fi/" },
 ];
 
 export function TestimonialsSection() {
@@ -63,45 +68,79 @@ export function TestimonialsSection() {
             Yritykset, jotka luottavat osaamiseeni
           </h2>
           
-          {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
-            {clients.map((client, index) => {
-              const cardContent = (
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
-                    className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
-                  />
-                </div>
-              );
-
-              const className = `aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`;
-
-              return client.url ? (
+          {/* Featured showcases (left) + Logo grid (right) */}
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-6xl">
+            {/* Featured client showcases */}
+            <div className="flex flex-row items-start gap-6 lg:w-2/3">
+              {featuredClients.map((client, index) => (
                 <a
                   key={client.name}
                   href={client.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={className}
+                  className={`group relative w-64 sm:w-80 aspect-[3/5] overflow-hidden bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] transition-all duration-500 ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  {cardContent}
+                  <Image
+                    src={client.image}
+                    alt={client.name}
+                    fill
+                    className="object-cover object-top filter brightness-75 group-hover:brightness-90 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
+                  <div className="absolute top-2 left-2 text-sm font-display text-[#f0f0f0]">
+                    {client.name}
+                  </div>
+                  <div className="absolute bottom-2 left-2 inline-flex items-center gap-1 text-xs font-mono text-[#f0f0f0]">
+                    Katso sivu
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </div>
                 </a>
-              ) : (
-                <div
-                  key={client.name}
-                  className={className}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {cardContent}
-                </div>
-              );
-            })}
+              ))}
+            </div>
+
+            {/* Client Logos Grid */}
+            <div className="grid grid-cols-2 lg:w-1/3 gap-6 lg:gap-8 content-start">
+              {clients.map((client, index) => {
+                const cardContent = (
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      fill
+                      className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                    />
+                  </div>
+                );
+
+                const className = `aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`;
+
+                return client.url ? (
+                  <a
+                    key={client.name}
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={className}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    {cardContent}
+                  </a>
+                ) : (
+                  <div
+                    key={client.name}
+                    className={className}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    {cardContent}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
