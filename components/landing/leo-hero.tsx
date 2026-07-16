@@ -19,6 +19,7 @@ const clients = [
   { name: "Kelmutus", logo: "/images/logo.kelmutuspng.png", url: "https://www.kelmutus.fi/" },
   { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
   { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
+  { name: "Kirjanpito ja Digitoimisto", logo: "/images/apellxrepola.logo.png", url: "https://kirjanpitojadigitoimisto.fi/" },
 ];
 
 export function LeoHero() {

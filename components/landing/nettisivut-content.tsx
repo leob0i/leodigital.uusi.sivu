@@ -212,7 +212,7 @@ export function NettisivutContent() {
                 className="h-14 px-8 text-base rounded-full border-[#f0f0f0]/20 text-[#f0f0f0] hover:bg-[#f0f0f0]/5 hover:border-[#f0f0f0]/40"
                 asChild
               >
-                <a href="#mita-sisaltyy">Katso mitä sisältyy</a>
+                <a href="#mita-sisaltyy">Katso hinnat ja mitä sisältyy</a>
               </Button>
             </div>
           </div>
@@ -272,7 +272,7 @@ export function NettisivutContent() {
             </h2>
             <div className="flex flex-col items-end shrink-0 w-full sm:w-auto mt-2 sm:mt-0">
               <div className="flex items-baseline gap-2 lg:scale-150 origin-right">
-                <div className="relative balloon-float">
+                <div className="relative">
                   <span className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold balloon-shimmer">49€</span>
                 </div>
                 <span className="text-xl sm:text-2xl lg:text-3xl font-display text-[#f0f0f0]">/kk</span>

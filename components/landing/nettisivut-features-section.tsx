@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const features = [
   {
@@ -165,26 +165,6 @@ export function NettisivutFeaturesSection() {
         <div className="absolute inset-0 bg-[#0a0a0a]/92" />
       </div>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="mb-16 lg:mb-24 p-8 lg:p-12 border border-[#2a2a2a] rounded-2xl bg-[#111111] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div>
-            <span className="text-3xl lg:text-4xl font-display text-[#f0f0f0]">Aloitusmaksu 99 €</span>
-            <p className="text-xl lg:text-2xl text-[#a0a0a0] mt-2">
-              Jonka jälkeen <span className="text-[#f0c040] font-display">49 €/kk</span> — sisältää kaiken
-            </p>
-            <p className="text-[#a0a0a0] mt-2">
-              + 5 €/kk per yrityssähköposti (esim. info@yrityksesi.fi)
-            </p>
-          </div>
-          <a
-            href="https://wa.me/358452031377"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium rounded-full transition-colors"
-          >
-            Pyydä tarjous WhatsAppissa
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
         <div className="mb-16 lg:mb-24">
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight text-[#f0f0f0] transition-all duration-700 ${
