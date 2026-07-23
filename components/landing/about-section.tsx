@@ -32,6 +32,7 @@ export function AboutSection() {
           src="/images/taustakuva.webp"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0d0d0d]/70" />

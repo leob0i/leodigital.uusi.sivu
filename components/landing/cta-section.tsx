@@ -63,6 +63,7 @@ export function CtaSection({
         src={backgroundImage}
         alt=""
         fill
+        sizes="100vw"
         className="object-cover opacity-20"
         priority={false}
       />

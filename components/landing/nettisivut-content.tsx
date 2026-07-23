@@ -103,7 +103,7 @@ const faq = [
   },
   {
     q: "Kuka omistaa sivut ja domainin — ja mitä tapahtuu jos irtisanon?",
-    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
+    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinnoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
   },
 ];
 
@@ -129,6 +129,7 @@ export function NettisivutContent() {
             alt=""
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
@@ -234,7 +235,7 @@ export function NettisivutContent() {
                 Sivuston teettäminen ammattilaisella: 500€ – 10.000€<br />
                 
                 Ylläpito isoilla digitoimistoilla: 50 € – 300 €/kk<br />
-                Leo Digitalilla alk 99€ jonka jälkeen alk 49€/kk sisälten kaiken
+                Leo Digitalilla alk 99€ jonka jälkeen alk 49€/kk sisältäen kaiken
               </p>
             </div>
             <div>
@@ -337,10 +338,13 @@ export function NettisivutContent() {
         </div>
       </section>
 
+      {/* ── Asiakkaat ── */}
+      <TestimonialsSection />
+
       {/* ── Miksi tämä toimii ── */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/tumma.tausta.webp" alt="" fill className="object-cover" />
+          <Image src="/images/tumma.tausta.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0a0a0a]/90" />
         </div>
         <div ref={whyInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -424,9 +428,6 @@ export function NettisivutContent() {
           </div>
         </div>
       </section>
-
-      {/* ── Asiakkaat ── */}
-      <TestimonialsSection />
 
       {/* ── Lomake ── */}
       <CtaSection

@@ -70,6 +70,7 @@ export function VeneilyalanContent() {
             alt=""
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
         </div>
@@ -104,12 +105,12 @@ export function VeneilyalanContent() {
             >
               <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0]">
                 <span className="w-8 h-px bg-[#f0f0f0]/30" />
-                Nettisivut koko veneilualalle
+                Nettisivut koko veneilyalalle
               </span>
             </div>
 
             <div className="mb-12">
-              <div
+              <h1
                 className={`text-[clamp(2.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
@@ -120,7 +121,7 @@ export function VeneilyalanContent() {
                   <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
                 </span>
                 <span className="block text-[#a0a0a0]">jotka tuovat asiakkaita</span>
-              </div>
+              </h1>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mt-8">
@@ -249,7 +250,7 @@ export function VeneilyalanContent() {
       {/* ── Mitä voidaan rakentaa veneilymaalalle ── */}
       <section className="relative py-24 lg:py-32 border-b border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/vene.ylhaalta.webp" alt="" fill className="object-cover" />
+          <Image src="/images/vene.ylhaalta.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -302,7 +303,7 @@ export function VeneilyalanContent() {
       {/* ── Hinnoittelu ── */}
       <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/sininen.tausta.webp" alt="" fill className="object-cover" />
+          <Image src="/images/sininen.tausta.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -368,7 +369,7 @@ export function VeneilyalanContent() {
                 <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
                 <div className="relative">
                   <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-4">
-                    ⭐ Starter – Sivut + ylläpito
+                    Sivut + ylläpito
                   </span>
                   <div className="mb-4">
                     <span className="font-display text-4xl text-[#f0c040] leading-none">99 €</span>
@@ -378,7 +379,7 @@ export function VeneilyalanContent() {
                     Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
                   </p>
                   <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
-                    Sivun rakennushinta + ylläpitopaketti sisältäen:
+                    Sivun rakennushinta + ylläpito sisältäen:
                   </p>
                   <ul className="space-y-2 mb-8">
                     {["Päivitykset ja muutokset WhatsApp:in kautta", "Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot"].map((item) => (
@@ -388,15 +389,6 @@ export function VeneilyalanContent() {
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-6 border-t border-[#b8960c]/40">
-                    <a
-                      href="/nettisivut"
-                      className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
-                    >
-                      Lue lisää ylläpitopaketeista
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </div>
                 </div>
               </div>
               <a
@@ -421,7 +413,7 @@ export function VeneilyalanContent() {
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/taustakuva.webp" alt="" fill className="object-cover" />
+          <Image src="/images/taustakuva.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={formInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

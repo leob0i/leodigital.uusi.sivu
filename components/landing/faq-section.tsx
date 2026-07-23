@@ -49,7 +49,7 @@ const faq = [
   },
   {
     q: "Kuka omistaa sivut ja domainin — ja mitä tapahtuu jos irtisanon?",
-    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
+    a: "Leo Digital Suomi hallinnoi domainia ja sivuja koko sopimuskauden aikana ellei toisin sovita. Sopimuksen loputtua domainin voi siirtää asiakkaan nimiin sovittaessa. Asiakas voi myös itse ostaa ja hallinnoida domain-osoitteensa. Myös nettisivun lähdekoodin voi lunastaa itselleen aloitusmaksun hinnalla sopimuksen päätyttyä.",
   },
 ];
 

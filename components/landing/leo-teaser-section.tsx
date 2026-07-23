@@ -67,6 +67,7 @@ export function LeoTeaserSection() {
                   src="/images/leoprofiilikuva.jpeg"
                   alt="Leo Apell"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 592px"
                   className="object-cover object-bottom"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />

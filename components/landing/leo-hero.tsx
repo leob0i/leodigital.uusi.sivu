@@ -97,6 +97,7 @@ export function LeoHero() {
             src="/images/taustakuva.webp"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover object-top"
           />
         </div>
@@ -210,6 +211,7 @@ export function LeoHero() {
                     src="/images/leoprofiilikuva.jpeg"
                     alt="Leo Apell"
                     fill
+                    sizes="90vw"
                     className="object-cover"
                     priority
                   />
@@ -308,6 +310,7 @@ export function LeoHero() {
                   src="/images/leoprofiilikuva.jpeg"
                   alt="Leo Apell"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 608px"
                   className="object-cover"
                   priority
                 />
@@ -344,6 +347,7 @@ export function LeoHero() {
               src="/images/mese.webp"
               alt=""
               fill
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-[#0d0d0d]/88" />
@@ -383,6 +387,7 @@ export function LeoHero() {
                     src={client.logo}
                     alt={client.name}
                     fill
+                    sizes="(max-width: 768px) 45vw, 15vw"
                     className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
                   />
                 </div>
@@ -426,6 +431,7 @@ export function LeoHero() {
               src="/images/herokuva.webp"
               alt=""
               fill
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-[#0d0d0d]/85" />

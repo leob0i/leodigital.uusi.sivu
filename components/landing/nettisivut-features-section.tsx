@@ -161,7 +161,7 @@ export function NettisivutFeaturesSection() {
   return (
     <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image src="/images/tumma.tausta.webp" alt="" fill className="object-cover" />
+        <Image src="/images/tumma.tausta.webp" alt="" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-[#0a0a0a]/92" />
       </div>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">

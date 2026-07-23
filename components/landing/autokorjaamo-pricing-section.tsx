@@ -26,7 +26,7 @@ export function AutokorjaamoPricingSection() {
   return (
     <section id="hinnoittelu" className="relative overflow-hidden py-24 lg:py-32">
       <div className="absolute inset-0 z-0">
-        <Image src="/images/bmwt.webp" alt="" fill className="object-cover" />
+        <Image src="/images/bmwt.webp" alt="" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-[#0d0d0d]/80" />
       </div>
       <div ref={pricingInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -92,7 +92,7 @@ export function AutokorjaamoPricingSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
               <div className="relative">
                 <span className="font-mono text-xs tracking-widest text-[#d4a017] uppercase block mb-4">
-                  ⭐ Starter – Sivut + ylläpito
+                  Sivut + ylläpito
                 </span>
                 <div className="mb-4">
                   <span className="font-display text-4xl text-[#f0c040] leading-none">99 €</span>
@@ -102,7 +102,7 @@ export function AutokorjaamoPricingSection() {
                   Sähköposti +5€/per sähköpostilaatikko esim info@yrityksesi.fi
                 </p>
                 <p className="text-[#d4a017]/80 text-sm leading-relaxed mb-4">
-                  Sivun rakennushinta + ylläpitopaketti sisältäen:
+                  Sivun rakennushinta + ylläpito sisältäen:
                 </p>
                 <ul className="space-y-2 mb-8">
                   {["Päivitykset ja muutokset WhatsApp:in kautta","Domain & SSL-sertifikaatti", "Hosting & varmuuskopiot"].map((item) => (
@@ -112,15 +112,6 @@ export function AutokorjaamoPricingSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="pt-6 border-t border-[#b8960c]/40">
-                  <a
-                    href="/nettisivut"
-                    className="inline-flex items-center gap-2 text-sm text-[#d4a017] hover:text-[#f0c040] transition-colors group"
-                  >
-                    Lue lisää ylläpitopaketeista
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
               </div>
             </div>
             <a

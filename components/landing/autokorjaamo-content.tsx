@@ -68,6 +68,7 @@ export function AutokorjaamoContent() {
           <Image
             src="/images/bmw.e30.webp"
             alt=""
+            sizes="100vw"
             fill
             priority
             className="object-cover"
@@ -109,7 +110,7 @@ export function AutokorjaamoContent() {
             </div>
 
             <div className="mb-12">
-              <div
+              <h1
                 className={`text-[clamp(2.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
@@ -120,7 +121,7 @@ export function AutokorjaamoContent() {
                   <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#f0f0f0]/10" />
                 </span>
                 <span className="block text-[#a0a0a0]">jotka tuovat töitä</span>
-              </div>
+              </h1>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mt-8">
@@ -131,7 +132,7 @@ export function AutokorjaamoContent() {
               >
                 <p className="text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl">
                   Enemmän kuin pelkkä nettisivu autokorjaamolle, detailing-yritykselle tai teippipajalle.
-Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat lisää yhetydenottoja. Kaikki työt aidolla autoalan tuntemuksella ja korjaamokokemuksella
+Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat lisää yhteydenottoja. Kaikki työt aidolla autoalan tuntemuksella ja korjaamokokemuksella
                 </p>
               </div>
               <div
@@ -265,7 +266,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
       {/* ── Mikä erottaa mut joukosta ── */}
       <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/mese.webp" alt="" fill className="object-cover" />
+          <Image src="/images/mese.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/75" />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -322,6 +323,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
             src="/images/wheeltec.etusivu.jpeg"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover object-top"
           />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
@@ -369,7 +371,7 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/kultanen.vanne.webp" alt="" fill className="object-cover" />
+          <Image src="/images/kultanen.vanne.webp" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[#0d0d0d]/80" />
         </div>
         <div ref={formInView.ref} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">

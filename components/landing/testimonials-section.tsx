@@ -20,7 +20,7 @@ const testimonials = [
 ];
 
 // Featured client showcases (left side)
-const featuredClients = [
+const featuredClients: { name: string; image: string; url: string; tagline: string; quote?: string }[] = [
   {
     name: "Wheeltec",
     image: "/images/wheeltec.etusivu.jpeg",
@@ -32,6 +32,7 @@ const featuredClients = [
     image: "/images/repola.etusivu.jpeg",
     url: "https://www.kirjanpitopalvelutrepola.fi/",
     tagline: "Nettisivut, jotka tuovat taloushallinnon palveluille enemmän näkyvyyttä ja asiakkaita.",
+    quote: "Asiantuntevaa ja mukavaa palvelua Leolta. Nettisivujen ylläpito erittäin helppoa ja sujuvaa tämän kaverin ansiosta.\n\n-Repola",
   },
 ];
 
@@ -62,10 +63,10 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="asiakkaat" ref={sectionRef} className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
+    <section id="asiakkaat" ref={sectionRef} className="relative pt-24 lg:pt-32 pb-10 lg:pb-12 border-t border-[#2a2a2a] bg-[#0d0d0d]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Clients */}
-        <div className="mb-20">
+        <div>
           <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-8">
             <span className="w-8 h-px bg-[#f0f0f0]/30" />
             Asiakkaat
@@ -78,46 +79,55 @@ export function TestimonialsSection() {
             Yritykset, jotka luottavat osaamiseeni
           </h2>
           
-          {/* Featured showcases (left) + Logo grid (right) */}
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-6xl">
-            {/* Featured client showcases */}
-            <div className="flex flex-row items-start gap-6 lg:w-2/3">
+          {/* Featured pairs + Logo row */}
+          <div className="flex flex-col gap-8 lg:gap-12 max-w-6xl">
+            {/* Featured client showcases: card + text side by side */}
+            <div className="flex flex-col sm:flex-row gap-8 lg:gap-12">
               {featuredClients.map((client, index) => (
-                <a
-                  key={client.name}
-                  href={client.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative w-64 sm:w-80 aspect-[3/5] overflow-hidden bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <Image
-                    src={client.image}
-                    alt={client.name}
-                    fill
-                    className="object-cover object-top filter brightness-75 group-hover:brightness-90 transition-all duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
-                  <div className="absolute top-2 left-2 text-sm font-display text-[#f0f0f0]">
-                    {client.name}
-                  </div>
+                <div key={client.name} className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 flex-1 text-center sm:text-left">
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative w-48 sm:w-64 lg:w-80 aspect-[3/5] shrink-0 overflow-hidden bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] transition-all duration-500 ${
+                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    }`}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <Image
+                      src={client.image}
+                      alt={client.name}
+                      fill
+                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 320px"
+                      className="object-cover object-top filter brightness-75 group-hover:brightness-90 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
+                    <div className="absolute top-2 left-2 text-sm font-display text-[#f0f0f0]">
+                      {client.name}
+                    </div>
+                    <div className="absolute bottom-2 left-2 inline-flex items-center gap-1.5 sm:gap-2 text-base sm:text-lg lg:text-xl font-mono text-[#f0f0f0]">
+                      Katso sivu
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </div>
+                  </a>
                   {client.tagline && (
-                    <p className="absolute bottom-11 left-2 right-2 text-base sm:text-lg font-medium text-[#f0f0f0] leading-snug">
-                      {client.tagline}
-                    </p>
+                    <div>
+                      <p className="text-base sm:text-lg font-medium text-[#f0f0f0] leading-snug">
+                        {client.tagline}
+                      </p>
+                      {client.quote && (
+                        <p className="mt-4 text-sm sm:text-base text-[#a0a0a0] leading-snug whitespace-pre-line">
+                          {client.quote}
+                        </p>
+                      )}
+                    </div>
                   )}
-                  <div className="absolute bottom-2 left-2 inline-flex items-center gap-1 text-xs font-mono text-[#f0f0f0]">
-                    Katso sivu
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </div>
-                </a>
+                </div>
               ))}
             </div>
 
-            {/* Client Logos Grid */}
-            <div className="grid grid-cols-2 lg:w-1/3 gap-6 lg:gap-8 content-start">
+            {/* Client Logos row */}
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 lg:gap-8">
               {clients.map((client, index) => {
                 const cardContent = (
                   <div className="relative w-full h-full flex items-center justify-center">
@@ -125,6 +135,7 @@ export function TestimonialsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
+                      sizes="(max-width: 640px) 30vw, (max-width: 1024px) 16vw, 185px"
                       className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
                     />
                   </div>
