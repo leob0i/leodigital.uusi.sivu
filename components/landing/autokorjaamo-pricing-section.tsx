@@ -59,8 +59,7 @@ export function AutokorjaamoPricingSection() {
             <div className="space-y-5 mb-10">
               {[
                 "Räätälöity ulkoasu – ei templaatteja, ei WordPressiä. Sivu tehdään juuri sinun korjaamolle sopivaksi.",
-                "Hakukoneoptimointi (SEO) – oikeat avainsanat, tekninen rakenne ja sisältö, joka löytyy Googlesta kun asiakas etsii korjaamoa läheltä.",
-                "Tekoälyhakuoptimointi (GEO) – sivusto on rakennettu niin, että ChatGPT, Perplexity ja muut tekoälypohjaiset haut suosittelevat yritystäsi.",
+                "Hakukonevalmis pohja — tekninen SEO, sivurakenne ja metatiedot kuntoon heti julkaisussa",
                 "Mobiilioptimoidut ja nopeat sivut toimii moitteettomasti puhelimella, tabletilla ja tietokoneella.",
                 "Enintään 6 sivua – etusivu, palvelut, tietoa korjaamosta, yhteystiedot ja muut tarpeelliset.",
               ].map((text, i) => (

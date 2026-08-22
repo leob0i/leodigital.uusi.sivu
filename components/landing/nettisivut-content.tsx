@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
@@ -27,8 +28,7 @@ function useInView(threshold = 0.15) {
 
 const sisaltyy = [
   "Räätälöity Next.js-toteutus — ei WordPress, ei templaatteja",
-  "Hakukoneoptimointi (SEO) alusta alkaen — oikeat avainsanat, tekninen rakenne",
-  "Tekoälyhakuoptimointi (GEO) — löydyt ChatGPT:stä, Perplexitystä ja Google AI:sta",
+  "Hakukonevalmis pohja — tekninen SEO, sivurakenne ja metatiedot kuntoon heti julkaisussa",
   "Mobiilioptimoidut ja nopeat sivut kaikilla laitteilla",
   "Aloitushinta 99€ sisältää 6 sivua (etusivu, palvelut, yhteystiedot + muut tarpeelliset).",
   "Domain & SSL-sertifikaatti hoidettu",
@@ -320,20 +320,28 @@ export function NettisivutContent() {
           </div>
 
           <div
-            className={`mt-8 p-8 border border-[#2a2a2a] bg-[#0d0d0d] transition-all duration-700 delay-150 ${
+            className={`relative overflow-hidden mt-8 p-8 border border-[#2a2a2a] transition-all duration-700 delay-150 ${
               mitaInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="flex flex-wrap items-baseline gap-3 mb-4">
-              <h3 className="text-3xl lg:text-4xl font-display text-[#f0f0f0]">Maksut ja verkkokauppa</h3>
-              <span className="text-xl font-display text-[#f0c040]">+15–99 €/kk lisää</span>
+            <Image src="/images/seo.jpg" alt="" fill sizes="(min-width: 1400px) 1400px, 100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-[#0a0a0a]/80" />
+            <div className="relative z-10">
+              <h3 className="text-2xl lg:text-3xl font-display text-[#f0f0f0] mb-4">
+                Jatkuva SEO + GEO -seuranta ja optimointi erillisenä palveluna —
+              </h3>
+              <div className="flex flex-wrap items-center gap-4">
+                <p className="text-2xl lg:text-3xl font-display text-[#f0f0f0]">
+                  Leo Digitalin asiakkaana <span className="text-[#f0c040]">−20 %</span>
+                </p>
+                <Link
+                  href="/hakukoneoptimointi"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f0f0f0] text-[#0a0a0a] text-sm font-medium hover:bg-white transition-colors"
+                >
+                  Lue lisää SEO + GEO -palvelusta
+                </Link>
+              </div>
             </div>
-            <p className="text-lg lg:text-xl font-bold text-[#f0c040] leading-relaxed mb-4">
-              Sisältäen täysin räätälöidyn verkkokaupan ja tuotehallinnan.
-            </p>
-            <p className="text-[#a0a0a0] leading-relaxed">
-              <span className="text-[#f0f0f0] font-medium">Entä maksujen välitys?</span> Kun asiakkaasi maksaa verkkokaupassa, rahaliikenne kulkee maksunvälittäjän kautta (esim. Stripe tai Visma Pay). He veloittavat jokaisesta myynnistä pienen palkkion — yleensä muutama prosentti + kiinteä sentti per tapahtuma, joillakin lisäksi kuukausimaksu. Tämä on alan vakiokäytäntö kaikilla verkkokaupoilla, ja maksat sen suoraan palveluntarjoajalle. Me emme ota siitä osuutta. Autamme sinut valitsemaan sopivimman vaihtoehdon ja kerromme etukäteen mitä se maksaa.
-            </p>
           </div>
         </div>
       </section>

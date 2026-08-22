@@ -21,11 +21,11 @@ function useInView(threshold = 0.15) {
 const faq = [
   {
     q: "Mitä kotisivut maksavat yritykselle?",
-    a: "Aloitusmaksu on 99 € ja sen jälkeen 49 €/kk. Hinta sisältää räätälöidyt sivut, ylläpidon, domainin, hostingin ja tietoturvan. Yrityssähköposti on +5 €/kk per postilaatikko.",
+    a: "Aloitusmaksu on alk.99 € ja sen jälkeen 49 €/kk. Hinta sisältää räätälöidyt sivut, ylläpidon, domainin, hostingin ja tietoturvan. Yrityssähköposti on +5 €/kk per postilaatikko.",
   },
   {
     q: "Onko sopimus määräaikainen?",
-    a: "Sopimus on 12kk määräaikainen, jonka jälkeen se muuttuu toistaiseksi voimassaolevaksi 1kk irtisanomisajalla.",
+    a: "Nettisivujen sopimus on 12kk-, ja SEO & GEO sopimus on 3kk määräaikainen, jonka jälkeen se muuttuu toistaiseksi voimassaolevaksi 1kk irtisanomisajalla.",
   },
   {
     q: "Kuinka nopeasti sivut valmistuvat?",

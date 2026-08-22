@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
 const features = [
@@ -14,17 +15,47 @@ const features = [
   },
   {
     number: "02",
-    title: "SEO ja AI hakukonenäkyvyys",
-    description:
-      "Hakukoneoptimointi huomioidaan jokaisessa projektissa alusta alkaen. Oikeat avainsanat, tekninen SEO ja rakenne, joka miellyttää Googlea ja tekoälypohjaista hakua.",
-    visual: "seo",
+    title: "Päivitykset WhatsAppin kautta",
+    description: (
+      <>
+        Lähetä kuva, ajankohtainen tarjous tai uusi palvelu suoraan
+        WhatsApp:viestillä.
+        <br />
+        <br />
+        <span className="text-white">
+          Päivitätkö uudet kuvat, lisäätkö uuden palvelun tai muutatko
+          aukioloaikoja? Laita vain viesti WhatsAppissa – Näin helposti
+          päivitykset onnistuvat!
+        </span>
+      </>
+    ),
+    visual: "whatsapp",
   },
   {
     number: "03",
-    title: "Päivitykset WhatsAppin kautta",
-    description:
-      "Lähetä kuva, ajankohtainen tarjous tai uusi palvelu suoraan WhatsApp:viestillä.",
-    visual: "whatsapp",
+    title: "Hakukonevalmis perusta",
+    description: (
+      <>
+        Sivusto rakennetaan teknisesti oikein: indeksoitavuus, sivurakenne,
+        otsikkohierarkia, metatiedot, nopeus ja rakenteinen data kuntoon jo
+        julkaisussa. Näin sivusto on valmis löytymään — eikä lähtökohtaa
+        tarvitse korjata jälkikäteen.
+        <br />
+        <br />
+        <span className="text-white">
+          Jos toimialallasi on kova kilpailu haussa, tarvitaan lisäksi
+          jatkuvaa optimointia ja seurantaa.
+        </span>
+        <br />
+        <Link
+          href="/hakukoneoptimointi"
+          className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-full bg-[#f0f0f0] text-[#0a0a0a] text-sm font-medium hover:bg-white transition-colors"
+        >
+          Lue lisää SEO + GEO -palvelusta
+        </Link>
+      </>
+    ),
+    visual: "seo",
   },
 ];
 

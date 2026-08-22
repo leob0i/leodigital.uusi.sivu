@@ -336,8 +336,7 @@ export function VeneilyalanContent() {
               <div className="space-y-5 mb-10">
                 {[
                   "Räätälöity ulkoasu – ei templaatteja, ei WordPressiä. Sivu tehdään juuri sinun veneilyyrityksellesi sopivaksi.",
-                  "Hakukoneoptimointi (SEO) – oikeat avainsanat, tekninen rakenne ja sisältö, joka löytyy Googlesta kun asiakas etsii venehuoltoa tai venekauppaa.",
-                  "Tekoälyhakuoptimointi (GEO) – sivusto on rakennettu niin, että ChatGPT, Perplexity ja muut tekoälypohjaiset haut suosittelevat yritystäsi.",
+                  "Hakukonevalmis pohja — tekninen SEO, sivurakenne ja metatiedot kuntoon heti julkaisussa",
                   "Mobiilioptimoidut ja nopeat sivut – toimii moitteettomasti puhelimella, tabletilla ja tietokoneella.",
                   "Enintään 6 sivua – etusivu, palvelut, tietoa yrityksestä, yhteystiedot ja muut tarpeelliset.",
                 ].map((text, i) => (
