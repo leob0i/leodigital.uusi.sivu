@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
+    images: [
+      {
+        url: '/images/leodigital.logo.webp',
+        width: 200,
+        height: 200,
+        alt: 'Leo Digital Suomi',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

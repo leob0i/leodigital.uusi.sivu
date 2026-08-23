@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     url: "https://www.leodigital.fi/nettisivut",
     locale: "fi_FI",
     type: "website",
+    images: [
+      {
+        url: "/images/leodigital.logo.webp",
+        width: 200,
+        height: 200,
+        alt: "Leo Digital Suomi",
+      },
+    ],
   },
 };
 
