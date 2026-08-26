@@ -83,14 +83,19 @@ export function TestimonialsSection() {
           {/* Featured pairs + Logo row */}
           <div className="flex flex-col gap-8 lg:gap-12 max-w-6xl">
             {/* Featured client showcases: card + text side by side */}
-            <div className="flex flex-col sm:flex-row gap-8 lg:gap-12">
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-12">
               {featuredClients.map((client, index) => (
-                <div key={client.name} className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 flex-1 text-center sm:text-left">
+                <div
+                  key={client.name}
+                  className={`flex items-start gap-3 sm:gap-6 flex-1 text-left ${
+                    client.name === "Repola" ? "flex-row-reverse" : ""
+                  }`}
+                >
                   <a
                     href={client.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative w-48 sm:w-64 lg:w-80 aspect-[3/5] shrink-0 overflow-hidden bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] transition-all duration-500 ${
+                    className={`group relative w-28 sm:w-64 lg:w-80 aspect-[3/5] shrink-0 overflow-hidden bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] transition-all duration-500 ${
                       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
@@ -99,25 +104,25 @@ export function TestimonialsSection() {
                       src={client.image}
                       alt={client.name}
                       fill
-                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 320px"
+                      sizes="(max-width: 640px) 112px, (max-width: 1024px) 256px, 320px"
                       className="object-cover object-top filter brightness-75 group-hover:brightness-90 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
-                    <div className="absolute top-2 left-2 text-sm font-display text-[#f0f0f0]">
+                    <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 text-xs sm:text-sm font-display text-[#f0f0f0]">
                       {client.name}
                     </div>
-                    <div className="absolute bottom-2 left-2 inline-flex items-center gap-1.5 sm:gap-2 text-base sm:text-lg lg:text-xl font-mono text-[#f0f0f0]">
+                    <div className="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-lg lg:text-xl font-mono text-[#f0f0f0]">
                       Katso sivu
                       <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </div>
                   </a>
                   {client.tagline && (
-                    <div>
-                      <p className="text-base sm:text-lg font-medium text-[#f0f0f0] leading-snug">
+                    <div className="min-w-0">
+                      <p className="text-sm sm:text-lg font-medium text-[#f0f0f0] leading-snug">
                         {client.tagline}
                       </p>
                       {client.quote && (
-                        <p className="mt-4 text-sm sm:text-base text-[#a0a0a0] leading-snug whitespace-pre-line">
+                        <p className="mt-2 sm:mt-4 text-xs sm:text-base text-[#a0a0a0] leading-snug whitespace-pre-line">
                           {client.quote}
                         </p>
                       )}
