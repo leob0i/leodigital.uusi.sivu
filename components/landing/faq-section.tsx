@@ -55,6 +55,7 @@ const faq = [
 
 export function FaqSection() {
   const faqInView = useInView(0.1);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
@@ -72,12 +73,30 @@ export function FaqSection() {
             faqInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {faq.map((item) => (
-            <div key={item.q} className="p-8 border border-[#2a2a2a] bg-[#111111]">
-              <h3 className="text-lg lg:text-xl font-display text-[#f0f0f0] mb-3">{item.q}</h3>
-              <p className="text-[#a0a0a0] leading-relaxed">{item.a}</p>
-            </div>
-          ))}
+          {faq.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={item.q} className="p-8 border border-[#2a2a2a] bg-[#111111]">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between gap-4 text-left cursor-pointer lg:cursor-default lg:pointer-events-none"
+                >
+                  <h3 className="text-lg lg:text-xl font-display text-[#f0f0f0]">{item.q}</h3>
+                  <span className="lg:hidden shrink-0 text-2xl leading-none text-[#a0a0a0]">
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
+                <p
+                  className={`text-[#a0a0a0] leading-relaxed mt-3 lg:mt-3 lg:block ${
+                    isOpen ? "block" : "hidden"
+                  }`}
+                >
+                  {item.a}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

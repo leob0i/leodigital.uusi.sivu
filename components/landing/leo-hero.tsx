@@ -20,6 +20,7 @@ const clients = [
   { name: "Rasa & Väänänen", logo: "/images/rasa.vaananen.logo.png", url: "https://adkorjaamomikkeli.com/" },
   { name: "Abo Marine Service", logo: "/images/abo.marine.service.logo.png", url: "https://www.abomarineservice.com/" },
   { name: "Kirjanpito ja Digitoimisto", logo: "/images/apellxrepola.logo.png", url: "https://kirjanpitojadigitoimisto.fi/" },
+  { name: "Rakennuspalvelu Kolehmainen", logo: "/images/rakennuskolehmainen.logo.webp", url: "https://www.rakennuskolehmainen.fi" },
 ];
 
 export function LeoHero() {
@@ -379,43 +380,47 @@ export function LeoHero() {
           >
             Yritykset, jotka luottavat osaamiseeni
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 lg:gap-8 max-w-6xl">
-            {clients.map((client, index) => {
-              const cardContent = (
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
-                    sizes="(max-width: 768px) 45vw, 15vw"
-                    className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
-                  />
+          <div
+            className={`relative left-1/2 -translate-x-1/2 w-screen overflow-hidden transition-opacity duration-700 ${
+              clientsVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="flex gap-6 lg:gap-8 marquee">
+              {[...Array(2)].map((_, dupIndex) => (
+                <div key={dupIndex} className="flex gap-6 lg:gap-8 shrink-0">
+                  {clients.map((client) => {
+                    const cardContent = (
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <Image
+                          src={client.logo}
+                          alt={client.name}
+                          fill
+                          sizes="160px"
+                          className="object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-300"
+                        />
+                      </div>
+                    );
+                    const cardClass =
+                      "w-32 lg:w-40 aspect-square shrink-0 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-colors group";
+                    return client.url ? (
+                      <a
+                        key={`${client.name}-${dupIndex}`}
+                        href={client.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cardClass}
+                      >
+                        {cardContent}
+                      </a>
+                    ) : (
+                      <div key={`${client.name}-${dupIndex}`} className={cardClass}>
+                        {cardContent}
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-              const cardClass = `aspect-square bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#404040] flex items-center justify-center transition-all duration-500 group ${
-                clientsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`;
-              return client.url ? (
-                <a
-                  key={client.name}
-                  href={client.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cardClass}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {cardContent}
-                </a>
-              ) : (
-                <div
-                  key={client.name}
-                  className={cardClass}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {cardContent}
-                </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
 
