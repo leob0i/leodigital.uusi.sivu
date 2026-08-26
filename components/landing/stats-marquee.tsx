@@ -1,10 +1,10 @@
 "use client";
 
 const stats = [
-  { value: "100%", label: "räätälöity koodi", company: "yrityksesi näköiseksi" },
-  { value: "24/7", label: "tuki saatavilla", company: "WhatsApp" },
-  { value: "SEO", label: "alusta alkaen", company: "Hakukoneoptimointi" },
-  { value: "Nopea", label: "latausaika", company: "Optimoitu" },
+  { value: "Nettisivut", label: "alk. 49 €/kk", company: "Suunnittelusta ylläpitoon" },
+  { value: "SEO + GEO", label: "", company: "Jatkuva näkyvyyden kehitys" },
+  { value: "Helppo", label: "kumppanuus", company: "Muutokset ja tuki yhdellä viestillä" },
+  { value: "Kaikki", label: "samasta", company: "Toteutus, ylläpito ja kehitys" },
 ];
 
 export function StatsMarquee({ isVisible }: { isVisible: boolean }) {
@@ -14,15 +14,15 @@ export function StatsMarquee({ isVisible }: { isVisible: boolean }) {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="flex gap-16 marquee whitespace-nowrap">
+      <div className="flex gap-16 lg:gap-32 marquee whitespace-nowrap">
         {[...Array(2)].map((_, i) => (
-          <div key={i} className="flex gap-16">
-            {stats.map((stat) => (
-              <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
-                <span className="text-4xl lg:text-5xl font-display text-[#f0f0f0]">{stat.value}</span>
-                <span className="text-sm text-[#a0a0a0]">
+          <div key={i} className="flex gap-16 lg:gap-32">
+            {[...stats, ...stats, ...stats].map((stat, j) => (
+              <div key={`${stat.company}-${i}-${j}`} className="flex flex-col items-start gap-1">
+                <span className="text-3xl lg:text-4xl font-display text-[#f0f0f0]">{stat.value}</span>
+                <span className="text-xs text-[#a0a0a0]">
                   {stat.label}
-                  <span className="block font-mono text-xs mt-1">{stat.company}</span>
+                  <span className="block font-mono text-[10px] mt-0.5">{stat.company}</span>
                 </span>
               </div>
             ))}

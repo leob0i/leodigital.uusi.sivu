@@ -82,14 +82,15 @@ export function HeroSection() {
 
 <h1 className="sr-only">Yrityksellesi nettisivu, ylläpito ja näkyvyys – kotisivut suomalaisille yrityksille</h1>
 
-          <div 
-            className={`text-[clamp(2.5rem,10vw,8rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
+          <div
+            className={`text-[clamp(2.75rem,10.5vw,8.5rem)] font-semibold leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
+            style={{ fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" }}
           >
             <span className="block text-balance">Yrityksellesi</span>
             <span className="block">
-              <span className="relative inline-block">
+              <span className="relative inline-block text-blue-500">
                 <span 
                   key={wordIndex}
                   className="inline-flex"

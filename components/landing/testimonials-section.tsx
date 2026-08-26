@@ -87,8 +87,8 @@ export function TestimonialsSection() {
               {featuredClients.map((client, index) => (
                 <div
                   key={client.name}
-                  className={`flex items-start gap-3 sm:gap-6 flex-1 text-left ${
-                    client.name === "Repola" ? "flex-row-reverse" : ""
+                  className={`flex items-start sm:items-center gap-3 sm:gap-6 flex-1 text-left ${
+                    client.name === "Repola" ? "flex-row-reverse sm:flex-row" : ""
                   }`}
                 >
                   <a
