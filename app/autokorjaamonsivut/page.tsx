@@ -5,7 +5,7 @@ import { FooterSection } from "@/components/landing/footer-section";
 
 export const metadata: Metadata = {
   title: 'Autokorjaamon Nettisivut | Leo Digital Suomi – Enemmän Ajanvarauksia',
-  description: 'Rakennamme suomalaisille autokorjaamoille nettisivut, jotka ratkaisevat oikean ongelman. Enemmän ajanvarauksia, vähemmän turhia soittoja. Pyydä ilmainen demo tai suunnitelma.',
+  description: 'Rakennamme suomalaisille autokorjaamoille nettisivut, jotka ratkaisevat oikean ongelman: enemmän ajanvarauksia, vähemmän turhia soittoja. Pyydä ilmainen demo.',
   keywords: [
     'autokorjaamon nettisivut',
     'autokorjaamo kotisivut',

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { AutokorjaamoPricingSection } from "@/components/landing/autokorjaamo-pricing-section";
+import { AutokorjaamoFaqSection } from "@/components/landing/autokorjaamo-faq-section";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -394,6 +395,8 @@ Rakennamme näyttäviä verkkosivuja, jotka herättävät luottamusta ja tuovat 
           </div>
         </div>
       </section>
+
+      <AutokorjaamoFaqSection />
 
       {/* ── Yhteydenottolomake ── */}
       <section id="yhteydenotto" className="relative py-24 lg:py-32 border-t border-[#2a2a2a] overflow-hidden">
