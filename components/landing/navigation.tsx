@@ -6,12 +6,19 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const navLinksFi = [
+type NavLink = { name: string; href: string; submenu?: undefined } | { name: string; href?: undefined; submenu: { name: string; href: string }[] };
+
+const navLinksFi: NavLink[] = [
   { name: "Nettisivut + ylläpito", href: "/nettisivut" },
-  { name: "Kenelle sopii?", href: "/leodigitalnettisivut" },
   { name: "SEO ja GEO", href: "/hakukoneoptimointi" },
-  { name: "Autoala", href: "/autokorjaamonsivut" },
-  { name: "Veneily", href: "/veneilyalansivut" },
+  {
+    name: "Alat",
+    submenu: [
+      { name: "Autoala", href: "/autokorjaamonsivut" },
+      { name: "Veneily", href: "/veneilyalansivut" },
+    ],
+  },
+  { name: "Kenelle sopii?", href: "/leodigitalnettisivut" },
   { name: "Kuka on Leo?", href: "/leodigital" },
   { name: "Työni", href: "#asiakkaat" },
 ];
@@ -77,17 +84,38 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleAnchorClick(e, link.href)}
-                className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors duration-300 relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#f0f0f0] transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.submenu ? (
+                <div key={link.name} className="relative group py-2">
+                  <span className="text-sm text-[#a0a0a0] group-hover:text-[#f0f0f0] transition-colors duration-300 cursor-default">
+                    {link.name}
+                  </span>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-[#111111]/95 backdrop-blur-xl border border-[#2a2a2a] rounded-xl shadow-lg py-2 min-w-[160px]">
+                      {link.submenu.map((sublink) => (
+                        <a
+                          key={sublink.name}
+                          href={sublink.href}
+                          className="block px-4 py-2 text-sm text-[#a0a0a0] hover:text-[#f0f0f0] hover:bg-[#1a1a1a] transition-colors duration-200 whitespace-nowrap"
+                        >
+                          {sublink.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  className="text-sm text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors duration-300 relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#f0f0f0] transition-all duration-300 group-hover:w-full" />
+                </a>
+              )
+            )}
           </div>
 
           {/* Desktop CTA */}
@@ -160,21 +188,47 @@ export function Navigation() {
           </button>
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
-            {navLinks.map((link, i) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => { handleAnchorClick(e, link.href); setIsMobileMenuOpen(false); }}
-                className={`text-5xl font-display text-[#f0f0f0] hover:text-[#a0a0a0] transition-all duration-500 ${
-                  isMobileMenuOpen 
-                    ? "opacity-100 translate-y-0" 
-                    : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link, i) =>
+              link.submenu ? (
+                <div
+                  key={link.name}
+                  className={`transition-all duration-500 ${
+                    isMobileMenuOpen
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
+                >
+                  <span className="text-5xl font-display text-[#f0f0f0]">{link.name}</span>
+                  <div className="flex flex-col gap-3 mt-4 pl-2">
+                    {link.submenu.map((sublink) => (
+                      <a
+                        key={sublink.name}
+                        href={sublink.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-2xl font-display text-[#a0a0a0] hover:text-[#f0f0f0] transition-colors duration-300"
+                      >
+                        {sublink.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => { handleAnchorClick(e, link.href); setIsMobileMenuOpen(false); }}
+                  className={`text-5xl font-display text-[#f0f0f0] hover:text-[#a0a0a0] transition-all duration-500 ${
+                    isMobileMenuOpen
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
+                >
+                  {link.name}
+                </a>
+              )
+            )}
           </div>
           
           {/* Bottom CTAs */}

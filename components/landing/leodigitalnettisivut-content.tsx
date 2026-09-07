@@ -445,51 +445,6 @@ export function LeodigitalNettisivutContent() {
         </div>
       </section>
 
-      {/* ── Kenelle Leo Digitalin kotisivut sopivat ── */}
-      <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#111111]">
-        <div ref={toimialatInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div
-            className={`mb-16 transition-all duration-700 ${
-              toimialatInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
-              <span className="w-8 h-px bg-[#f0f0f0]/30" />
-              Toimialat
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl">
-              Kenelle Leo Digitalin kotisivut sopivat?
-            </h2>
-          </div>
-
-          <div
-            className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 delay-100 ${
-              toimialatInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            {toimialat.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col p-8 border border-[#2a2a2a] hover:border-[#3a3a3a] transition-colors bg-[#0d0d0d]"
-              >
-                <span className="text-3xl mb-4">{item.icon}</span>
-                <h3 className="text-xl font-display text-[#f0f0f0] mb-3">{item.title}</h3>
-                <p className="text-[#a0a0a0] leading-relaxed text-sm flex-1">{item.desc}</p>
-                {item.link && (
-                  <a
-                    href={item.link.href}
-                    className="inline-flex items-center gap-2 text-sm text-[#f0f0f0] mt-6 group"
-                  >
-                    {item.link.label}
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Nettisivut ilman verkkosivusäätöä ── */}
       <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#0d0d0d]">
         <div ref={helppoInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -957,6 +912,51 @@ export function LeodigitalNettisivutContent() {
                 Minä autan rakentamaan loput.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Kenelle Leo Digitalin kotisivut sopivat ── */}
+      <section className="relative py-24 lg:py-32 border-t border-[#2a2a2a] bg-[#111111]">
+        <div ref={toimialatInView.ref} className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div
+            className={`mb-16 transition-all duration-700 ${
+              toimialatInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-[#a0a0a0] mb-6">
+              <span className="w-8 h-px bg-[#f0f0f0]/30" />
+              Toimialat
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-display tracking-tight text-[#f0f0f0] max-w-3xl">
+              Kenelle Leo Digitalin kotisivut sopivat?
+            </h2>
+          </div>
+
+          <div
+            className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 delay-100 ${
+              toimialatInView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            {toimialat.map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col p-8 border border-[#2a2a2a] hover:border-[#3a3a3a] transition-colors bg-[#0d0d0d]"
+              >
+                <span className="text-3xl mb-4">{item.icon}</span>
+                <h3 className="text-xl font-display text-[#f0f0f0] mb-3">{item.title}</h3>
+                <p className="text-[#a0a0a0] leading-relaxed text-sm flex-1">{item.desc}</p>
+                {item.link && (
+                  <a
+                    href={item.link.href}
+                    className="inline-flex items-center gap-2 text-sm text-[#f0f0f0] mt-6 group"
+                  >
+                    {item.link.label}
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
