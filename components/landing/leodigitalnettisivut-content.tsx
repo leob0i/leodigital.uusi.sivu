@@ -147,12 +147,12 @@ const toimialat = [
 ];
 
 const teknisetVastuut = [
-  { q: "Domain?", a: "Minä hoidan." },
-  { q: "Hosting?", a: "Minä hoidan." },
-  { q: "SSL-sertifikaatti?", a: "Minä hoidan." },
-  { q: "Varmuuskopiot?", a: "Minä hoidan." },
-  { q: "Tekniset päivitykset?", a: "Minä hoidan." },
-  { q: "Sivuston kehittäminen?", a: "Katsotaan yhdessä." },
+  "Domain",
+  "Hosting",
+  "SSL-sertifikaatti",
+  "Varmuuskopiot",
+  "Tekniset päivitykset",
+  "Sivuston kehittäminen",
 ];
 
 const hajallaan = [
@@ -277,6 +277,7 @@ export function LeodigitalNettisivutContent() {
             alt=""
             fill
             priority
+            quality={45}
             sizes="100vw"
             className="object-cover object-top opacity-40"
           />
@@ -483,13 +484,15 @@ export function LeodigitalNettisivutContent() {
                 </strong>
               </p>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                {teknisetVastuut.map((item) => (
-                  <div key={item.q} className="p-6 border border-[#2a2a2a] bg-[#111111]">
-                    <p className="text-sm text-[#a0a0a0] font-mono mb-2">{item.q}</p>
-                    <p className="text-lg font-display text-[#f0f0f0]">{item.a}</p>
-                  </div>
-                ))}
+              <div className="p-8 border border-[#2a2a2a] bg-[#111111] mb-10 lg:max-w-4xl">
+                <ul className="sm:columns-2 gap-x-8 space-y-2">
+                  {teknisetVastuut.map((item) => (
+                    <li key={item} className="text-lg font-display text-[#f0f0f0] break-inside-avoid">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-lg font-display text-[#f0f0f0] mt-4">ja kaikki puolestasi!</p>
               </div>
 
               <p className="text-base lg:text-lg text-[#a0a0a0] leading-relaxed max-w-3xl">
@@ -609,6 +612,45 @@ export function LeodigitalNettisivutContent() {
               <p className="text-2xl lg:text-3xl font-display text-[#f0f0f0]">
                 Leo Digital hoitaa digin puolestasi.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Hinnoittelu ── */}
+      <section className="relative py-12 lg:py-16 border-t border-[#2a2a2a] bg-[#0d0d0d] overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="relative overflow-hidden p-6 lg:p-8 rounded-3xl border border-[#2a2a2a]/60 shadow-2xl">
+            <Image src="/images/nettisivu2.jpg" alt="" fill sizes="(min-width: 1400px) 1400px, 100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-[#0d0d0d]/80" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div>
+                <div className="flex flex-wrap items-center gap-4 mb-2">
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl font-display tracking-tight text-[#f0f0f0]">
+                    Kotisivut alkaen <span className="font-black text-[#f0c040]">49€/kk</span>
+                  </h2>
+                </div>
+                <p className="text-xl text-[#f0f0f0]/80 font-medium mb-3">
+                  Enemmän kuin pelkkä &ldquo;nettisivu&rdquo;
+                </p>
+                <p className="text-base text-[#f0f0f0] leading-relaxed max-w-2xl">
+                  Räätälöidyt kotisivut, jotka löytyvät Googlesta ja tekoälyhauista. Hinta sisältää kaiken: ylläpidon, domainin, hostingin ja tietoturvan — ei piilomaksuja eikä yllätyslaskuja.
+                  <br />
+                  Päivitykset hoituvat yhdellä WhatsApp-viestillä, vaikka viikonloppuna.
+                </p>
+                <p className="text-base text-[#f0f0f0] leading-relaxed max-w-2xl mt-3">
+                  Sähköposti <span className="font-black text-[#f0c040]">+5€/kk</span> per sähköpostilaatikko esim. info@yrityksesi.fi
+                </p>
+              </div>
+
+              <a
+                href="/nettisivut"
+                className="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 bg-[#f0f0f0] text-[#0d0d0d] text-sm font-medium rounded-full hover:bg-[#e0e0e0] transition-colors group"
+              >
+                Lue lisää
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>

@@ -169,7 +169,7 @@ export function NettisivutContent() {
           {/* Headline */}
           <div className="mb-12">
             <h1
-              className={`text-[clamp(2.5rem,8vw,7rem)] font-display leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
+              className={`text-[clamp(2.5rem,8vw,7rem)] font-display font-bold leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >

@@ -64,10 +64,10 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 pb-32 lg:pt-32 lg:pb-40">
         {/* Eyebrow */}
-        <div 
-          className={`mb-8 transition-all duration-700 ${
+        <div
+          className={`mb-6 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -76,14 +76,14 @@ export function HeroSection() {
             Verkkosivut, ylläpito & hakukonenäkyvyys
           </span>
         </div>
-        
+
         {/* Main headline */}
-        <div className="mb-12">
+        <div className="mb-8">
 
 <h1 className="sr-only">Yrityksellesi nettisivu, ylläpito ja näkyvyys – kotisivut suomalaisille yrityksille</h1>
 
           <div
-            className={`text-[clamp(2.75rem,10.5vw,8.5rem)] font-semibold leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
+            className={`text-[clamp(3.25rem,12vw,9.5rem)] font-semibold leading-[0.9] tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" }}
@@ -114,7 +114,7 @@ export function HeroSection() {
         </div>
         
         {/* Description */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-end">
           <p 
             className={`text-xl lg:text-2xl text-[#a0a0a0] leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"

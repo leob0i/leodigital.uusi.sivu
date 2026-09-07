@@ -24,11 +24,20 @@ export const metadata: Metadata = {
     siteName: 'Leo Digital Suomi',
     locale: 'fi_FI',
     type: 'website',
+    images: [
+      {
+        url: '/images/herokuva..jpeg',
+        width: 1024,
+        height: 1536,
+        alt: 'Kenelle yrityksen kotisivut sopivat – Leo Digital Suomi',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Kenelle Yrityksen Kotisivut Sopivat? | Leo Digital Suomi',
     description: 'Rehellinen puheenvuoro siitä, kenelle yrityksen kotisivut oikeasti sopivat – ja kenelle eivät.',
+    images: ['/images/herokuva..jpeg'],
   },
   robots: {
     index: true,
@@ -36,6 +45,7 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
     },
   },
   alternates: {

@@ -152,7 +152,7 @@ export function LeoHero() {
             {/* Animated heading */}
             <div className="overflow-hidden">
               <h1 
-                className={`text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
+                className={`text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-[#f0f0f0] transition-all duration-1000 ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
                 }`}
               >
